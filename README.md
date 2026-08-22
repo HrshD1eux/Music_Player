@@ -1,6 +1,12 @@
-# Music Player
+<p align="center">
+  <img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" alt="Music Player Icon" width="128" height="128" />
+</p>
 
-A customized, modern, high-performance offline music player for Android.
+<h1 align="center">Music Player</h1>
+
+<p align="center">
+  <b>A customized, modern, high-performance offline music player for Android.</b>
+</p>
 
 ---
 
