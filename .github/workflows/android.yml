@@ -55,7 +55,7 @@ jobs:
     - name: Configure Release Keystore
       if: env.RELEASE_KEYSTORE_BASE64 != ''
       run: |
-        python3 -c "import base64, os; s = os.environ['RELEASE_KEYSTORE_BASE64'].strip().strip('\'\"'); s += '=' * ((4 - len(s) % 4) % 4); open('musicplayer-release.jks', 'wb').write(base64.b64decode(s))"
+        python3 -c "import base64, os; s = ''.join(os.environ['RELEASE_KEYSTORE_BASE64'].split()).strip('\'\"'); s += '=' * ((4 - len(s) % 4) % 4); open('musicplayer-release.jks', 'wb').write(base64.b64decode(s))"
         cat <<EOF > keystore.properties
         storeFile=../musicplayer-release.jks
         storePassword=$RELEASE_KEYSTORE_PASSWORD
