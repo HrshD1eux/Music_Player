@@ -94,7 +94,48 @@ jobs:
         name: MusicPlayer-Debug
         path: app/build/outputs/apk/debug/app-debug.apk
 
-    - name: Create / Update GitHub Release
+    - name: Configure Git
+      if: env.RELEASE_KEYSTORE_BASE64 != ''
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+
+    - name: Bump Version in build.gradle
+      if: env.RELEASE_KEYSTORE_BASE64 != ''
+      run: |
+        # Extract current version
+        CURRENT_VERSION=$(grep 'versionName' app/build.gradle | head -1 | awk -F'"' '{print $2}')
+        
+        # Split version into parts (major.minor.patch)
+        IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
+        
+        # Increment patch version
+        PATCH=$((PATCH + 1))
+        NEW_VERSION="$MAJOR.$MINOR.$PATCH"
+        
+        # Update build.gradle with new version
+        sed -i "s/versionName \"$CURRENT_VERSION\"/versionName \"$NEW_VERSION\"/g" app/build.gradle
+        
+        # Commit and push version bump
+        git add app/build.gradle
+        git commit -m "chore: bump version to $NEW_VERSION" || true
+        git push origin main || true
+        
+        echo "Version bumped from $CURRENT_VERSION to $NEW_VERSION"
+
+    - name: Create and Push Git Tag
+      if: env.RELEASE_KEYSTORE_BASE64 != ''
+      run: |
+        # Check if tag already exists
+        if git rev-parse ${{ env.TAG_NAME }} >/dev/null 2>&1; then
+          echo "Tag ${{ env.TAG_NAME }} already exists, skipping tag creation"
+        else
+          git tag -a ${{ env.TAG_NAME }} -m "Release ${{ env.TAG_NAME }}" ${{ github.sha }}
+          git push origin ${{ env.TAG_NAME }}
+          echo "Created and pushed tag ${{ env.TAG_NAME }}"
+        fi
+
+    - name: Create GitHub Release
       if: env.RELEASE_KEYSTORE_BASE64 != ''
       uses: softprops/action-gh-release@v2
       env:
