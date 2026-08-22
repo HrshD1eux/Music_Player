@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2023 Auxio Project
- * ExternalPlaylistManager.kt is part of Auxio.
+ * Copyright (c) 2023 Music Player Project
+ * ExternalPlaylistManager.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ import org.oxycblt.musikr.playlist.m3u.M3U
  *
  * @see ImportedPlaylist
  * @see M3U
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 interface ExternalPlaylistManager {
     /**

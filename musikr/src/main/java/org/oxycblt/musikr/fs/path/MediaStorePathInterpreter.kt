@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2024 Auxio Project
- * MediaStorePathInterpreter.kt is part of Auxio.
+ * Copyright (c) 2024 Music Player Project
+ * MediaStorePathInterpreter.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ import org.oxycblt.musikr.fs.Path
 /**
  * Wrapper around a [Cursor] that interprets path information on a per-API/manufacturer basis.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 internal sealed interface MediaStorePathInterpreter {
     /**

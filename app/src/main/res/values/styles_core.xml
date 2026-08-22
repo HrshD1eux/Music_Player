@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Master parent theme -->
-    <style name="Theme.Auxio" parent="Theme.Material3Expressive.DynamicColors.DayNight" />
+    <style name="Theme.MusicPlayer" parent="Theme.Material3Expressive.DynamicColors.DayNight" />
     <!-- Adds nicer selector attributes not supported on lollipop -->
-    <style name="Theme.Auxio.V23" parent="Theme.Auxio" />
+    <style name="Theme.MusicPlayer.V23" parent="Theme.MusicPlayer" />
     <!-- Handles edge-to-edge on other styles variants -->
-    <style name="Theme.Auxio.V27" parent="Theme.Auxio.V23">
+    <style name="Theme.MusicPlayer.V27" parent="Theme.MusicPlayer.V23">
         <item name="android:statusBarColor">@color/chrome_translucent</item>
         <item name="android:navigationBarColor">@color/chrome_translucent</item>
     </style>
     <!-- Adds fully transparent system bars -->
-    <style name="Theme.Auxio.V29" parent="Theme.Auxio.V27" />
+    <style name="Theme.MusicPlayer.V29" parent="Theme.MusicPlayer.V27" />
     <!-- Adds an animated splash screen. -->
-    <style name="Theme.Auxio.V31" parent="Theme.Auxio.V29" />
+    <style name="Theme.MusicPlayer.V31" parent="Theme.MusicPlayer.V29" />
 
     <!-- Base theme -->
-    <style name="Theme.Auxio.Base" parent="Theme.Auxio.V31">
+    <style name="Theme.MusicPlayer.Base" parent="Theme.MusicPlayer.V31">
 
         <!-- Material configuration -->
 <!--        <item name="colorOutline">@color/overlay_stroke</item>-->
@@ -29,17 +29,17 @@
         </item>
         <item name="motionSpringSlowSpatial">@style/Motion.Material3.Spring.Standard.Slow.Spatial</item>
         <item name="motionSpringSlowEffects">@style/Motion.Material3.Spring.Standard.Slow.Effects</item>
-        <item name="appBarLayoutStyle">@style/Widget.Auxio.AppBarLayout</item>
-        <item name="toolbarStyle">@style/Widget.Auxio.Toolbar</item>
-        <item name="tabStyle">@style/Widget.Auxio.TabLayout</item>
-        <item name="tabSecondaryStyle">@style/Widget.Auxio.TabLayout.Secondary</item>
-        <item name="materialButtonStyle">@style/Widget.Auxio.Button</item>
-        <item name="materialButtonTonalStyle">@style/Widget.Auxio.Button.TonalButton</item>
-        <item name="materialButtonOutlinedStyle">@style/Widget.Auxio.Button.OutlinedButton</item>
-        <item name="materialButtonElevatedStyle">@style/Widget.Auxio.Button.ElevatedButton</item>
-        <item name="borderlessButtonStyle">@style/Widget.Auxio.Button.TextButton</item>
-        <item name="snackbarButtonStyle">@style/Widget.Auxio.Button.TextButton.Snackbar</item>
-        <item name="materialIconButtonStyle">@style/Widget.Auxio.Button.Icon.Base</item>
+        <item name="appBarLayoutStyle">@style/Widget.MusicPlayer.AppBarLayout</item>
+        <item name="toolbarStyle">@style/Widget.MusicPlayer.Toolbar</item>
+        <item name="tabStyle">@style/Widget.MusicPlayer.TabLayout</item>
+        <item name="tabSecondaryStyle">@style/Widget.MusicPlayer.TabLayout.Secondary</item>
+        <item name="materialButtonStyle">@style/Widget.MusicPlayer.Button</item>
+        <item name="materialButtonTonalStyle">@style/Widget.MusicPlayer.Button.TonalButton</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.MusicPlayer.Button.OutlinedButton</item>
+        <item name="materialButtonElevatedStyle">@style/Widget.MusicPlayer.Button.ElevatedButton</item>
+        <item name="borderlessButtonStyle">@style/Widget.MusicPlayer.Button.TextButton</item>
+        <item name="snackbarButtonStyle">@style/Widget.MusicPlayer.Button.TextButton.Snackbar</item>
+        <item name="materialIconButtonStyle">@style/Widget.MusicPlayer.Button.Icon.Base</item>
         <item name="materialIconButtonOutlinedStyle">
             @style/Widget.Material3Expressive.Button.IconButton.Outlined
         </item>
@@ -49,25 +49,25 @@
         <item name="materialIconButtonFilledTonalStyle">
             @style/Widget.Material3Expressive.Button.IconButton.Tonal
         </item>
-        <item name="materialSplitButtonStyle">@style/Widget.Auxio.SplitButton</item>
+        <item name="materialSplitButtonStyle">@style/Widget.MusicPlayer.SplitButton</item>
         <item name="materialSplitButtonLeadingFilledStyle">
-            @style/Widget.Auxio.SplitButton.LeadingButton.Filled
+            @style/Widget.MusicPlayer.SplitButton.LeadingButton.Filled
         </item>
         <item name="materialSplitButtonLeadingFilledTonalStyle">
-            @style/Widget.Auxio.SplitButton.LeadingButton.Filled.Tonal
+            @style/Widget.MusicPlayer.SplitButton.LeadingButton.Filled.Tonal
         </item>
         <item name="materialSplitButtonIconFilledStyle">
-            @style/Widget.Auxio.SplitButton.IconButton.Filled
+            @style/Widget.MusicPlayer.SplitButton.IconButton.Filled
         </item>
         <item name="materialSplitButtonIconFilledTonalStyle">
-            @style/Widget.Auxio.SplitButton.IconButton.Filled.Tonal
+            @style/Widget.MusicPlayer.SplitButton.IconButton.Filled.Tonal
         </item>
-        <item name="materialAlertDialogTheme">@style/Theme.Auxio.Dialog</item>
-        <item name="sliderStyle">@style/Widget.Auxio.Slider</item>
-        <item name="linearProgressIndicatorStyle">@style/Widget.Auxio.LinearProgressIndicator</item>
-        <item name="bottomSheetStyle">@style/Widget.Auxio.BottomSheet</item>
-        <item name="bottomSheetDialogTheme">@style/Widget.Auxio.BottomSheet.Dialog</item>
-        <item name="bottomSheetDragHandleStyle">@style/Widget.Auxio.BottomSheet.Handle</item>
+        <item name="materialAlertDialogTheme">@style/Theme.MusicPlayer.Dialog</item>
+        <item name="sliderStyle">@style/Widget.MusicPlayer.Slider</item>
+        <item name="linearProgressIndicatorStyle">@style/Widget.MusicPlayer.LinearProgressIndicator</item>
+        <item name="bottomSheetStyle">@style/Widget.MusicPlayer.BottomSheet</item>
+        <item name="bottomSheetDialogTheme">@style/Widget.MusicPlayer.BottomSheet.Dialog</item>
+        <item name="bottomSheetDragHandleStyle">@style/Widget.MusicPlayer.BottomSheet.Handle</item>
 
         <!-- typography -->
         <!-- some of it is non-standard because the default material typography isnt actually
@@ -119,21 +119,21 @@
         <item name="android:textColorHighlight">@color/overlay_text_highlight</item>
         <item name="android:textColorHighlightInverse">@color/overlay_text_highlight_inverse</item>
 
-        <item name="preferenceTheme">@style/PreferenceTheme.Auxio</item>
+        <item name="preferenceTheme">@style/PreferenceTheme.MusicPlayer</item>
         <item name="preferenceStyle">@style/Preference.Auxio</item>
         <item name="preferenceCategoryStyle">@style/Preference.Auxio.PreferenceCategory</item>
         <item name="dialogPreferenceStyle">@style/Preference.Auxio.DialogPreference</item>
         <item name="switchPreferenceCompatStyle">@style/Preference.Auxio.SwitchPreferenceCompat
         </item>
-        <item name="materialButtonGroupStyle">@style/Widget.Auxio.MaterialButtonGroup</item>
+        <item name="materialButtonGroupStyle">@style/Widget.MusicPlayer.MaterialButtonGroup</item>
     </style>
 
     <!-- Make sure blue is the default style instead of material purple -->
-    <style name="Theme.Auxio.App" parent="@style/Theme.Auxio.Blue" />
+    <style name="Theme.MusicPlayer.App" parent="@style/Theme.MusicPlayer.Blue" />
 
     <!--
     Theming widgets is technically possible below Android 12, but I *really* don't care enough
     to bother with it.
     -->
-    <style name="Theme.Auxio.Widget" parent="@style/Theme.Auxio.Blue" />
+    <style name="Theme.MusicPlayer.Widget" parent="@style/Theme.MusicPlayer.Blue" />
 </resources>

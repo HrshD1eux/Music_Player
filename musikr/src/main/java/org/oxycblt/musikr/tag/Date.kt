@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2022 Auxio Project
- * Date.kt is part of Auxio.
+ * Copyright (c) 2022 Music Player Project
+ * Date.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ import org.oxycblt.musikr.util.positiveOrNull
  * any other time management or validation. In general, this should only be used for display. Use
  * [from] to create an instance.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 class Date private constructor(private val tokens: List<Int>) : Comparable<Date> {
     val year = tokens[0]
@@ -83,7 +83,7 @@ class Date private constructor(private val tokens: List<Int>) : Comparable<Date>
      * several sub-items and thus can have a "range" of release dates. Use [from] to create an
      * instance.
      *
-     * @author Alexander Capehart
+     * @author HrshD1eux
      */
     class Range(
         /** The earliest [Date] in the range. */

@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2024 Auxio Project
- * ArtistImpl.kt is part of Auxio.
+ * Copyright (c) 2024 Music Player Project
+ * ArtistImpl.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ internal interface ArtistCore {
 /**
  * Library-backed implementation of [Artist].
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 internal class ArtistImpl(private val core: ArtistCore) : Artist {
     override val uid = core.preArtist.uid

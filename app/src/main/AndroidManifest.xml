@@ -10,6 +10,8 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"  />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
     <!-- Bluetooth auto-connect functionality (Disabled until permission workflow can be made) -->
 <!--    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />-->
@@ -24,7 +26,7 @@
     <queries />
 
     <application
-        android:name=".Auxio"
+        android:name=".MusicPlayerApp"
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup_descriptor"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -32,7 +34,7 @@
         android:label="@string/info_app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Auxio.App"
+        android:theme="@style/Theme.MusicPlayer.App"
         android:appCategory="audio"
         android:enableOnBackInvokedCallback="true"
         tools:ignore="UnusedAttribute">
@@ -41,7 +43,7 @@
             android:resource="@xml/automotive_app_desc"/>
         <meta-data
                 android:name="androidx.car.app.TintableAttributionIcon"
-                android:resource="@drawable/ic_auxio_24" />
+                android:resource="@drawable/ic_music_player_24" />
 
         <activity
             android:name=".MainActivity"
@@ -89,8 +91,8 @@
         Service handling music playback, system components, and state saving.
         -->
         <service
-            android:name=".AuxioService"
-            android:foregroundServiceType="mediaPlayback"
+            android:name=".MusicPlayerService"
+            android:foregroundServiceType="mediaPlayback|dataSync"
             android:icon="@mipmap/ic_launcher"
             android:exported="true"
             android:roundIcon="@mipmap/ic_launcher"
@@ -108,6 +110,16 @@
             android:authorities="@string/pkg_authority_cover"
             android:exported="true"
             tools:ignore="ExportedContentProvider" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
         <!--
         Work around apps that blindly query for ACTION_MEDIA_BUTTON working.

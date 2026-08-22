@@ -2,13 +2,13 @@ name: Feature Request
 description: Propose new functionality
 labels: ["enhancement"]
 assignees:
-  - OxygenCobalt
+  - HrshD1eux
 body:
   - type: markdown
     attributes:
       value: |
-        Welcome to Auxio's feature request form.
-        Please note that there have been several major features that Auxio has already **rejected**, due to either technical issues or due to it not being in scope for the app. To ensure that you are not requesting a feature that was already rejected, please read the [Why Are These Features Missing?](https://github.com/OxygenCobalt/Auxio/wiki/Why-Are-These-Features-Missing%3F) page.
+        Welcome to Music Player's feature request form.
+        Please note that there have been several major features that Music Player has already **rejected**, due to either technical issues or due to it not being in scope for the app. To ensure that you are not requesting a feature that was already rejected, please read the [Why Are These Features Missing?](https://github.com/HrshD1eux/Music_Player/wiki/Why-Are-These-Features-Missing%3F) page.
   - type: textarea
     id: desc
     attributes:
@@ -36,7 +36,7 @@ body:
     attributes:
       label: Benefit
       description: >
-        How will this addition benefit **everyone's** usage of Auxio? A convincing argument increases the likelihood
+        How will this addition benefit **everyone's** usage of Music Player? A convincing argument increases the likelihood
         that this feature is accepted.
       placeholder: This feature allows...
     validations:
@@ -49,9 +49,9 @@ body:
       options:
         - label: I have checked this feature request for duplicates.
           required: true
-        - label: I have checked that this feature is not implemented in the [lastest version](https://github.com/OxygenCobalt/Auxio/releases).
+        - label: I have checked that this feature is not implemented in the [lastest version](https://github.com/HrshD1eux/Music_Player/releases).
           required: true
-        - label: I have checked the [Why Are These Features Missing?](https://github.com/OxygenCobalt/Auxio/wiki/Why-Are-These-Features-Missing%3F) page.
+        - label: I have checked the [Why Are These Features Missing?](https://github.com/HrshD1eux/Music_Player/wiki/Why-Are-These-Features-Missing%3F) page.
           required: true
-        - label: I agree to the [Contribution Guidelines](https://github.com/OxygenCobalt/Auxio/blob/dev/.github/CONTRIBUTING.md).
+        - label: I agree to the [Contribution Guidelines](https://github.com/HrshD1eux/Music_Player/blob/dev/.github/CONTRIBUTING.md).
           required: true          

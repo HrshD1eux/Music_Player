@@ -1,6 +1,6 @@
-/*
- * Copyright (c) 2025 Auxio Project
- * MediaStore.kt is part of Auxio.
+﻿/*
+ * Copyright (c) 2025 Music Player Project
+ * MediaStore.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,8 +20,10 @@ package org.oxycblt.musikr.fs.mediastore
 
 import android.content.Context
 import android.net.Uri
+import android.os.Environment
 import android.provider.MediaStore as AOSPMediaStore
 import androidx.core.database.getStringOrNull
+import java.io.File as JFile
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -39,7 +41,9 @@ import org.oxycblt.musikr.fs.path.MediaStorePathInterpreter
 import org.oxycblt.musikr.fs.path.VolumeManager
 import org.oxycblt.musikr.fs.saf.contentResolverSafe
 import org.oxycblt.musikr.fs.saf.useQuery
+import org.oxycblt.musikr.fs.track.DirectoryFileObserver
 import org.oxycblt.musikr.fs.track.LocationObserver
+import org.oxycblt.musikr.fs.track.MediaScanner
 import org.oxycblt.musikr.util.tryAsyncWith
 
 /**
@@ -144,7 +148,91 @@ private constructor(
             LocationObserver(context, AOSPMediaStore.Audio.Media.EXTERNAL_CONTENT_URI) {
                 trySend(FSUpdate.LocationChanged(null))
             }
-        awaitClose { observer.release() }
+
+        val watchPaths = resolveWatchPaths()
+        var fileObserver: DirectoryFileObserver? = null
+        if (watchPaths.isNotEmpty()) {
+            fileObserver =
+                DirectoryFileObserver(watchPaths) { changedPaths, _ ->
+                    if (changedPaths.isNotEmpty()) {
+                        MediaScanner.scanFiles(context, changedPaths) {
+                            trySend(FSUpdate.LocationChanged(null))
+                        }
+                    } else {
+                        trySend(FSUpdate.LocationChanged(null))
+                    }
+                }
+            fileObserver.startWatching()
+        }
+
+        awaitClose {
+            observer.release()
+            fileObserver?.stopWatching()
+        }
+    }
+
+    private fun resolveWatchPaths(): List<String> {
+        val paths = mutableSetOf<String>()
+        val audioSubdirs =
+            listOf(
+                "Music",
+                "Download",
+                "Downloads",
+                "Audio",
+                "Podcasts",
+                "audiobooks",
+                "Sound",
+                "Recordings",
+            )
+
+        // 1. Add standard system public directories
+        val standardDirs =
+            listOf(
+                Environment.DIRECTORY_MUSIC,
+                Environment.DIRECTORY_DOWNLOADS,
+                Environment.DIRECTORY_PODCASTS,
+                Environment.DIRECTORY_AUDIOBOOKS,
+            )
+        for (dir in standardDirs) {
+            try {
+                Environment.getExternalStoragePublicDirectory(dir)?.let { f ->
+                    if (f.exists() && f.isDirectory && f.canRead()) {
+                        paths.add(f.absolutePath)
+                    }
+                }
+            } catch (_: Exception) {}
+        }
+
+        // 2. Scan all storage volumes (including MicroSD cards & OTG)
+        try {
+            for (volume in volumeManager.getVolumes()) {
+                val volumePathStr = volume.components?.unixString ?: continue
+                val volumeDir = JFile(volumePathStr)
+                if (volumeDir.exists() && volumeDir.isDirectory && volumeDir.canRead()) {
+                    for (sub in audioSubdirs) {
+                        val targetDir = JFile(volumeDir, sub)
+                        if (targetDir.exists() && targetDir.isDirectory && targetDir.canRead()) {
+                            paths.add(targetDir.absolutePath)
+                        }
+                    }
+                }
+            }
+        } catch (_: Exception) {}
+
+        // 3. Fallback for primary external storage
+        try {
+            val extRoot = Environment.getExternalStorageDirectory()
+            if (extRoot != null && extRoot.exists()) {
+                for (sub in audioSubdirs) {
+                    val f = JFile(extRoot, sub)
+                    if (f.exists() && f.isDirectory && f.canRead()) {
+                        paths.add(f.absolutePath)
+                    }
+                }
+            }
+        } catch (_: Exception) {}
+
+        return paths.toList()
     }
 
     data class Query(

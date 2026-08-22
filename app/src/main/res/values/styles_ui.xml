@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- SHARED RE-USABLE UI STYLES -->
 
-    <style name="Widget.Auxio.AppBarLayout" parent="Widget.Material3.AppBarLayout">
+    <style name="Widget.MusicPlayer.AppBarLayout" parent="Widget.Material3.AppBarLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <!-- Fix flickering lift animation when scrolling quickly -->
@@ -10,7 +10,7 @@
     </style>
 
     <!-- Base toolbar style -->
-    <style name="Widget.Auxio.Toolbar" parent="Widget.Material3.Toolbar">
+    <style name="Widget.MusicPlayer.Toolbar" parent="Widget.Material3.Toolbar">
         <item name="titleTextAppearance">?attr/textAppearanceTitleLargeEmphasized</item>
         <item name="subtitleTextAppearance">?attr/textAppearanceLabelMediumEmphasized</item>
         <item name="maxButtonHeight">@dimen/size_touchable_small</item>
@@ -20,19 +20,19 @@
         <item name="android:paddingEnd">@dimen/spacing_tiny</item>
     </style>
 
-    <style name="Widget.Auxio.TabLayout" parent="Widget.Material3.TabLayout">
+    <style name="Widget.MusicPlayer.TabLayout" parent="Widget.Material3.TabLayout">
         <item name="tabTextAppearance">?attr/textAppearanceTitleSmallEmphasized</item>
     </style>
 
-    <style name="Widget.Auxio.TabLayout.Secondary" parent="Widget.Material3.TabLayout.Secondary">
+    <style name="Widget.MusicPlayer.TabLayout.Secondary" parent="Widget.Material3.TabLayout.Secondary">
         <item name="tabTextAppearance">?attr/textAppearanceTitleSmallEmphasized</item>
     </style>
 
-    <style name="Widget.Auxio.Chip.Filter" parent="Widget.Material3.Chip.Filter">
+    <style name="Widget.MusicPlayer.Chip.Filter" parent="Widget.Material3.Chip.Filter">
         <item name="android:textAppearance">?attr/textAppearanceTitleSmallEmphasized</item>
     </style>
 
-    <style name="Widget.Auxio.Slider" parent="Widget.Material3.Slider">
+    <style name="Widget.MusicPlayer.Slider" parent="Widget.Material3.Slider">
         <item name="labelBehavior">gone</item>
         <item name="tickVisible">false</item>
         <item name="trackStopIndicatorSize">0dp</item>
@@ -42,27 +42,27 @@
         <item name="thumbHeight">@dimen/slider_thumb_height</item>
     </style>
 
-    <style name="Widget.Auxio.LinearProgressIndicator" parent="Widget.Material3.LinearProgressIndicator">
+    <style name="Widget.MusicPlayer.LinearProgressIndicator" parent="Widget.Material3.LinearProgressIndicator">
 <!--        <item name="trackColor">@color/sel_track</item>-->
         <item name="trackCornerRadius">@dimen/m3_shape_corners_full</item>
         <item name="trackStopIndicatorSize">0dp</item>
     </style>
 
-    <style name="Widget.Auxio.BottomSheet" parent="Widget.Material3.BottomSheet">
+    <style name="Widget.MusicPlayer.BottomSheet" parent="Widget.Material3.BottomSheet">
         <item name="marginLeftSystemWindowInsets">false</item>
         <item name="marginRightSystemWindowInsets">false</item>
         <item name="paddingBottomSystemWindowInsets">false</item>
         <item name="paddingTopSystemWindowInsets">false</item>
-        <item name="shapeAppearance">@style/ShapeAppearance.Auxio.BottomSheet</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.MusicPlayer.BottomSheet</item>
         <item name="shouldRemoveExpandedCorners">true</item>
     </style>
 
-    <style name="ShapeAppearance.Auxio.BottomSheet" parent="ShapeAppearance.Material3.Corner.ExtraLarge">
+    <style name="ShapeAppearance.MusicPlayer.BottomSheet" parent="ShapeAppearance.Material3.Corner.ExtraLarge">
         <!-- This is really badly off-spec, but is needed to nicely harmonize the corner radii in the playback bar -->
         <item name="cornerSize">20dp</item>
     </style>
 
-    <style name="Widget.Auxio.BottomSheet.Modal" parent="Widget.Material3.BottomSheet.Modal">
+    <style name="Widget.MusicPlayer.BottomSheet.Modal" parent="Widget.Material3.BottomSheet.Modal">
         <item name="marginLeftSystemWindowInsets">false</item>
         <item name="marginRightSystemWindowInsets">false</item>
         <item name="paddingBottomSystemWindowInsets">false</item>
@@ -70,15 +70,15 @@
         <item name="shouldRemoveExpandedCorners">false</item>
     </style>
 
-    <style name="Widget.Auxio.BottomSheet.Dialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/Widget.Auxio.BottomSheet.Modal</item>
-        <item name="materialButtonStyle">@style/Widget.Auxio.Button</item>
-        <item name="materialButtonTonalStyle">@style/Widget.Auxio.Button.TonalButton</item>
-        <item name="materialButtonOutlinedStyle">@style/Widget.Auxio.Button.OutlinedButton</item>
-        <item name="materialButtonElevatedStyle">@style/Widget.Auxio.Button.ElevatedButton</item>
-        <item name="borderlessButtonStyle">@style/Widget.Auxio.Button.TextButton</item>
-        <item name="snackbarButtonStyle">@style/Widget.Auxio.Button.TextButton.Snackbar</item>
-        <item name="materialIconButtonStyle">@style/Widget.Auxio.Button.Icon.Base</item>
+    <style name="Widget.MusicPlayer.BottomSheet.Dialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.MusicPlayer.BottomSheet.Modal</item>
+        <item name="materialButtonStyle">@style/Widget.MusicPlayer.Button</item>
+        <item name="materialButtonTonalStyle">@style/Widget.MusicPlayer.Button.TonalButton</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.MusicPlayer.Button.OutlinedButton</item>
+        <item name="materialButtonElevatedStyle">@style/Widget.MusicPlayer.Button.ElevatedButton</item>
+        <item name="borderlessButtonStyle">@style/Widget.MusicPlayer.Button.TextButton</item>
+        <item name="snackbarButtonStyle">@style/Widget.MusicPlayer.Button.TextButton.Snackbar</item>
+        <item name="materialIconButtonStyle">@style/Widget.MusicPlayer.Button.Icon.Base</item>
         <item name="materialIconButtonOutlinedStyle">
             @style/Widget.Material3Expressive.Button.IconButton.Outlined
         </item>
@@ -88,18 +88,18 @@
         <item name="materialIconButtonFilledTonalStyle">
             @style/Widget.Material3Expressive.Button.IconButton.Tonal
         </item>
-        <item name="materialSplitButtonStyle">@style/Widget.Auxio.SplitButton</item>
+        <item name="materialSplitButtonStyle">@style/Widget.MusicPlayer.SplitButton</item>
         <item name="materialSplitButtonLeadingFilledStyle">
-            @style/Widget.Auxio.SplitButton.LeadingButton.Filled
+            @style/Widget.MusicPlayer.SplitButton.LeadingButton.Filled
         </item>
         <item name="materialSplitButtonLeadingFilledTonalStyle">
-            @style/Widget.Auxio.SplitButton.LeadingButton.Filled.Tonal
+            @style/Widget.MusicPlayer.SplitButton.LeadingButton.Filled.Tonal
         </item>
         <item name="materialSplitButtonIconFilledStyle">
-            @style/Widget.Auxio.SplitButton.IconButton.Filled
+            @style/Widget.MusicPlayer.SplitButton.IconButton.Filled
         </item>
         <item name="materialSplitButtonIconFilledTonalStyle">
-            @style/Widget.Auxio.SplitButton.IconButton.Filled.Tonal
+            @style/Widget.MusicPlayer.SplitButton.IconButton.Filled.Tonal
         </item>
         <item name="android:windowAnimationStyle">@style/Animation.Auxio.BottomSheet.Dialog</item>
     </style>
@@ -109,97 +109,97 @@
         <item name="android:windowExitAnimation">@anim/bottom_sheet_slide_out</item>
     </style>
 
-    <style name="Widget.Auxio.BottomSheet.Handle" parent="Widget.Material3.BottomSheet.DragHandle">
+    <style name="Widget.MusicPlayer.BottomSheet.Handle" parent="Widget.Material3.BottomSheet.DragHandle">
         <item name="android:paddingBottom">0dp</item>
     </style>
 
-    <style name="Widget.Auxio.MaterialButtonGroup" parent="Widget.Material3.MaterialButtonGroup">
+    <style name="Widget.MusicPlayer.MaterialButtonGroup" parent="Widget.Material3.MaterialButtonGroup">
         <item name="buttonSizeChange">@xml/safe_button_group_size_change</item>
         <item name="android:gravity">center</item>
         <item name="android:orientation">horizontal</item>
     </style>
 
-    <style name="Widget.Auxio.Image.Small" parent="">
+    <style name="Widget.MusicPlayer.Image.Small" parent="">
         <item name="android:layout_width">@dimen/size_touchable_small</item>
         <item name="android:layout_height">@dimen/size_touchable_small</item>
         <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Medium</item>
         <item name="iconSize">@dimen/size_icon_small</item>
     </style>
 
-    <style name="Widget.Auxio.Image.Small.Circular" parent="">
+    <style name="Widget.MusicPlayer.Image.Small.Circular" parent="">
         <item name="android:layout_width">@dimen/size_touchable_small</item>
         <item name="android:layout_height">@dimen/size_touchable_small</item>
         <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Full</item>
         <item name="iconSize">@dimen/size_icon_small</item>
     </style>
 
-    <style name="Widget.Auxio.Image.Medium" parent="">
+    <style name="Widget.MusicPlayer.Image.Medium" parent="">
         <item name="android:layout_width">@dimen/size_touchable_medium</item>
         <item name="android:layout_height">@dimen/size_touchable_medium</item>
         <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Medium</item>
         <item name="iconSize">@dimen/size_icon_medium</item>
     </style>
 
-    <style name="Widget.Auxio.Image.Medium.Circular" parent="">
+    <style name="Widget.MusicPlayer.Image.Medium.Circular" parent="">
         <item name="android:layout_width">@dimen/size_touchable_medium</item>
         <item name="android:layout_height">@dimen/size_touchable_medium</item>
         <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Full</item>
         <item name="iconSize">@dimen/size_icon_medium</item>
     </style>
 
-    <style name="Widget.Auxio.Image.MidLarge" parent="">
+    <style name="Widget.MusicPlayer.Image.MidLarge" parent="">
         <item name="android:layout_width">@dimen/size_touchable_huge</item>
         <item name="android:layout_height">@dimen/size_touchable_huge</item>
         <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.ExtraLarge</item>
     </style>
 
-    <style name="Widget.Auxio.Image.Large" parent="">
+    <style name="Widget.MusicPlayer.Image.Large" parent="">
         <item name="android:layout_width">@dimen/size_hero_small</item>
         <item name="android:layout_height">@dimen/size_hero_small</item>
         <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.ExtraLarge</item>
     </style>
 
-    <style name="Widget.Auxio.Image.MidHuge" parent="">
+    <style name="Widget.MusicPlayer.Image.MidHuge" parent="">
         <item name="android:layout_width">@dimen/size_hero_medium</item>
         <item name="android:layout_height">@dimen/size_hero_medium</item>
         <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.ExtraLarge</item>
     </style>
 
-    <style name="Widget.Auxio.Image.Huge" parent="">
+    <style name="Widget.MusicPlayer.Image.Huge" parent="">
         <item name="android:layout_width">@dimen/size_hero_large</item>
         <item name="android:layout_height">@dimen/size_hero_large</item>
         <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.ExtraLarge</item>
     </style>
 
-    <style name="Widget.Auxio.Image.MidFull" parent="">
+    <style name="Widget.MusicPlayer.Image.MidFull" parent="">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">0dp</item>
         <item name="layout_constraintDimensionRatio">1</item>
         <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Large</item>
     </style>
 
-    <style name="Widget.Auxio.Image.Full" parent="">
+    <style name="Widget.MusicPlayer.Image.Full" parent="">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">0dp</item>
         <item name="layout_constraintDimensionRatio">1</item>
         <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.ExtraLarge</item>
     </style>
 
-    <style name="Widget.Auxio.RecyclerView.Linear" parent="">
+    <style name="Widget.MusicPlayer.RecyclerView.Linear" parent="">
         <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
     </style>
 
-    <style name="Widget.Auxio.RecyclerView.Grid.Base" parent="">
+    <style name="Widget.MusicPlayer.RecyclerView.Grid.Base" parent="">
         <item name="layoutManager">androidx.recyclerview.widget.GridLayoutManager</item>
     </style>
 
-    <style name="Widget.Auxio.RecyclerView.Grid" parent="Widget.Auxio.RecyclerView.Grid.Base" />
+    <style name="Widget.MusicPlayer.RecyclerView.Grid" parent="Widget.MusicPlayer.RecyclerView.Grid.Base" />
 
-    <style name="Widget.Auxio.RecyclerView.Grid.WithAdaptiveFab" parent="Widget.Auxio.RecyclerView.Grid">
+    <style name="Widget.MusicPlayer.RecyclerView.Grid.WithAdaptiveFab" parent="Widget.MusicPlayer.RecyclerView.Grid">
         <item name="android:paddingBottom">@dimen/recycler_fab_space_normal</item>
     </style>
 
-    <style name="Widget.Auxio.DisableDropShadows" parent="">
+    <style name="Widget.MusicPlayer.DisableDropShadows" parent="">
         <!-- API 28+ Only -->
         <item name="android:outlineAmbientShadowColor" tools:ignore="NewApi">
             @android:color/transparent
@@ -215,53 +215,53 @@
 
     <!-- TEXTVIEW STYLES -->
 
-    <style name="Widget.Auxio.TextView.Base" parent="Widget.AppCompat.TextView">
+    <style name="Widget.MusicPlayer.TextView.Base" parent="Widget.AppCompat.TextView">
         <item name="android:textAlignment">viewStart</item>
         <item name="emojiCompatEnabled">false</item>
     </style>
 
-    <style name="Widget.Auxio.TextView.Item.Base" parent="Widget.Auxio.TextView.Base">
+    <style name="Widget.MusicPlayer.TextView.Item.Base" parent="Widget.MusicPlayer.TextView.Base">
         <item name="android:ellipsize">end</item>
         <item name="android:maxLines">1</item>
         <item name="android:layout_marginStart">@dimen/spacing_medium</item>
     </style>
 
-    <style name="Widget.Auxio.TextView.Item.Primary" parent="Widget.Auxio.TextView.Item.Base">
+    <style name="Widget.MusicPlayer.TextView.Item.Primary" parent="Widget.MusicPlayer.TextView.Item.Base">
         <item name="android:textAppearance">?attr/textAppearanceTitleMedium
         </item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 
-    <style name="Widget.Auxio.TextView.Item.Secondary" parent="Widget.Auxio.TextView.Item.Base">
+    <style name="Widget.MusicPlayer.TextView.Item.Secondary" parent="Widget.MusicPlayer.TextView.Item.Base">
         <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
 
-    <style name="Widget.Auxio.TextView.Primary" parent="Widget.Auxio.TextView.Base">
+    <style name="Widget.MusicPlayer.TextView.Primary" parent="Widget.MusicPlayer.TextView.Base">
         <item name="android:ellipsize">marquee</item>
         <item name="android:singleLine">true</item>
         <item name="android:marqueeRepeatLimit">marquee_forever</item>
         <item name="android:textAppearance">?attr/textAppearanceTitleLargeEmphasized</item>
     </style>
 
-    <style name="Widget.Auxio.TextView.Secondary.Base" parent="Widget.Auxio.TextView.Base">
+    <style name="Widget.MusicPlayer.TextView.Secondary.Base" parent="Widget.MusicPlayer.TextView.Base">
         <item name="android:textColor">?android:attr/textColorSecondary</item>
         <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
     </style>
 
-    <style name="Widget.Auxio.TextView.Secondary.Ellipsize" parent="Widget.Auxio.TextView.Secondary.Base">
+    <style name="Widget.MusicPlayer.TextView.Secondary.Ellipsize" parent="Widget.MusicPlayer.TextView.Secondary.Base">
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
 
     </style>
 
-    <style name="Widget.Auxio.TextView.Secondary.Marquee" parent="Widget.Auxio.TextView.Secondary.Base">
+    <style name="Widget.MusicPlayer.TextView.Secondary.Marquee" parent="Widget.MusicPlayer.TextView.Secondary.Base">
         <item name="android:singleLine">true</item>
         <item name="android:ellipsize">marquee</item>
         <item name="android:marqueeRepeatLimit">marquee_forever</item>
     </style>
 
-    <style name="Widget.Auxio.TextView.Primary.Compact" parent="Widget.Auxio.TextView.Base">
+    <style name="Widget.MusicPlayer.TextView.Primary.Compact" parent="Widget.MusicPlayer.TextView.Base">
         <item name="android:ellipsize">marquee</item>
         <item name="android:singleLine">true</item>
         <item name="android:marqueeRepeatLimit">marquee_forever</item>
@@ -269,14 +269,14 @@
         <item name="android:textAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
     </style>
 
-    <style name="Widget.Auxio.TextView.Secondary.Compact" parent="Widget.Auxio.TextView.Base">
+    <style name="Widget.MusicPlayer.TextView.Secondary.Compact" parent="Widget.MusicPlayer.TextView.Base">
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
         <item name="android:textAppearance">?attr/textAppearanceBodySmall</item>
     </style>
 
-    <style name="Widget.Auxio.TextView.Header" parent="Widget.Auxio.TextView.Base">
+    <style name="Widget.MusicPlayer.TextView.Header" parent="Widget.MusicPlayer.TextView.Base">
         <item name="android:paddingStart">@dimen/spacing_medium</item>
         <item name="android:paddingTop">@dimen/spacing_small</item>
         <item name="android:paddingBottom">@dimen/spacing_small</item>
@@ -287,12 +287,12 @@
         <item name="android:textAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
     </style>
 
-    <style name="Widget.Auxio.TextView.Detail" parent="Widget.Auxio.TextView.Base">
+    <style name="Widget.MusicPlayer.TextView.Detail" parent="Widget.MusicPlayer.TextView.Base">
         <item name="android:textAppearance">?attr/textAppearanceTitleLargeEmphasized</item>
         <item name="android:textAlignment">viewStart</item>
     </style>
 
-    <style name="Widget.Auxio.TextView.Icon" parent="Widget.Auxio.TextView.Base">
+    <style name="Widget.MusicPlayer.TextView.Icon" parent="Widget.MusicPlayer.TextView.Base">
         <item name="android:drawablePadding">@dimen/spacing_medium</item>
         <item name="android:paddingTop">@dimen/spacing_mid_medium</item>
         <item name="android:paddingStart">@dimen/spacing_medium</item>
@@ -301,7 +301,7 @@
         <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
     </style>
 
-    <style name="Widget.Auxio.TextView.Icon.Clickable" parent="Widget.Auxio.TextView.Icon">
+    <style name="Widget.MusicPlayer.TextView.Icon.Clickable" parent="Widget.MusicPlayer.TextView.Icon">
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
         <item name="android:background">?attr/selectableItemBackground</item>
@@ -309,73 +309,73 @@
 
     <!-- BUTTON STYLES -->
 
-    <style name="Widget.Auxio.Button" parent="Widget.Material3Expressive.Button">
+    <style name="Widget.MusicPlayer.Button" parent="Widget.Material3Expressive.Button">
         <item name="labelTextAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
         <item name="android:textAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
     </style>
 
-    <style name="Widget.Auxio.Button.TonalButton" parent="Widget.Material3Expressive.Button.TonalButton">
+    <style name="Widget.MusicPlayer.Button.TonalButton" parent="Widget.Material3Expressive.Button.TonalButton">
         <item name="labelTextAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
         <item name="android:textAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
     </style>
 
-    <style name="Widget.Auxio.Button.OutlinedButton" parent="Widget.Material3Expressive.Button.OutlinedButton">
+    <style name="Widget.MusicPlayer.Button.OutlinedButton" parent="Widget.Material3Expressive.Button.OutlinedButton">
         <item name="labelTextAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
         <item name="android:textAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
     </style>
 
-    <style name="Widget.Auxio.Button.ElevatedButton" parent="Widget.Material3Expressive.Button.ElevatedButton">
+    <style name="Widget.MusicPlayer.Button.ElevatedButton" parent="Widget.Material3Expressive.Button.ElevatedButton">
         <item name="labelTextAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
         <item name="android:textAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
     </style>
 
-    <style name="Widget.Auxio.Button.TextButton" parent="Widget.Material3Expressive.Button.TextButton">
+    <style name="Widget.MusicPlayer.Button.TextButton" parent="Widget.Material3Expressive.Button.TextButton">
         <item name="labelTextAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
         <item name="android:textAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
     </style>
 
-    <style name="Widget.Auxio.Button.TextButton.Dialog" parent="Widget.Material3Expressive.Button.TextButton.Dialog">
+    <style name="Widget.MusicPlayer.Button.TextButton.Dialog" parent="Widget.Material3Expressive.Button.TextButton.Dialog">
         <item name="labelTextAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
         <item name="android:textAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
     </style>
 
-    <style name="Widget.Auxio.Button.TextButton.Dialog.Flush" parent="Widget.Material3Expressive.Button.TextButton.Dialog.Flush">
+    <style name="Widget.MusicPlayer.Button.TextButton.Dialog.Flush" parent="Widget.Material3Expressive.Button.TextButton.Dialog.Flush">
         <item name="labelTextAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
         <item name="android:textAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
     </style>
 
-    <style name="Widget.Auxio.Button.TextButton.Snackbar" parent="Widget.Material3Expressive.Button.TextButton.Snackbar">
+    <style name="Widget.MusicPlayer.Button.TextButton.Snackbar" parent="Widget.Material3Expressive.Button.TextButton.Snackbar">
         <item name="labelTextAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
         <item name="android:textAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
     </style>
 
-    <style name="Widget.Auxio.SplitButton" parent="Widget.Material3.MaterialSplitButton" />
+    <style name="Widget.MusicPlayer.SplitButton" parent="Widget.Material3.MaterialSplitButton" />
 
-    <style name="Widget.Auxio.SplitButton.LeadingButton.Filled" parent="Widget.Material3.SplitButton.LeadingButton.Filled">
+    <style name="Widget.MusicPlayer.SplitButton.LeadingButton.Filled" parent="Widget.Material3.SplitButton.LeadingButton.Filled">
         <item name="labelTextAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
         <item name="android:textAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
     </style>
 
-    <style name="Widget.Auxio.SplitButton.LeadingButton.Filled.Tonal" parent="Widget.Material3.SplitButton.LeadingButton.Filled.Tonal">
+    <style name="Widget.MusicPlayer.SplitButton.LeadingButton.Filled.Tonal" parent="Widget.Material3.SplitButton.LeadingButton.Filled.Tonal">
         <item name="labelTextAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
         <item name="android:textAppearance">?attr/textAppearanceLabelLargeEmphasized</item>
     </style>
 
-    <style name="Widget.Auxio.SplitButton.IconButton.Filled" parent="Widget.Material3.SplitButton.IconButton.Filled" />
+    <style name="Widget.MusicPlayer.SplitButton.IconButton.Filled" parent="Widget.Material3.SplitButton.IconButton.Filled" />
 
-    <style name="Widget.Auxio.SplitButton.IconButton.Filled.Tonal" parent="Widget.Material3.SplitButton.IconButton.Filled.Tonal" />
+    <style name="Widget.MusicPlayer.SplitButton.IconButton.Filled.Tonal" parent="Widget.Material3.SplitButton.IconButton.Filled.Tonal" />
 
-    <style name="Widget.Auxio.Button.Primary" parent="Widget.Auxio.Button">
+    <style name="Widget.MusicPlayer.Button.Primary" parent="Widget.MusicPlayer.Button">
         <item name="iconGravity">textStart</item>
         <item name="iconSize">@dimen/size_icon_small</item>
     </style>
 
-    <style name="Widget.Auxio.Button.Secondary" parent="Widget.Auxio.Button.TonalButton">
+    <style name="Widget.MusicPlayer.Button.Secondary" parent="Widget.MusicPlayer.Button.TonalButton">
         <item name="iconGravity">textStart</item>
         <item name="iconSize">@dimen/size_icon_small</item>
     </style>
 
-    <style name="Widget.Auxio.Button.Icon.Base" parent="Widget.Material3Expressive.Button.IconButton">
+    <style name="Widget.MusicPlayer.Button.Icon.Base" parent="Widget.Material3Expressive.Button.IconButton">
         <item name="materialThemeOverlay">@style/ThemeOverlay.Auxio.UncheckableIconButton</item>
     </style>
 
@@ -384,7 +384,7 @@
         <item name="colorOnContainer">?attr/colorOnSurfaceVariant</item>
     </style>
 
-    <style name="Widget.Auxio.Button.Icon.Small" parent="Widget.Auxio.Button.Icon.Base">
+    <style name="Widget.MusicPlayer.Button.Icon.Small" parent="Widget.MusicPlayer.Button.Icon.Base">
         <item name="iconSize">@dimen/size_icon_small</item>
         <item name="android:minWidth">@dimen/size_touchable_small</item>
         <item name="android:minHeight">@dimen/size_touchable_small</item>
@@ -400,7 +400,7 @@
         <item name="iconTint" tools:ignore="PrivateResource">@color/m3_text_button_foreground_color_selector</item>
     </style>
 
-    <style name="Widget.Auxio.Button.Icon.Medium" parent="Widget.Material3Expressive.Button.IconButton.Outlined">
+    <style name="Widget.MusicPlayer.Button.Icon.Medium" parent="Widget.Material3Expressive.Button.IconButton.Outlined">
         <item name="iconSize">@dimen/size_icon_medium</item>
         <item name="android:minWidth">@dimen/size_touchable_small</item>
         <item name="android:minHeight">@dimen/size_touchable_small</item>
@@ -415,7 +415,7 @@
         <item name="iconTint" tools:ignore="PrivateResource">@color/m3_text_button_foreground_color_selector</item>
     </style>
 
-    <style name="Widget.Auxio.Button.Icon.Small.Primary" parent="Widget.Material3Expressive.Button.IconButton.Filled">
+    <style name="Widget.MusicPlayer.Button.Icon.Small.Primary" parent="Widget.Material3Expressive.Button.IconButton.Filled">
         <item name="iconSize">@dimen/size_icon_small</item>
         <item name="android:minWidth">@dimen/size_touchable_small</item>
         <item name="android:minHeight">@dimen/size_touchable_small</item>
@@ -429,7 +429,7 @@
         <item name="android:paddingBottom">@dimen/spacing_small</item>
     </style>
 
-    <style name="Widget.Auxio.Button.Icon.Small.Secondary" parent="Widget.Material3Expressive.Button.IconButton.Tonal">
+    <style name="Widget.MusicPlayer.Button.Icon.Small.Secondary" parent="Widget.Material3Expressive.Button.IconButton.Tonal">
         <item name="iconSize">@dimen/size_icon_small</item>
         <item name="android:minWidth">@dimen/size_touchable_small</item>
         <item name="android:minHeight">@dimen/size_touchable_small</item>
@@ -450,26 +450,26 @@
     </style>
 
     <style name="ThemeOverlay.Auxio.IconButton.Style.Small.Primary" parent="">
-        <item name="materialIconButtonStyle">@style/Widget.Auxio.Button.Icon.Small.Primary</item>
+        <item name="materialIconButtonStyle">@style/Widget.MusicPlayer.Button.Icon.Small.Primary</item>
     </style>
 
     <style name="ThemeOverlay.Auxio.IconButton.Style.Small.Secondary" parent="">
-        <item name="materialIconButtonStyle">@style/Widget.Auxio.Button.Icon.Small.Secondary</item>
+        <item name="materialIconButtonStyle">@style/Widget.MusicPlayer.Button.Icon.Small.Secondary</item>
     </style>
 
-    <style name="Widget.Auxio.Button.PlayPause" parent="Widget.Material3Expressive.Button.IconButton">
+    <style name="Widget.MusicPlayer.Button.PlayPause" parent="Widget.Material3Expressive.Button.IconButton">
         <item name="android:checkable">true</item>
     </style>
 
-    <style name="Widget.Auxio.Button.PlayPause.Secondary" parent="Widget.Material3Expressive.Button.IconButton">
+    <style name="Widget.MusicPlayer.Button.PlayPause.Secondary" parent="Widget.Material3Expressive.Button.IconButton">
         <item name="backgroundTint">?attr/colorSecondary</item>
         <item name="iconTint">?attr/colorOnSecondary</item>
         <item name="android:checkable">true</item>
     </style>
 
-    <style name="Widget.Auxio.Button.Playback.More" parent="Widget.Auxio.Button.Icon.Base" />
+    <style name="Widget.MusicPlayer.Button.Playback.More" parent="Widget.MusicPlayer.Button.Icon.Base" />
 
-    <style name="Widget.Auxio.Button.Playback.Toggle" parent="Widget.Material3Expressive.Button.IconButton.Outlined">
+    <style name="Widget.MusicPlayer.Button.Playback.Toggle" parent="Widget.Material3Expressive.Button.IconButton.Outlined">
         <item name="android:checkable">true</item>
         <item name="toggleCheckedStateOnClick">false</item>
         <item name="iconTint">@color/sel_checkable_icon</item>
@@ -477,9 +477,9 @@
         <item name="backgroundTint">?attr/colorSurfaceContainerLow</item>
     </style>
 
-    <style name="Widget.Auxio.Button.Playback.Skip" parent="Widget.Material3Expressive.Button.IconButton.Tonal" />
+    <style name="Widget.MusicPlayer.Button.Playback.Skip" parent="Widget.Material3Expressive.Button.IconButton.Tonal" />
 
-    <style name="Widget.Auxio.Button.Playback.PlayPause" parent="Widget.Material3Expressive.Button.IconButton.Tonal">
+    <style name="Widget.MusicPlayer.Button.Playback.PlayPause" parent="Widget.Material3Expressive.Button.IconButton.Tonal">
         <item name="android:checkable">true</item>
         <item name="materialThemeOverlay">@style/ThemeOverlay.Auxio.Button.PrimaryTonal</item>
     </style>

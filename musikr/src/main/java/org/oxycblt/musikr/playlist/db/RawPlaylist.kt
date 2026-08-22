@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2023 Auxio Project
- * RawPlaylist.kt is part of Auxio.
+ * Copyright (c) 2023 Music Player Project
+ * RawPlaylist.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ import org.oxycblt.musikr.Music
 /**
  * Raw playlist information persisted to [PlaylistDatabase].
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 internal data class RawPlaylist(
     @Embedded val playlistInfo: PlaylistInfo,
@@ -44,21 +44,21 @@ internal data class RawPlaylist(
 /**
  * UID and name information corresponding to a [RawPlaylist] entry.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 @Entity internal data class PlaylistInfo(@PrimaryKey val playlistUid: Music.UID, val name: String)
 
 /**
  * Song information corresponding to a [RawPlaylist] entry.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 @Entity internal data class PlaylistSong(@PrimaryKey val songUid: Music.UID)
 
 /**
  * Links individual songs to a playlist entry.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 @Entity
 internal data class PlaylistSongCrossRef(

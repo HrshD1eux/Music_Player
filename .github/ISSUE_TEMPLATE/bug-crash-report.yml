@@ -2,12 +2,12 @@ name: Bug/Crash Report
 description: Report a problem
 labels: ["bug"]
 assignees:
-  - OxygenCobalt
+  - HrshD1eux
 body:
   - type: markdown
     attributes:
       value: |
-        Welcome to Auxio's bug report form.
+        Welcome to Music Player's bug report form.
         Please note that not every reported issue can be fixed. Well-written bug reports are more likely to be resolved.
   - type: textarea
     id: desc
@@ -81,11 +81,11 @@ body:
       label: Duplicates
       description: By submitting this issue, you aknowledge the following
       options:
-        - label: I have checked the [Troubleshooting](https://github.com/OxygenCobalt/Auxio/wiki/Troubleshooting) page.
+        - label: I have checked the [Troubleshooting](https://github.com/HrshD1eux/Music_Player/wiki/Troubleshooting) page.
           required: true
         - label: I have checked this issue for duplicates.
           required: true
-        - label: I have checked that this issue occurs on the [lastest version](https://github.com/OxygenCobalt/Auxio/releases).
+        - label: I have checked that this issue occurs on the [lastest version](https://github.com/HrshD1eux/Music_Player/releases).
           required: true
-        - label: I agree to the [Contribution Guidelines](https://github.com/OxygenCobalt/Auxio/blob/dev/.github/CONTRIBUTING.md).
+        - label: I agree to the [Contribution Guidelines](https://github.com/HrshD1eux/Music_Player/blob/dev/.github/CONTRIBUTING.md).
           required: true          

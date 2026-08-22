@@ -182,7 +182,7 @@
     <string name="lbl_report">Report</string>
 
     <string name="lbl_author">Author</string>
-    <string name="lbl_author_name">Alexander Capehart</string>
+    <string name="lbl_author_name">HrshD1eux</string>
     <string name="lbl_feedback">Feedback</string>
     <string name="lbl_github">Make an issue on GitHub</string>
     <string name="lbl_email">Send an email</string>
@@ -207,7 +207,7 @@
     <!-- As in music library -->
     <string name="lng_search_library">Search your library…</string>
     <string name="lng_tasker_start">
-        Starts Auxio using the previously saved state. If no saved state is available, all songs will be shuffled. Playback will start immediately.
+        Starts Music Player using the previously saved state. If no saved state is available, all songs will be shuffled. Playback will start immediately.
         \n\nWARNING: Be careful controlling this service, if you close it and then try to use it again, you will probably crash the app.
     </string>
     <string name="lng_empty_songs">Your songs will show up here.</string>
@@ -373,7 +373,7 @@
     <string name="desc_add_folder">Add folder</string>
     <string name="desc_music_location_delete">Remove folder</string>
 
-    <string name="desc_auxio_icon">Auxio icon</string>
+    <string name="desc_auxio_icon">Music Player icon</string>
     <string name="desc_no_cover">Album cover</string>
     <string name="desc_album_cover">Album cover for %s</string>
     <string name="desc_artist_image">Artist image for %s</string>
@@ -496,4 +496,12 @@
         <item quantity="one">%d second</item>
         <item quantity="other">%d seconds</item>
     </plurals>
+
+    <!-- Update Namespace -->
+    <string name="lbl_check_for_updates">Check for updates</string>
+    <string name="msg_checking_updates">Checking for updates…</string>
+    <string name="msg_latest_version">You are using the latest version (v%s)</string>
+    <string name="msg_update_available">Update available: v%s</string>
+    <string name="btn_download_install">Download &amp; Install</string>
+    <string name="msg_downloading_update">Starting update download…</string>
 </resources>

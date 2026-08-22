@@ -119,7 +119,7 @@
     <string name="lbl_sample_rate">Frecuencia de mostraxe</string>
     <string name="lbl_about">Acerca de</string>
     <string name="lng_observing">Monitorizando cambios na túa biblioteca…</string>
-    <string name="lbl_author_name">Desenvolvido por Alexander Capehart</string>
+    <string name="lbl_author_name">Desenvolvido por HrshD1eux</string>
     <string name="set_ui">Aspecto e sensación</string>
     <string name="set_round_mode">Modo redondo</string>
     <string name="set_round_mode_desc">Habilita as esquinas redondeadas en elementos adicionais da interface de usuario (require que as portadas dos álbums estean redondeadas)</string>
@@ -163,7 +163,7 @@
     <string name="desc_queue_bar">Abrir a cola</string>
     <string name="desc_clear_search">Borrar o historial de busca</string>
     <string name="desc_music_location_delete">Quitar cartafol</string>
-    <string name="desc_auxio_icon">Icona de Auxio</string>
+    <string name="desc_auxio_icon">Icona de Music Player</string>
     <string name="desc_no_cover">Portada de álbum</string>
     <string name="desc_album_cover">Portada de álbum para %s</string>
     <string name="desc_artist_image">Imaxe de artista para %s</string>

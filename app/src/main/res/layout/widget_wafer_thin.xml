@@ -8,14 +8,14 @@
     android:backgroundTint="?attr/colorSurface"
     android:baselineAligned="false"
     android:orientation="horizontal"
-    android:theme="@style/Theme.Auxio.Widget">
+    android:theme="@style/Theme.MusicPlayer.Widget">
 
     <!--
     Wrapping the 1:1 ImageView hack in a LinearLayout allows the view to measure greedily
     without squishing the controls.
     -->
 
-    <android.widget.ImageView
+    <ImageView
         android:id="@+id/widget_cover"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,7 +24,7 @@
         android:clipToOutline="true"
         tools:ignore="ContentDescription,UnusedAttribute" />
 
-    <android.widget.LinearLayout
+    <LinearLayout
         android:id="@+id/widget_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,9 +37,9 @@
             android:layout_height="wrap_content"
             android:background="@drawable/ui_widget_circle_button_bg">
 
-            <android.widget.ImageButton
+            <ImageButton
                 android:id="@+id/widget_skip_prev"
-                style="@style/Widget.Auxio.MaterialButton.AppWidget"
+                style="@style/Widget.MusicPlayer.MaterialButton.AppWidget"
                 android:layout_width="@dimen/size_touchable_small"
                 android:layout_height="@dimen/size_touchable_small"
                 android:contentDescription="@string/desc_skip_prev"
@@ -47,20 +47,20 @@
         </FrameLayout>
 
 
-        <android.widget.ImageView
+        <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
-        <android.widget.ImageButton
+        <ImageButton
             android:id="@+id/widget_play_pause"
-            style="@style/Widget.Auxio.MaterialButton.AppWidget.PlayPause"
+            style="@style/Widget.MusicPlayer.MaterialButton.AppWidget.PlayPause"
             android:layout_width="@dimen/size_touchable_small"
             android:layout_height="@dimen/size_touchable_small"
             android:contentDescription="@string/desc_play_pause"
             android:src="@drawable/ic_play_24" />
 
-        <android.widget.ImageView
+        <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
@@ -70,9 +70,9 @@
             android:layout_height="wrap_content"
             android:background="@drawable/ui_widget_circle_button_bg">
 
-            <android.widget.ImageButton
+            <ImageButton
                 android:id="@+id/widget_skip_next"
-                style="@style/Widget.Auxio.MaterialButton.AppWidget"
+                style="@style/Widget.MusicPlayer.MaterialButton.AppWidget"
                 android:layout_width="@dimen/size_touchable_small"
                 android:layout_height="@dimen/size_touchable_small"
                 android:contentDescription="@string/desc_skip_next"
@@ -81,7 +81,7 @@
         </FrameLayout>
 
 
-    </android.widget.LinearLayout>
+    </LinearLayout>
 </FrameLayout>
 
 

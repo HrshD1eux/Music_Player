@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:baselineAligned="false"
     android:orientation="horizontal"
-    android:theme="@style/Theme.Auxio.Widget">
+    android:theme="@style/Theme.MusicPlayer.Widget">
 
 
     <FrameLayout
@@ -13,24 +13,10 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@drawable/ui_widget_rectangle_button_bg">
-            <android.widget.ImageButton
-                android:id="@+id/widget_repeat"
-                style="@style/Widget.Auxio.MaterialButton.AppWidget"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/desc_change_repeat"
-                android:src="@drawable/ic_repeat_off_24" />
-    </FrameLayout>
 
-    <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@drawable/ui_widget_rectangle_button_bg">
-
-        <android.widget.ImageButton
+        <ImageButton
             android:id="@+id/widget_skip_prev"
-            style="@style/Widget.Auxio.MaterialButton.AppWidget"
+            style="@style/Widget.MusicPlayer.MaterialButton.AppWidget"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/desc_skip_prev"
@@ -38,9 +24,9 @@
     </FrameLayout>
 
 
-    <android.widget.ImageButton
+    <ImageButton
         android:id="@+id/widget_play_pause"
-        style="@style/Widget.Auxio.MaterialButton.AppWidget.PlayPause"
+        style="@style/Widget.MusicPlayer.MaterialButton.AppWidget.PlayPause"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -53,29 +39,14 @@
         android:layout_weight="1"
         android:background="@drawable/ui_widget_rectangle_button_bg">
 
-        <android.widget.ImageButton
+        <ImageButton
             android:id="@+id/widget_skip_next"
-            style="@style/Widget.Auxio.MaterialButton.AppWidget"
+            style="@style/Widget.MusicPlayer.MaterialButton.AppWidget"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/desc_skip_next"
             android:src="@drawable/ic_skip_next_24" />
 
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@drawable/ui_widget_rectangle_button_bg">
-
-            <android.widget.ImageButton
-                android:id="@+id/widget_shuffle"
-                style="@style/Widget.Auxio.MaterialButton.AppWidget"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/desc_shuffle"
-                android:src="@drawable/ic_shuffle_off_24" />
     </FrameLayout>
 
 </LinearLayout>

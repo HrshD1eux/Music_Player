@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2023 Auxio Project
- * DocumentPathFactory.kt is part of Auxio.
+ * Copyright (c) 2023 Music Player Project
+ * DocumentPathFactory.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ import org.oxycblt.musikr.fs.saf.useQuery
 /**
  * A factory for parsing the reverse-engineered format of the URIs obtained from document picker.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 internal interface DocumentPathFactory {
     /**

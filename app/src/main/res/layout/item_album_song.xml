@@ -16,9 +16,9 @@
     with us only overlaying the track number (and other elements) onto it.
     -->
 
-    <org.oxycblt.auxio.image.CoverView
+    <com.HrshD1eux.musicplayer.image.CoverView
         android:id="@+id/song_track_cover"
-        style="@style/Widget.Auxio.Image.Small"
+        style="@style/Widget.MusicPlayer.Image.Small"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -54,12 +54,12 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="16" />
 
-    </org.oxycblt.auxio.image.CoverView>
+    </com.HrshD1eux.musicplayer.image.CoverView>
 
 
     <TextView
         android:id="@+id/song_name"
-        style="@style/Widget.Auxio.TextView.Item.Primary"
+        style="@style/Widget.MusicPlayer.TextView.Item.Primary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/spacing_mid_medium"
@@ -73,7 +73,7 @@
 
     <TextView
         android:id="@+id/song_duration"
-        style="@style/Widget.Auxio.TextView.Item.Secondary"
+        style="@style/Widget.MusicPlayer.TextView.Item.Secondary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/spacing_mid_medium"
@@ -84,9 +84,9 @@
         app:layout_constraintTop_toBottomOf="@+id/song_name"
         tools:text="16:16" />
 
-    <org.oxycblt.auxio.ui.RippleFixMaterialButton
+    <com.HrshD1eux.musicplayer.ui.RippleFixMaterialButton
         android:id="@+id/song_menu"
-        style="@style/Widget.Auxio.Button.Icon.Small"
+        style="@style/Widget.MusicPlayer.Button.Icon.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:icon="@drawable/ic_more_24"

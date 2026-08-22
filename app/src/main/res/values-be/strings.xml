@@ -124,7 +124,7 @@
     <string name="desc_skip_next">Перайсці да наступнай песні</string>
     <string name="desc_skip_prev">Перайсці да апошняй песні</string>
     <string name="desc_change_repeat">Змяніць рэжым паўтору</string>
-    <string name="desc_auxio_icon">Значок Auxio</string>
+    <string name="desc_auxio_icon">Значок Music Player</string>
     <string name="desc_shuffle">Ўключыце або выключыце перамешванне</string>
     <string name="desc_remove_song">Выдаліць гэтую песню з чаргі</string>
     <string name="desc_exit">Спыніць прайграванне</string>
@@ -301,7 +301,7 @@
     <string name="set_remember_pause_desc">Пакідаць прайграванне/паўзу падчас пропуску або рэдагаванні чаргі</string>
     <string name="set_replay_gain_mode_off">Адкл.</string>
     <string name="lbl_start_playback">Пачаць прайграванне</string>
-    <string name="lng_tasker_start">Запускаць auxio, выкарыстоўваючы раней захаваны стан. Калі захаваны стан недаступны, усе песні будуць ператасаваныя. Прайграванне пачнецца неадкладна. \n \nПапярэджанне: будзьце асцярожныя пры кіраванні гэтай службай, калі вы закрыеце яе, а затым паспрабуеце выкарыстоўваць зноў, вы, верагодна, прывядзеце да збою прыкладання.</string>
+    <string name="lng_tasker_start">Запускаць Music Player, выкарыстоўваючы раней захаваны стан. Калі захаваны стан недаступны, усе песні будуць ператасаваныя. Прайграванне пачнецца неадкладна. \n \nПапярэджанне: будзьце асцярожныя пры кіраванні гэтай службай, калі вы закрыеце яе, а затым паспрабуеце выкарыстоўваць зноў, вы, верагодна, прывядзеце да збою прыкладання.</string>
     <string name="lbl_more">Больш</string>
     <string name="cnt_mp4">MPEG-4, які змяшчае %s</string>
     <string name="def_album">Невядомы альбом</string>

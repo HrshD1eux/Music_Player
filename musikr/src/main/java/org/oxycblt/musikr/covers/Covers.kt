@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2024 Auxio Project
- * Covers.kt is part of Auxio.
+ * Copyright (c) 2024 Music Player Project
+ * Covers.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

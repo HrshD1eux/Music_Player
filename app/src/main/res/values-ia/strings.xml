@@ -85,7 +85,7 @@
     <string name="lbl_error_info">Information re le error</string>
     <string name="lbl_report">Signalar</string>
     <string name="lbl_author">Autor</string>
-    <string name="lbl_author_name">Alexander Capehart</string>
+    <string name="lbl_author_name">HrshD1eux</string>
     <string name="lng_widget">Vider e controlar le reproduction de musica</string>
     <string name="lng_queue_added">Addite al cauda</string>
     <string name="lng_playlist_created">Lista de reproduction create</string>
@@ -146,7 +146,7 @@
     <string name="desc_exit">Stoppar le reproduction</string>
     <string name="desc_queue_bar">Aperir le cauda</string>
     <string name="desc_music_location_delete">Remover le dossier</string>
-    <string name="desc_auxio_icon">Icone de Auxio</string>
+    <string name="desc_auxio_icon">Icone de Music Player</string>
     <string name="desc_album_cover">Copertura de album pro %s</string>
     <string name="def_artist">Artista incognite</string>
     <string name="def_date">Necun data</string>

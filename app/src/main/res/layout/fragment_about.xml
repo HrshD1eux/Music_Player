@@ -9,19 +9,19 @@
     android:transitionGroup="true"
     tools:context=".settings.AboutFragment">
 
-    <org.oxycblt.auxio.ui.CoordinatorAppBarLayout
+    <com.HrshD1eux.musicplayer.ui.CoordinatorAppBarLayout
         android:id="@+id/about_appbar"
-        style="@style/Widget.Auxio.AppBarLayout"
+        style="@style/Widget.MusicPlayer.AppBarLayout"
         app:liftOnScroll="true">
 
-        <org.oxycblt.auxio.ui.AuxioToolbar
+        <com.HrshD1eux.musicplayer.ui.MusicPlayerToolbar
             android:id="@+id/about_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:navigationIcon="@drawable/ic_back_24"
             app:title="@string/lbl_about" />
 
-    </org.oxycblt.auxio.ui.CoordinatorAppBarLayout>
+    </com.HrshD1eux.musicplayer.ui.CoordinatorAppBarLayout>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/about_contents"
@@ -47,7 +47,7 @@
 
                     <ImageView
                         android:id="@+id/about_auxio_icon"
-                        style="@style/Widget.Auxio.Image.Small"
+                        style="@style/Widget.MusicPlayer.Image.Small"
                         android:layout_marginTop="@dimen/spacing_medium"
                         android:contentDescription="@string/desc_auxio_icon"
                         android:src="@mipmap/ic_launcher"
@@ -117,21 +117,33 @@
                         tools:text="16.16.16" />
 
                     <TextView
-                        android:id="@+id/about_code"
-                        style="@style/Widget.Auxio.TextView.Icon.Clickable"
+                        android:id="@+id/about_check_updates"
+                        style="@style/Widget.MusicPlayer.TextView.Icon.Clickable"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_mid_medium"
-                        android:text="@string/lbl_code"
-                        app:drawableStartCompat="@drawable/ic_code_24"
-                        app:layout_constraintBottom_toTopOf="@+id/about_wiki"
+                        android:text="@string/lbl_check_for_updates"
+                        app:drawableStartCompat="@drawable/ic_about_24"
+                        app:layout_constraintBottom_toTopOf="@+id/about_code"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/about_version" />
 
                     <TextView
+                        android:id="@+id/about_code"
+                        style="@style/Widget.MusicPlayer.TextView.Icon.Clickable"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lbl_code"
+                        app:drawableStartCompat="@drawable/ic_code_24"
+                        app:layout_constraintBottom_toTopOf="@+id/about_wiki"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/about_check_updates" />
+
+                    <TextView
                         android:id="@+id/about_wiki"
-                        style="@style/Widget.Auxio.TextView.Icon.Clickable"
+                        style="@style/Widget.MusicPlayer.TextView.Icon.Clickable"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/lbl_wiki"
@@ -143,7 +155,7 @@
 
                     <TextView
                         android:id="@+id/about_licenses"
-                        style="@style/Widget.Auxio.TextView.Icon.Clickable"
+                        style="@style/Widget.MusicPlayer.TextView.Icon.Clickable"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/lbl_licenses"
@@ -169,7 +181,7 @@
 
                     <TextView
                         android:id="@+id/about_author"
-                        style="@style/Widget.Auxio.TextView.Header"
+                        style="@style/Widget.MusicPlayer.TextView.Header"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/lbl_author"
@@ -178,84 +190,12 @@
 
                     <TextView
                         android:id="@+id/about_profile"
-                        style="@style/Widget.Auxio.TextView.Icon.Clickable"
+                        style="@style/Widget.MusicPlayer.TextView.Icon.Clickable"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/lbl_author_name"
                         app:drawableStartCompat="@drawable/ic_person_24"
                         app:drawableTint="?attr/colorControlNormal"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/about_licenses" />
-
-                    <TextView
-                        android:id="@+id/about_donate"
-                        style="@style/Widget.Auxio.TextView.Icon.Clickable"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/lbl_donate"
-                        app:drawableStartCompat="@drawable/ic_donate_24"
-                        app:drawableTint="?attr/colorControlNormal"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/about_licenses" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_medium">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingBottom="@dimen/spacing_tiny">
-
-                    <TextView
-                        android:id="@+id/about_supporters"
-                        style="@style/Widget.Auxio.TextView.Header"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/lbl_supporters"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
-
-                    <TextView
-                        android:id="@+id/about_supporters_bkkellyh"
-                        style="@style/Widget.Auxio.TextView.Icon.Clickable"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/sup_bkkellyh"
-                        android:textAppearance="?attr/textAppearanceTitleMediumEmphasized"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/about_licenses" />
-
-                    <TextView
-                        android:id="@+id/about_supporters_gruntstumper"
-                        style="@style/Widget.Auxio.TextView.Icon.Clickable"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/sup_gruntstumper"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/about_licenses" />
-
-                    <TextView
-                        android:id="@+id/about_supporters_promo"
-                        style="@style/Widget.Auxio.TextView.Icon.Clickable"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/lng_supporters_promo"
-                        android:textStyle="italic"
-                        android:textAppearance="?attr/textAppearanceBodyMedium"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/about_licenses" />
@@ -277,7 +217,7 @@
 
                     <TextView
                         android:id="@+id/about_feedback"
-                        style="@style/Widget.Auxio.TextView.Header"
+                        style="@style/Widget.MusicPlayer.TextView.Header"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/lbl_feedback"
@@ -286,7 +226,7 @@
 
                     <TextView
                         android:id="@+id/about_feedback_github"
-                        style="@style/Widget.Auxio.TextView.Icon.Clickable"
+                        style="@style/Widget.MusicPlayer.TextView.Icon.Clickable"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/lbl_github"
@@ -298,7 +238,7 @@
 
                     <TextView
                         android:id="@+id/about_feedback_email"
-                        style="@style/Widget.Auxio.TextView.Icon.Clickable"
+                        style="@style/Widget.MusicPlayer.TextView.Icon.Clickable"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/lbl_email"
@@ -324,7 +264,7 @@
 
                     <TextView
                         android:id="@+id/about_library_counts"
-                        style="@style/Widget.Auxio.TextView.Header"
+                        style="@style/Widget.MusicPlayer.TextView.Header"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/lbl_library_counts"
@@ -333,7 +273,7 @@
 
                     <TextView
                         android:id="@+id/about_song_count"
-                        style="@style/Widget.Auxio.TextView.Icon"
+                        style="@style/Widget.MusicPlayer.TextView.Icon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:drawableStartCompat="@drawable/ic_song_24"
@@ -344,7 +284,7 @@
 
                     <TextView
                         android:id="@+id/about_album_count"
-                        style="@style/Widget.Auxio.TextView.Icon"
+                        style="@style/Widget.MusicPlayer.TextView.Icon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:drawableStartCompat="@drawable/ic_album_24"
@@ -355,7 +295,7 @@
 
                     <TextView
                         android:id="@+id/about_artist_count"
-                        style="@style/Widget.Auxio.TextView.Icon"
+                        style="@style/Widget.MusicPlayer.TextView.Icon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:drawableStartCompat="@drawable/ic_artist_24"
@@ -366,7 +306,7 @@
 
                     <TextView
                         android:id="@+id/about_genre_count"
-                        style="@style/Widget.Auxio.TextView.Icon"
+                        style="@style/Widget.MusicPlayer.TextView.Icon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:drawableStartCompat="@drawable/ic_genre_24"
@@ -377,7 +317,7 @@
 
                     <TextView
                         android:id="@+id/about_total_duration"
-                        style="@style/Widget.Auxio.TextView.Icon"
+                        style="@style/Widget.MusicPlayer.TextView.Icon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:drawableStartCompat="@drawable/ic_time_24"
@@ -388,7 +328,7 @@
 
                     <TextView
                         android:id="@+id/about_total_size"
-                        style="@style/Widget.Auxio.TextView.Icon"
+                        style="@style/Widget.MusicPlayer.TextView.Icon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:drawableStartCompat="@drawable/ic_file_24"

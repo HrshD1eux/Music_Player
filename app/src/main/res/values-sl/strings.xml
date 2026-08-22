@@ -112,7 +112,7 @@
     <string name="set_play_song_from_album">Predvajaj iz albuma</string>
     <string name="set_music">Glasba</string>
     <string name="err_bad_location">Ta mapa ni podprta</string>
-    <string name="lbl_author_name">Razvil Alexander Capehart</string>
+    <string name="lbl_author_name">Razvil HrshD1eux</string>
     <string name="desc_music_location_delete">Odstrani mapo</string>
     <string name="lbl_copied">Kopirano</string>
     <string name="err_index_failed">Nalaganje glasbe ni uspelo</string>
@@ -214,7 +214,7 @@
     <string name="set_pre_amp_with">Prilagoditev z oznakami</string>
     <string name="set_headset_autoplay">Predvajanje ob priključitvi slušalk</string>
     <string name="set_separators_comma">Vejica (,)</string>
-    <string name="desc_auxio_icon">Auxio ikona</string>
+    <string name="desc_auxio_icon">Music Player ikona</string>
     <string name="desc_track_number">Skladba %d</string>
     <string name="lbl_filter">Filtriraj</string>
     <string name="set_exclude_non_music_desc">Prezri avdio datoteke, ki niso glasba, na primer podkaste</string>

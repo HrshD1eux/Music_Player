@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2023 Auxio Project
- * M3U.kt is part of Auxio.
+ * Copyright (c) 2023 Music Player Project
+ * M3U.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@ import org.oxycblt.musikr.util.unlikelyToBeNull
 /**
  * Minimal M3U file format implementation.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 abstract class M3U {
     /**

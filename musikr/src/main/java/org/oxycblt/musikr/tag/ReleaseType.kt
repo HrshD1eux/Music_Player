@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2023 Auxio Project
- * ReleaseType.kt is part of Auxio.
+ * Copyright (c) 2023 Music Player Project
+ * ReleaseType.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ package org.oxycblt.musikr.tag
  * This class is derived from the MusicBrainz Release Group Type specification. It can be found at:
  * https://musicbrainz.org/doc/Release_Group/Type
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 sealed interface ReleaseType {
     /**

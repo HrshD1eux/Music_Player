@@ -26,9 +26,9 @@
         tools:ignore="RtlSymmetry,contentDescription"
         tools:text="Artists" />
 
-    <org.oxycblt.auxio.ui.RippleFixMaterialButton
+    <com.HrshD1eux.musicplayer.ui.RippleFixMaterialButton
         android:id="@+id/tab_drag_handle"
-        style="@style/Widget.Auxio.Button.Icon.Small"
+        style="@style/Widget.MusicPlayer.Button.Icon.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/spacing_mid_large"

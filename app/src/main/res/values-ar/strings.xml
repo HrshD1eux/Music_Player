@@ -309,7 +309,7 @@
     <string name="lbl_error_info">معلومات الخطأ</string>
     <string name="lbl_copied">نُسخت</string>
     <string name="lbl_report">إبلاغ</string>
-    <string name="lng_tasker_start">يبدأ Auxio باستخدام الحالة المحفوظة مسبقًا. إذا لم تتوفر حالة محفوظة، فسيتم خلط جميع الأغاني. سيبدأ التشغيل على الفور. \n\nتحذير: احرص على التحكم في هذه الخدمة، إذا قمت بإغلاقها ثم حاول استخدامها مرة أخرى، فمن المحتمل أن ينهار التطبيق.</string>
+    <string name="lng_tasker_start">يبدأ Music Player باستخدام الحالة المحفوظة مسبقًا. إذا لم تتوفر حالة محفوظة، فسيتم خلط جميع الأغاني. سيبدأ التشغيل على الفور. \n\nتحذير: احرص على التحكم في هذه الخدمة، إذا قمت بإغلاقها ثم حاول استخدامها مرة أخرى، فمن المحتمل أن ينهار التطبيق.</string>
     <string name="lbl_windows_paths">استخدم مسارات متوافقة مع Windows</string>
     <string name="set_cover_mode_save_space">وفر المساحة</string>
     <plurals name="fmt_album_count">

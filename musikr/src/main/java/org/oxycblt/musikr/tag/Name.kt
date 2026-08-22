@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2023 Auxio Project
- * Name.kt is part of Auxio.
+ * Copyright (c) 2023 Music Player Project
+ * Name.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ import java.text.CollationKey
  *
  * This class automatically implements advanced sorting heuristics for music naming,
  *
- * @author Alexander Capehart
+ * @author HrshD1eux
  */
 sealed interface Name : Comparable<Name> {
     /** A name that could be obtained for the music item. */
@@ -57,7 +57,7 @@ sealed interface Name : Comparable<Name> {
     /**
      * A placeholder name that is used when a [Known] name could not be obtained for the item.
      *
-     * @author Alexander Capehart
+     * @author HrshD1eux
      */
     data class Unknown(val placeholder: Placeholder) : Name {
         override fun compareTo(other: Name) =

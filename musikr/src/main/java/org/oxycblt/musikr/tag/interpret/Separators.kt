@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2024 Auxio Project
- * Separators.kt is part of Auxio.
+ * Copyright (c) 2024 Music Player Project
+ * Separators.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ import org.oxycblt.musikr.util.splitEscaped
  * Defines the user-specified parsing of multi-value tags. This should be used to parse any tags
  * that may be delimited with a separator character.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 interface Separators {
     /**

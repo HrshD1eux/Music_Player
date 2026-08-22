@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2023 Auxio Project
- * GenreImpl.kt is part of Auxio.
+ * Copyright (c) 2023 Music Player Project
+ * GenreImpl.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ internal interface GenreCore {
 /**
  * Library-backed implementation of [Genre].
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 internal class GenreImpl(private val core: GenreCore) : Genre {
     override val uid = Music.UID.auxio(Music.UID.Item.GENRE) { update(core.preGenre.rawName) }

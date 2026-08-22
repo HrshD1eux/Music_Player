@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2023 Auxio Project
- * PlaylistDatabase.kt is part of Auxio.
+ * Copyright (c) 2023 Music Player Project
+ * PlaylistDatabase.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ import org.oxycblt.musikr.Music
 /**
  * Allows persistence of all user-created music information.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 @Database(
     entities = [PlaylistInfo::class, PlaylistSong::class, PlaylistSongCrossRef::class],
@@ -117,7 +117,7 @@ internal abstract class PlaylistDatabase : RoomDatabase() {
 /**
  * The DAO for persisted playlist information.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 @Dao
 internal abstract class PlaylistDao {
@@ -169,6 +169,7 @@ internal abstract class PlaylistDao {
     open suspend fun deletePlaylist(playlistUid: Music.UID) {
         deleteInfo(playlistUid)
         deleteRefs(playlistUid)
+        pruneOrphanedSongs()
     }
 
     /**
@@ -199,6 +200,7 @@ internal abstract class PlaylistDao {
         insertRefs(
             songs.map { PlaylistSongCrossRef(playlistUid = playlistUid, songUid = it.songUid) }
         )
+        pruneOrphanedSongs()
     }
 
     /** Internal, do not use. */
@@ -220,4 +222,8 @@ internal abstract class PlaylistDao {
     /** Internal, do not use. */
     @Query("DELETE FROM PlaylistSongCrossRef where playlistUid = :playlistUid")
     abstract suspend fun deleteRefs(playlistUid: Music.UID)
+
+    /** Automatically prune dead songs not associated with any playlist. */
+    @Query("DELETE FROM PlaylistSong WHERE songUid NOT IN (SELECT DISTINCT songUid FROM PlaylistSongCrossRef)")
+    abstract suspend fun pruneOrphanedSongs()
 }

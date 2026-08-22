@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2024 Auxio Project
- * Naming.kt is part of Auxio.
+ * Copyright (c) 2024 Music Player Project
+ * Naming.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -59,7 +59,7 @@ private val punctRegex by lazy { Regex("[\\p{Punct}+]") }
 /**
  * Plain [Name.Known] implementation that is internationalization-safe.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 private data class SimpleKnownName(override val raw: String, override val sort: String?) :
     Name.Known() {
@@ -77,7 +77,7 @@ private data class SimpleKnownName(override val raw: String, override val sort: 
 /**
  * [Name.Known] implementation that adds advanced sorting behavior at the cost of localization.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 private data class IntelligentKnownName(override val raw: String, override val sort: String?) :
     Name.Known() {

@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2022 Auxio Project
- * ReplayGainAdjustment.kt is part of Auxio.
+ * Copyright (c) 2022 Music Player Project
+ * ReplayGainAdjustment.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

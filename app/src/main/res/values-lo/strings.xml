@@ -131,7 +131,7 @@
     <string name="lng_playlist_added">ເພີ່ມເຂົ້າລາຍການເພງແລ້ວ</string>
     <string name="lng_supporters_promo">ບໍລິຈາກໃຫ້ໂຄງການເພື່ອເພີ່ມຊື່ຂອງທ່ານໃສ່ບ່ອນນີ້!</string>
     <string name="lng_search_library">ຄົ້ນຫາໃນຄັງເພງຂອງທ່ານ…</string>
-    <string name="lng_tasker_start">ເລີ່ມ Auxio ໂດຍໃຊ້ສະຖານະທີ່ບັນທຶກໄວ້ກ່ອນໜ້ານີ້. ຖ້າບໍ່ມີສະຖານະທີ່ບັນທຶກໄວ້, ເພງທັງໝົດຈະຖືກສຸ່ມ. ການຫຼິ້ນຈະເລີ່ມທັນທີ. \n\nຄຳເຕືອນ: ກະລຸນາລະມັດລະວັງໃນການຄວບຄຸມບໍລິການນີ້, ຖ້າທ່ານປິດມັນແລ້ວພະຍາຍາມໃຊ້ມັນອີກຄັ້ງ, ແອັບອາດຈະຂັດຂ້ອງ.</string>
+    <string name="lng_tasker_start">ເລີ່ມ Music Player ໂດຍໃຊ້ສະຖານະທີ່ບັນທຶກໄວ້ກ່ອນໜ້ານີ້. ຖ້າບໍ່ມີສະຖານະທີ່ບັນທຶກໄວ້, ເພງທັງໝົດຈະຖືກສຸ່ມ. ການຫຼິ້ນຈະເລີ່ມທັນທີ. \n\nຄຳເຕືອນ: ກະລຸນາລະມັດລະວັງໃນການຄວບຄຸມບໍລິການນີ້, ຖ້າທ່ານປິດມັນແລ້ວພະຍາຍາມໃຊ້ມັນອີກຄັ້ງ, ແອັບອາດຈະຂັດຂ້ອງ.</string>
     <string name="lng_empty_songs">ເພງຂອງທ່ານຈະສະແດງຢູ່ບ່ອນນີ້.</string>
     <string name="lng_empty_albums">ອາລະບໍາຂອງທ່ານຈະສະແດງຢູ່ບ່ອນນີ້.</string>
     <string name="lng_empty_artists">ສິນລະປິນຂອງທ່ານຈະສະແດງຢູ່ບ່ອນນີ້.</string>
@@ -275,7 +275,7 @@
     <string name="desc_clear_search">ລຶບຄຳຄົ້ນຫາ</string>
     <string name="desc_add_folder">ເພີ່ມໂຟນເດີ</string>
     <string name="desc_music_location_delete">ເອົາໂຟນເດີອອກ</string>
-    <string name="desc_auxio_icon">ໄອຄອນ Auxio</string>
+    <string name="desc_auxio_icon">ໄອຄອນ Music Player</string>
     <string name="desc_no_cover">ໜ້າປົກອາລະບໍາ</string>
     <string name="desc_album_cover">ໜ້າປົກອາລະບໍາສຳລັບ %s</string>
     <string name="desc_artist_image">ຮູບສິນລະປິນສຳລັບ %s</string>

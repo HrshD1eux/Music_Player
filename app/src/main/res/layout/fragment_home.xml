@@ -9,16 +9,16 @@
     android:transitionGroup="true">
 
 
-    <org.oxycblt.auxio.ui.CoordinatorAppBarLayout
+    <com.HrshD1eux.musicplayer.ui.CoordinatorAppBarLayout
         android:id="@+id/home_appbar"
-        style="@style/Widget.Auxio.AppBarLayout">
+        style="@style/Widget.MusicPlayer.AppBarLayout">
 
-        <org.oxycblt.auxio.ui.MultiToolbar
+        <com.HrshD1eux.musicplayer.ui.MultiToolbar
             android:id="@+id/home_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <org.oxycblt.auxio.ui.AuxioToolbar
+            <com.HrshD1eux.musicplayer.ui.MusicPlayerToolbar
                 android:id="@+id/home_normal_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
                 app:menu="@menu/toolbar_home"
                 app:title="@string/info_app_name" />
 
-            <org.oxycblt.auxio.ui.AuxioToolbar
+            <com.HrshD1eux.musicplayer.ui.MusicPlayerToolbar
                 android:id="@+id/home_selection_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
                 app:menu="@menu/toolbar_selection"
                 app:navigationIcon="@drawable/ic_close_24" />
 
-        </org.oxycblt.auxio.ui.MultiToolbar>
+        </com.HrshD1eux.musicplayer.ui.MultiToolbar>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/home_tabs"
@@ -46,7 +46,7 @@
             app:tabGravity="start"
             app:tabMode="scrollable" />
 
-    </org.oxycblt.auxio.ui.CoordinatorAppBarLayout>
+    </com.HrshD1eux.musicplayer.ui.CoordinatorAppBarLayout>
 
 
     <FrameLayout

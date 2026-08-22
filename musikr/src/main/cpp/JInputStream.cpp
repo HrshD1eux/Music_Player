@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2024 Auxio Project
- * JInputStream.cpp is part of Auxio.
+ * Copyright (c) 2024 Music Player Project
+ * JInputStream.cpp is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,7 +46,7 @@ JInputStream::JInputStream(JNIEnv *env, jobject jInputStream) : env(env), jInput
     jInputStreamLengthMethod = jInputStreamClass.method("length", "()J");
     JStringRef jName = { env, reinterpret_cast<jstring>(env->CallObjectMethod(
             jInputStream, jInputStreamNameMethod)) };
-    _name = TagLib::String(env->GetStringUTFChars(*jName, nullptr));
+    _name = jName.copy();
 }
 
 JInputStream::~JInputStream() {

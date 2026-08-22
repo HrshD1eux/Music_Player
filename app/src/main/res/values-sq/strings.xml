@@ -106,7 +106,7 @@
     <string name="lbl_copied">E kopjuar</string>
     <string name="lbl_report">Raportoni</string>
     <string name="lbl_author">Autori</string>
-    <string name="lbl_author_name">Alexander Capehart</string>
+    <string name="lbl_author_name">HrshD1eux</string>
     <string name="lbl_donate">Dhuroni</string>
     <string name="lbl_supporters">Mbështetësit</string>
     <string name="lng_widget">Shikoni dhe kontrolloni riprodhimin e muzikës</string>
@@ -130,7 +130,7 @@
     <string name="set_ui_desc">Ndryshoni temën dhe ngjyrat e aplikacionit</string>
     <string name="set_theme">Tema</string>
     <string name="set_theme_auto">Automatik</string>
-    <string name="lng_tasker_start">Nis Auxio duke përdorur gjendjen e ruajtur më parë. Nëse nuk ka një gjendje të ruajtur, të gjitha këngët do të luhen në mënyrë të rastësishme. Riprodhimi do të fillojë menjëherë. \n\nKUJDES: Kini kujdes kur kontrolloni këtë shërbim; nëse e mbyllni dhe pastaj përpiqeni ta përdorni përsëri, ka mundësi që aplikacioni të bllokohet.</string>
+    <string name="lng_tasker_start">Nis Music Player duke përdorur gjendjen e ruajtur më parë. Nëse nuk ka një gjendje të ruajtur, të gjitha këngët do të luhen në mënyrë të rastësishme. Riprodhimi do të fillojë menjëherë. \n\nKUJDES: Kini kujdes kur kontrolloni këtë shërbim; nëse e mbyllni dhe pastaj përpiqeni ta përdorni përsëri, ka mundësi që aplikacioni të bllokohet.</string>
     <string name="set_root_title">Cilësimet</string>
     <string name="set_ui">Shikoni dhe ndjeni</string>
     <string name="set_theme_day">E ndritshme</string>
@@ -259,7 +259,7 @@
     <string name="desc_queue_bar">Hap radhën</string>
     <string name="desc_clear_search">Pastro kërkimin</string>
     <string name="desc_music_location_delete">Hiq dosjen</string>
-    <string name="desc_auxio_icon">Ikona e Auxio</string>
+    <string name="desc_auxio_icon">Ikona e Music Player</string>
     <string name="desc_no_cover">Kopertina e albumit</string>
     <string name="desc_album_cover">Kopertina e albumit për %s</string>
     <string name="desc_artist_image">Imazhi i artistit për %s</string>

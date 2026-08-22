@@ -4,22 +4,22 @@
     android:id="@android:id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ui_widget_bg_sharp"
+    android:background="@drawable/ui_widget_bg_round"
     android:backgroundTint="?attr/colorSurface"
-    android:theme="@style/Theme.Auxio.Widget"
+    android:theme="@style/Theme.MusicPlayer.Widget"
     tools:ignore="Overdraw">
 
-    <android.widget.ImageView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.275"
         android:contentDescription="@string/desc_no_cover"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_auxio_24"
+        android:src="@drawable/ic_music_player_24"
         android:tint="?attr/colorPrimary" />
 
-    <android.widget.TextView
-        style="@style/Widget.Auxio.TextView.Primary.AppWidget"
+    <TextView
+        style="@style/Widget.MusicPlayer.TextView.Primary.AppWidget"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

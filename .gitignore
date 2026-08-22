@@ -9,6 +9,19 @@ release/
 .DS_Store/
 captures/
 
+# Keystores & Signing Secrets
+*.jks
+*.keystore
+*.p12
+*.key
+keystore.properties
+signing.properties
+
+# Build & APKs
+*.apk
+*.aab
+output-metadata.json
+
 # Other
 .externalNativeBuild
 *.iml

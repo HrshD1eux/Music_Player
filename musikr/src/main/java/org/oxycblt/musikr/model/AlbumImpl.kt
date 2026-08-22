@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2024 Auxio Project
- * AlbumImpl.kt is part of Auxio.
+ * Copyright (c) 2024 Music Player Project
+ * AlbumImpl.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ internal interface AlbumCore {
 /**
  * Library-backed implementation of [Album].
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 class AlbumImpl internal constructor(private val core: AlbumCore) : Album {
     private val preAlbum = core.preAlbum

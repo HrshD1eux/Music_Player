@@ -7,9 +7,9 @@
     android:padding="@dimen/spacing_tiny"
     android:theme="@style/ThemeOverlay.Accent">
 
-    <org.oxycblt.auxio.ui.RippleFixMaterialButton
+    <com.HrshD1eux.musicplayer.ui.RippleFixMaterialButton
         android:id="@+id/accent"
-        style="@style/Widget.Auxio.Button.Icon.Small"
+        style="@style/Widget.MusicPlayer.Button.Icon.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

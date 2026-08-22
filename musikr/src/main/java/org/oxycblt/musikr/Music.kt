@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2023 Auxio Project
- * Music.kt is part of Auxio.
+ * Copyright (c) 2023 Music Player Project
+ * Music.kt is part of Music Player.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ import org.oxycblt.musikr.util.toUuidOrNull
  * Abstract music data. This contains universal information about all concrete music
  * implementations, such as identification information and names.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 sealed interface Music {
     /**
@@ -71,7 +71,7 @@ sealed interface Music {
      * Note: Generally try to use [UID] as a black box that can only be read, written, and compared.
      * It will not be fun if you try to manipulate it in any other manner.
      *
-     * @author Alexander Capehart (OxygenCobalt)
+     * @author HrshD1eux
      */
     @Parcelize
     class UID
@@ -113,7 +113,7 @@ sealed interface Music {
          */
         private enum class Format(val namespace: String, val microNamespace: Char) {
             /** @see auxio */
-            AUXIO("org.oxycblt.auxio", 'a'),
+            AUXIO("com.HrshD1eux.musicplayer", 'a'),
 
             /** @see musicBrainz */
             MUSICBRAINZ("org.musicbrainz", 'm'),
@@ -255,7 +255,7 @@ sealed interface Music {
 /**
  * An abstract grouping of [Song]s and other [Music] data.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 sealed interface MusicParent : Music {
     /** The child [Song]s of this [MusicParent]. */
@@ -265,7 +265,7 @@ sealed interface MusicParent : Music {
 /**
  * A song.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 interface Song : Music {
     override val name: Name.Known
@@ -328,7 +328,7 @@ interface Song : Music {
  * An abstract release group. While it may be called an album, it encompasses other types of
  * releases like singles, EPs, and compilations.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 interface Album : MusicParent {
     /** The [Date.Range] that [Song]s in the [Album] were released. */
@@ -356,7 +356,7 @@ interface Album : MusicParent {
  * An abstract artist. These are actually a combination of the artist and album artist tags from
  * within the library, derived from [Song]s and [Album]s respectively.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 interface Artist : MusicParent {
     /** Albums directly credited to this [Artist] via a "Album Artist" tag. */
@@ -377,7 +377,7 @@ interface Artist : MusicParent {
 /**
  * A genre.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 interface Genre : MusicParent {
     /** The artists indirectly linked to by the [Artist]s of this [Genre]. */
@@ -391,7 +391,7 @@ interface Genre : MusicParent {
 /**
  * A playlist.
  *
- * @author Alexander Capehart (OxygenCobalt)
+ * @author HrshD1eux
  */
 interface Playlist : MusicParent {
     override val name: Name.Known
