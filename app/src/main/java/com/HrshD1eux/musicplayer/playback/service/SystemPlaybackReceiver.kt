@@ -24,11 +24,11 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.media.AudioManager
 import androidx.core.content.ContextCompat
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.playback.PlaybackSettings
 import com.HrshD1eux.musicplayer.playback.state.PlaybackStateManager
 import com.HrshD1eux.musicplayer.widgets.WidgetComponent
 import com.HrshD1eux.musicplayer.widgets.WidgetProvider
+import javax.inject.Inject
 import timber.log.Timber as L
 
 /**

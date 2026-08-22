@@ -21,11 +21,6 @@ package com.HrshD1eux.musicplayer.music.service
 import android.content.Context
 import android.os.PowerManager
 import coil3.ImageLoader
-import javax.inject.Inject
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
 import com.HrshD1eux.musicplayer.BuildConfig
 import com.HrshD1eux.musicplayer.ForegroundListener
 import com.HrshD1eux.musicplayer.ForegroundServiceNotification
@@ -35,6 +30,11 @@ import com.HrshD1eux.musicplayer.music.MusicSettings
 import com.HrshD1eux.musicplayer.music.locations.LocationMode
 import com.HrshD1eux.musicplayer.playback.state.PlaybackStateManager
 import com.HrshD1eux.musicplayer.util.getSystemServiceCompat
+import javax.inject.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import org.oxycblt.musikr.MusicParent
 import org.oxycblt.musikr.fs.mediastore.MediaStore
 import org.oxycblt.musikr.fs.saf.SAF

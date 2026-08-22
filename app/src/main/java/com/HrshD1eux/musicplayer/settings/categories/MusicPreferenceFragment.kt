@@ -22,13 +22,13 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.preference.Preference
 import coil3.ImageLoader
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.music.MusicViewModel
 import com.HrshD1eux.musicplayer.settings.BasePreferenceFragment
 import com.HrshD1eux.musicplayer.settings.ui.WrappedDialogPreference
 import com.HrshD1eux.musicplayer.util.navigateSafe
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import timber.log.Timber as L
 
 /**

@@ -20,13 +20,6 @@ package com.HrshD1eux.musicplayer.detail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.detail.list.DiscDivider
 import com.HrshD1eux.musicplayer.detail.list.DiscHeader
@@ -47,6 +40,13 @@ import com.HrshD1eux.musicplayer.playback.PlaybackSettings
 import com.HrshD1eux.musicplayer.util.Event
 import com.HrshD1eux.musicplayer.util.MutableEvent
 import com.HrshD1eux.musicplayer.util.unlikelyToBeNull
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.oxycblt.musikr.Album
 import org.oxycblt.musikr.Artist
 import org.oxycblt.musikr.Genre

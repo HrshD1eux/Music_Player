@@ -31,10 +31,10 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.ServiceCompat
 import androidx.media.MediaBrowserServiceCompat
 import androidx.media.utils.MediaConstants
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.music.service.MusicServiceFragment
 import com.HrshD1eux.musicplayer.playback.service.PlaybackServiceFragment
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import timber.log.Timber
 
 @AndroidEntryPoint

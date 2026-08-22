@@ -27,8 +27,6 @@ import androidx.appcompat.widget.TooltipCompat
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.R as MR
-import com.google.android.material.shape.MaterialShapeDrawable
 import com.HrshD1eux.musicplayer.IntegerTable
 import com.HrshD1eux.musicplayer.databinding.ItemEditHeaderBinding
 import com.HrshD1eux.musicplayer.databinding.ItemEditableSongBinding
@@ -45,6 +43,8 @@ import com.HrshD1eux.musicplayer.music.resolveNames
 import com.HrshD1eux.musicplayer.util.context
 import com.HrshD1eux.musicplayer.util.getAttrColorCompat
 import com.HrshD1eux.musicplayer.util.inflater
+import com.google.android.material.R as MR
+import com.google.android.material.shape.MaterialShapeDrawable
 import org.oxycblt.musikr.Playlist
 import org.oxycblt.musikr.Song
 import timber.log.Timber as L

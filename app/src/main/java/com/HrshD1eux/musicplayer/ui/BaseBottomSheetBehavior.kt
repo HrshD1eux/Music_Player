@@ -25,12 +25,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowInsets
 import androidx.coordinatorlayout.widget.CoordinatorLayout
-import com.google.android.material.R as MR
-import com.google.android.material.bottomsheet.BackportBottomSheetBehavior
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.util.getDimen
 import com.HrshD1eux.musicplayer.util.getDimenPixels
 import com.HrshD1eux.musicplayer.util.systemGestureInsetsCompat
+import com.google.android.material.R as MR
+import com.google.android.material.bottomsheet.BackportBottomSheetBehavior
 import timber.log.Timber as L
 
 /**

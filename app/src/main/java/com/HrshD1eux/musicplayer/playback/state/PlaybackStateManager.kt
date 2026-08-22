@@ -18,10 +18,10 @@
  
 package com.HrshD1eux.musicplayer.playback.state
 
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.BuildConfig
 import com.HrshD1eux.musicplayer.list.adapter.UpdateInstructions
 import com.HrshD1eux.musicplayer.playback.state.PlaybackStateManager.Listener
+import javax.inject.Inject
 import org.oxycblt.musikr.Music
 import org.oxycblt.musikr.MusicParent
 import org.oxycblt.musikr.Song

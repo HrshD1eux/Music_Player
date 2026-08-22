@@ -27,7 +27,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import dagger.hilt.android.AndroidEntryPoint
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.FragmentDetailBinding
 import com.HrshD1eux.musicplayer.detail.list.PlaylistDetailListAdapter
@@ -47,6 +46,7 @@ import com.HrshD1eux.musicplayer.util.context
 import com.HrshD1eux.musicplayer.util.getPlural
 import com.HrshD1eux.musicplayer.util.navigateSafe
 import com.HrshD1eux.musicplayer.util.showToast
+import dagger.hilt.android.AndroidEntryPoint
 import org.oxycblt.musikr.Music
 import org.oxycblt.musikr.MusicParent
 import org.oxycblt.musikr.Playlist

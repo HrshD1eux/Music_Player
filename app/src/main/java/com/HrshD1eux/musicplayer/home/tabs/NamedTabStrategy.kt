@@ -18,9 +18,9 @@
  
 package com.HrshD1eux.musicplayer.home.tabs
 
+import com.HrshD1eux.musicplayer.music.MusicType
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator.TabConfigurationStrategy
-import com.HrshD1eux.musicplayer.music.MusicType
 
 class NamedTabStrategy(private val homeTabs: List<MusicType>) : TabConfigurationStrategy {
     override fun onConfigureTab(tab: TabLayout.Tab, position: Int) {

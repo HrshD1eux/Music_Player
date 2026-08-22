@@ -20,15 +20,15 @@ package com.HrshD1eux.musicplayer.list
 
 import androidx.annotation.MenuRes
 import androidx.lifecycle.ViewModel
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import com.HrshD1eux.musicplayer.list.menu.Menu
 import com.HrshD1eux.musicplayer.music.MusicRepository
 import com.HrshD1eux.musicplayer.playback.PlaySong
 import com.HrshD1eux.musicplayer.util.Event
 import com.HrshD1eux.musicplayer.util.MutableEvent
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import org.oxycblt.musikr.Album
 import org.oxycblt.musikr.Artist
 import org.oxycblt.musikr.Genre

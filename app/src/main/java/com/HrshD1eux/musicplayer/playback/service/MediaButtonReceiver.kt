@@ -23,11 +23,11 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import androidx.core.content.ContextCompat
+import com.HrshD1eux.musicplayer.IntegerTable
+import com.HrshD1eux.musicplayer.MusicPlayerService
+import com.HrshD1eux.musicplayer.playback.state.PlaybackStateManager
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import com.HrshD1eux.musicplayer.MusicPlayerService
-import com.HrshD1eux.musicplayer.IntegerTable
-import com.HrshD1eux.musicplayer.playback.state.PlaybackStateManager
 import timber.log.Timber as L
 
 /**
@@ -52,7 +52,10 @@ class MediaButtonReceiver : BroadcastReceiver() {
             //  tasker
             L.d("Delivering media button intent $intent")
             intent.component = ComponentName(context, MusicPlayerService::class.java)
-            intent.putExtra(MusicPlayerService.INTENT_KEY_START_ID, IntegerTable.START_ID_MEDIA_BUTTON)
+            intent.putExtra(
+                MusicPlayerService.INTENT_KEY_START_ID,
+                IntegerTable.START_ID_MEDIA_BUTTON,
+            )
             ContextCompat.startForegroundService(context, intent)
         }
     }

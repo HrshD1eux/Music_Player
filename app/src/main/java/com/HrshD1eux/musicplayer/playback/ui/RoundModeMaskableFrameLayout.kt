@@ -20,11 +20,11 @@ package com.HrshD1eux.musicplayer.playback.ui
 
 import android.content.Context
 import android.util.AttributeSet
+import com.HrshD1eux.musicplayer.ui.UISettings
 import com.google.android.material.carousel.MaskableFrameLayout
 import com.google.android.material.shape.ShapeAppearanceModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import com.HrshD1eux.musicplayer.ui.UISettings
 
 @AndroidEntryPoint
 class RoundModeMaskableFrameLayout

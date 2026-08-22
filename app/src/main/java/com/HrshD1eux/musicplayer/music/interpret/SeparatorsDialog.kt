@@ -22,14 +22,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.children
-import com.google.android.material.checkbox.MaterialCheckBox
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.BuildConfig
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.DialogSeparatorsBinding
 import com.HrshD1eux.musicplayer.music.MusicSettings
 import com.HrshD1eux.musicplayer.ui.ViewBindingMaterialDialogFragment
+import com.google.android.material.checkbox.MaterialCheckBox
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import org.oxycblt.musikr.tag.interpret.Separators
 import timber.log.Timber as L
 

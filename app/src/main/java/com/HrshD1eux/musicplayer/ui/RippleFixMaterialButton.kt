@@ -21,9 +21,9 @@ package com.HrshD1eux.musicplayer.ui
 import android.content.Context
 import android.util.AttributeSet
 import androidx.annotation.AttrRes
+import com.HrshD1eux.musicplayer.util.fixDoubleRipple
 import com.google.android.material.R
 import com.google.android.material.button.MaterialButton
-import com.HrshD1eux.musicplayer.util.fixDoubleRipple
 
 /**
  * Fixes an issue where double ripples appear on [MaterialButton] from AppCompat 1.5 afterwards due

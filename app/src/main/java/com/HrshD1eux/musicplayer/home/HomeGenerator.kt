@@ -18,12 +18,12 @@
  
 package com.HrshD1eux.musicplayer.home
 
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.home.tabs.Tab
 import com.HrshD1eux.musicplayer.list.ListSettings
 import com.HrshD1eux.musicplayer.list.adapter.UpdateInstructions
 import com.HrshD1eux.musicplayer.music.MusicRepository
 import com.HrshD1eux.musicplayer.music.MusicType
+import javax.inject.Inject
 import org.oxycblt.musikr.Album
 import org.oxycblt.musikr.Artist
 import org.oxycblt.musikr.Genre

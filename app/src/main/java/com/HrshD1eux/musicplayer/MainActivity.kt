@@ -26,14 +26,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.WindowCompat
 import androidx.core.view.updatePadding
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.databinding.ActivityMainBinding
 import com.HrshD1eux.musicplayer.playback.PlaybackViewModel
 import com.HrshD1eux.musicplayer.playback.state.DeferredPlayback
 import com.HrshD1eux.musicplayer.ui.UISettings
 import com.HrshD1eux.musicplayer.util.isNight
 import com.HrshD1eux.musicplayer.util.systemBarInsetsCompat
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import timber.log.Timber as L
 
 /**

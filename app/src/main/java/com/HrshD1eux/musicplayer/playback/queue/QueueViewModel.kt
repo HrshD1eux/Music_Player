@@ -19,15 +19,15 @@
 package com.HrshD1eux.musicplayer.playback.queue
 
 import androidx.lifecycle.ViewModel
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import com.HrshD1eux.musicplayer.list.adapter.UpdateInstructions
 import com.HrshD1eux.musicplayer.playback.state.PlaybackStateManager
 import com.HrshD1eux.musicplayer.playback.state.QueueChange
 import com.HrshD1eux.musicplayer.util.Event
 import com.HrshD1eux.musicplayer.util.MutableEvent
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import org.oxycblt.musikr.MusicParent
 import org.oxycblt.musikr.Song
 import timber.log.Timber as L

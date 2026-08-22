@@ -20,11 +20,11 @@ package com.HrshD1eux.musicplayer.list
 
 import android.content.Context
 import androidx.core.content.edit
-import dagger.hilt.android.qualifiers.ApplicationContext
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.list.sort.Sort
 import com.HrshD1eux.musicplayer.settings.Settings
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
 interface ListSettings : Settings<ListSettings.Listener> {
     /** The [Sort] mode used in Song lists. */

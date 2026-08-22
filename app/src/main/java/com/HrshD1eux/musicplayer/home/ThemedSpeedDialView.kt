@@ -40,6 +40,11 @@ import androidx.core.widget.TextViewCompat
 import androidx.dynamicanimation.animation.FloatValueHolder
 import androidx.dynamicanimation.animation.SpringAnimation
 import androidx.dynamicanimation.animation.SpringForce
+import com.HrshD1eux.musicplayer.R
+import com.HrshD1eux.musicplayer.util.getAttrColorCompat
+import com.HrshD1eux.musicplayer.util.getAttrResourceId
+import com.HrshD1eux.musicplayer.util.getDimen
+import com.HrshD1eux.musicplayer.util.getDimenPixels
 import com.google.android.material.R as MR
 import com.google.android.material.motion.MotionUtils
 import com.google.android.material.shape.MaterialShapeDrawable
@@ -48,11 +53,6 @@ import com.leinardi.android.speeddial.SpeedDialActionItem
 import com.leinardi.android.speeddial.SpeedDialView
 import kotlin.math.roundToInt
 import kotlinx.parcelize.Parcelize
-import com.HrshD1eux.musicplayer.R
-import com.HrshD1eux.musicplayer.util.getAttrColorCompat
-import com.HrshD1eux.musicplayer.util.getAttrResourceId
-import com.HrshD1eux.musicplayer.util.getDimen
-import com.HrshD1eux.musicplayer.util.getDimenPixels
 
 /**
  * Customized Speed Dial view with some bug fixes and Material 3 theming.

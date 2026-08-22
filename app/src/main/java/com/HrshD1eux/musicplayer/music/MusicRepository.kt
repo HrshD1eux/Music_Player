@@ -19,6 +19,10 @@
 package com.HrshD1eux.musicplayer.music
 
 import android.content.Context
+import com.HrshD1eux.musicplayer.image.covers.SettingCovers
+import com.HrshD1eux.musicplayer.music.MusicRepository.IndexingWorker
+import com.HrshD1eux.musicplayer.music.locations.LocationMode
+import com.HrshD1eux.musicplayer.music.shim.WriteOnlyMutableCache
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.UUID
 import javax.inject.Inject
@@ -27,10 +31,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.yield
-import com.HrshD1eux.musicplayer.image.covers.SettingCovers
-import com.HrshD1eux.musicplayer.music.MusicRepository.IndexingWorker
-import com.HrshD1eux.musicplayer.music.locations.LocationMode
-import com.HrshD1eux.musicplayer.music.shim.WriteOnlyMutableCache
 import org.oxycblt.musikr.Config
 import org.oxycblt.musikr.IndexingProgress
 import org.oxycblt.musikr.Interpretation

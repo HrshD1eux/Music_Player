@@ -23,8 +23,8 @@ import android.media.MediaScannerConnection
 import java.io.File
 
 /**
- * Helper to immediately invoke Android's MediaScanner on specific file paths,
- * avoiding the 1-2 minute operating system daemon lag.
+ * Helper to immediately invoke Android's MediaScanner on specific file paths, avoiding the 1-2
+ * minute operating system daemon lag.
  */
 internal object MediaScanner {
     fun scanFiles(context: Context, paths: Collection<String>, onCompleted: () -> Unit) {
@@ -43,11 +43,7 @@ internal object MediaScanner {
 
         try {
             var remaining = validPaths.size
-            MediaScannerConnection.scanFile(
-                context.applicationContext,
-                validPaths,
-                null,
-            ) { _, _ ->
+            MediaScannerConnection.scanFile(context.applicationContext, validPaths, null) { _, _ ->
                 remaining--
                 if (remaining <= 0) {
                     onCompleted()

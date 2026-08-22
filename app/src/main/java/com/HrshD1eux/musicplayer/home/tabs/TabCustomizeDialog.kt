@@ -23,14 +23,14 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.BuildConfig
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.DialogTabsBinding
 import com.HrshD1eux.musicplayer.home.HomeSettings
 import com.HrshD1eux.musicplayer.list.EditClickListListener
 import com.HrshD1eux.musicplayer.ui.ViewBindingMaterialDialogFragment
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import timber.log.Timber as L
 
 /**

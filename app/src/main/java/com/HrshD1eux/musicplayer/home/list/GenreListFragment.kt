@@ -24,7 +24,6 @@ import android.view.ViewGroup
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
-import dagger.hilt.android.AndroidEntryPoint
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.FragmentHomeListBinding
 import com.HrshD1eux.musicplayer.detail.DetailViewModel
@@ -41,6 +40,7 @@ import com.HrshD1eux.musicplayer.music.MusicViewModel
 import com.HrshD1eux.musicplayer.playback.PlaybackViewModel
 import com.HrshD1eux.musicplayer.playback.formatDurationMsPopup
 import com.HrshD1eux.musicplayer.util.collectImmediately
+import dagger.hilt.android.AndroidEntryPoint
 import org.oxycblt.musikr.Genre
 import org.oxycblt.musikr.Music
 import org.oxycblt.musikr.MusicParent
@@ -69,9 +69,7 @@ class GenreListFragment :
     override fun onBindingCreated(binding: FragmentHomeListBinding, savedInstanceState: Bundle?) {
         super.onBindingCreated(binding, savedInstanceState)
 
-        binding.homeSwipeRefresh.setupHomeSwipeRefresh(requireContext()) {
-            musicModel.refresh()
-        }
+        binding.homeSwipeRefresh.setupHomeSwipeRefresh(requireContext()) { musicModel.refresh() }
 
         binding.homeRecycler.apply {
             id = R.id.home_genre_recycler

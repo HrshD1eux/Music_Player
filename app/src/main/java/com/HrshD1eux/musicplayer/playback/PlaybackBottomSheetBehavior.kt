@@ -25,9 +25,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.WindowInsets
 import androidx.coordinatorlayout.widget.CoordinatorLayout
-import com.google.android.material.R as MR
-import com.google.android.material.shape.MaterialShapeDrawable
-import com.google.android.material.shape.ShapeAppearanceModel
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.ui.BaseBottomSheetBehavior
 import com.HrshD1eux.musicplayer.ui.UISettings
@@ -35,6 +32,9 @@ import com.HrshD1eux.musicplayer.util.getAttrColorCompat
 import com.HrshD1eux.musicplayer.util.getDimenPixels
 import com.HrshD1eux.musicplayer.util.replaceSystemBarInsetsCompat
 import com.HrshD1eux.musicplayer.util.systemBarInsetsCompat
+import com.google.android.material.R as MR
+import com.google.android.material.shape.MaterialShapeDrawable
+import com.google.android.material.shape.ShapeAppearanceModel
 
 /**
  * The [BaseBottomSheetBehavior] for the playback bottom sheet. This bottom sheet

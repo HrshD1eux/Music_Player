@@ -24,7 +24,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import dagger.hilt.android.AndroidEntryPoint
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.DialogSongDetailBinding
 import com.HrshD1eux.musicplayer.detail.list.SongProperty
@@ -32,6 +31,7 @@ import com.HrshD1eux.musicplayer.detail.list.SongPropertyAdapter
 import com.HrshD1eux.musicplayer.list.adapter.UpdateInstructions
 import com.HrshD1eux.musicplayer.ui.ViewBindingMaterialDialogFragment
 import com.HrshD1eux.musicplayer.util.collectImmediately
+import dagger.hilt.android.AndroidEntryPoint
 import org.oxycblt.musikr.Song
 import timber.log.Timber as L
 

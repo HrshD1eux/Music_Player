@@ -26,13 +26,13 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import dagger.hilt.android.AndroidEntryPoint
-import kotlin.math.min
 import com.HrshD1eux.musicplayer.databinding.FragmentQueueBinding
 import com.HrshD1eux.musicplayer.list.EditClickListListener
 import com.HrshD1eux.musicplayer.playback.PlaybackViewModel
 import com.HrshD1eux.musicplayer.ui.ViewBindingFragment
 import com.HrshD1eux.musicplayer.util.collectImmediately
+import dagger.hilt.android.AndroidEntryPoint
+import kotlin.math.min
 import org.oxycblt.musikr.Song
 import timber.log.Timber as L
 

@@ -29,8 +29,6 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.children
-import com.google.android.material.appbar.AppBarLayout
-import com.google.android.material.transition.MaterialSharedAxis
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.settings.ui.IntListPreference
 import com.HrshD1eux.musicplayer.settings.ui.IntListPreferenceDialog
@@ -38,6 +36,8 @@ import com.HrshD1eux.musicplayer.settings.ui.PreferenceHeaderItemDecoration
 import com.HrshD1eux.musicplayer.settings.ui.WrappedDialogPreference
 import com.HrshD1eux.musicplayer.ui.MusicPlayerToolbar
 import com.HrshD1eux.musicplayer.util.systemBarInsetsCompat
+import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.transition.MaterialSharedAxis
 import timber.log.Timber as L
 
 /**

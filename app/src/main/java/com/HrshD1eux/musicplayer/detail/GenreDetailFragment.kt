@@ -22,7 +22,6 @@ import android.os.Bundle
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import dagger.hilt.android.AndroidEntryPoint
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.FragmentDetailBinding
 import com.HrshD1eux.musicplayer.detail.list.GenreDetailListAdapter
@@ -38,6 +37,7 @@ import com.HrshD1eux.musicplayer.util.collectImmediately
 import com.HrshD1eux.musicplayer.util.getPlural
 import com.HrshD1eux.musicplayer.util.navigateSafe
 import com.HrshD1eux.musicplayer.util.showToast
+import dagger.hilt.android.AndroidEntryPoint
 import org.oxycblt.musikr.Artist
 import org.oxycblt.musikr.Genre
 import org.oxycblt.musikr.Music

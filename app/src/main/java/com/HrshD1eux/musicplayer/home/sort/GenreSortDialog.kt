@@ -19,10 +19,10 @@
 package com.HrshD1eux.musicplayer.home.sort
 
 import androidx.fragment.app.activityViewModels
-import dagger.hilt.android.AndroidEntryPoint
 import com.HrshD1eux.musicplayer.home.HomeViewModel
 import com.HrshD1eux.musicplayer.list.sort.Sort
 import com.HrshD1eux.musicplayer.list.sort.SortDialog
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * A [SortDialog] that controls the [Sort] of [HomeViewModel.genreList].

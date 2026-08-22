@@ -25,9 +25,9 @@ import android.content.UriMatcher
 import android.database.Cursor
 import android.net.Uri
 import android.os.ParcelFileDescriptor
-import kotlinx.coroutines.runBlocking
 import com.HrshD1eux.musicplayer.BuildConfig
 import com.HrshD1eux.musicplayer.image.covers.SettingCovers
+import kotlinx.coroutines.runBlocking
 import org.oxycblt.musikr.covers.CoverResult
 
 class CoverProvider : ContentProvider() {

@@ -23,11 +23,11 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.WindowInsets
 import androidx.coordinatorlayout.widget.CoordinatorLayout
-import com.google.android.material.bottomsheet.BackportBottomSheetBehavior
-import kotlin.math.abs
 import com.HrshD1eux.musicplayer.util.coordinatorLayoutBehavior
 import com.HrshD1eux.musicplayer.util.replaceSystemBarInsetsCompat
 import com.HrshD1eux.musicplayer.util.systemBarInsetsCompat
+import com.google.android.material.bottomsheet.BackportBottomSheetBehavior
+import kotlin.math.abs
 
 /**
  * A behavior that automatically re-layouts and re-insets content to align with the parent layout's

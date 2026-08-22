@@ -28,9 +28,6 @@ import androidx.core.view.updatePadding
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import kotlinx.coroutines.launch
-import com.google.android.material.transition.MaterialFadeThrough
-import dagger.hilt.android.AndroidEntryPoint
 import com.HrshD1eux.musicplayer.BuildConfig
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.FragmentAboutBinding
@@ -41,6 +38,9 @@ import com.HrshD1eux.musicplayer.util.collectImmediately
 import com.HrshD1eux.musicplayer.util.openInBrowser
 import com.HrshD1eux.musicplayer.util.startIntent
 import com.HrshD1eux.musicplayer.util.systemBarInsetsCompat
+import com.google.android.material.transition.MaterialFadeThrough
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 /**
  * A [ViewBindingFragment] that displays information about the app and the current music library.
@@ -88,25 +88,33 @@ class AboutFragment : ViewBindingFragment<FragmentAboutBinding>() {
     private fun checkAppUpdates() {
         val binding = binding ?: return
         com.google.android.material.snackbar.Snackbar.make(
-            binding.root,
-            R.string.msg_checking_updates,
-            com.google.android.material.snackbar.Snackbar.LENGTH_SHORT,
-        ).show()
+                binding.root,
+                R.string.msg_checking_updates,
+                com.google.android.material.snackbar.Snackbar.LENGTH_SHORT,
+            )
+            .show()
 
         viewLifecycleOwner.lifecycleScope.launch {
-            when (val result = com.HrshD1eux.musicplayer.update.UpdateManager.checkForUpdates(BuildConfig.VERSION_NAME)) {
+            when (
+                val result =
+                    com.HrshD1eux.musicplayer.update.UpdateManager.checkForUpdates(
+                        BuildConfig.VERSION_NAME
+                    )
+            ) {
                 is com.HrshD1eux.musicplayer.update.UpdateResult.Available -> {
                     if (!isAdded) return@launch
-                    com.google.android.material.dialog.MaterialAlertDialogBuilder(requireContext())
+                    com.google.android.material.dialog
+                        .MaterialAlertDialogBuilder(requireContext())
                         .setTitle(getString(R.string.msg_update_available, result.version))
                         .setMessage(result.releaseNotes)
                         .setPositiveButton(R.string.btn_download_install) { _, _ ->
                             val currentBinding = binding ?: return@setPositiveButton
                             com.google.android.material.snackbar.Snackbar.make(
-                                currentBinding.root,
-                                R.string.msg_downloading_update,
-                                com.google.android.material.snackbar.Snackbar.LENGTH_LONG,
-                            ).show()
+                                    currentBinding.root,
+                                    R.string.msg_downloading_update,
+                                    com.google.android.material.snackbar.Snackbar.LENGTH_LONG,
+                                )
+                                .show()
                             com.HrshD1eux.musicplayer.update.UpdateManager.startDownloadAndInstall(
                                 requireContext(),
                                 result.downloadUrl,
@@ -120,19 +128,21 @@ class AboutFragment : ViewBindingFragment<FragmentAboutBinding>() {
                     if (!isAdded) return@launch
                     val currentBinding = binding ?: return@launch
                     com.google.android.material.snackbar.Snackbar.make(
-                        currentBinding.root,
-                        getString(R.string.msg_latest_version, BuildConfig.VERSION_NAME),
-                        com.google.android.material.snackbar.Snackbar.LENGTH_SHORT,
-                    ).show()
+                            currentBinding.root,
+                            getString(R.string.msg_latest_version, BuildConfig.VERSION_NAME),
+                            com.google.android.material.snackbar.Snackbar.LENGTH_SHORT,
+                        )
+                        .show()
                 }
                 is com.HrshD1eux.musicplayer.update.UpdateResult.Error -> {
                     if (!isAdded) return@launch
                     val currentBinding = binding ?: return@launch
                     com.google.android.material.snackbar.Snackbar.make(
-                        currentBinding.root,
-                        result.message,
-                        com.google.android.material.snackbar.Snackbar.LENGTH_LONG,
-                    ).show()
+                            currentBinding.root,
+                            result.message,
+                            com.google.android.material.snackbar.Snackbar.LENGTH_LONG,
+                        )
+                        .show()
                 }
             }
         }

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2025 Music Player Project
  * MediaStore.kt is part of Music Player.
  *

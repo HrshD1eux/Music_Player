@@ -21,7 +21,6 @@ package com.HrshD1eux.musicplayer.list.recycler
 import android.annotation.SuppressLint
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.divider.MaterialDivider
 import com.HrshD1eux.musicplayer.IntegerTable
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.ItemHeaderBinding
@@ -38,6 +37,7 @@ import com.HrshD1eux.musicplayer.music.resolveNames
 import com.HrshD1eux.musicplayer.util.context
 import com.HrshD1eux.musicplayer.util.getPlural
 import com.HrshD1eux.musicplayer.util.inflater
+import com.google.android.material.divider.MaterialDivider
 import org.oxycblt.musikr.Album
 import org.oxycblt.musikr.Artist
 import org.oxycblt.musikr.Genre

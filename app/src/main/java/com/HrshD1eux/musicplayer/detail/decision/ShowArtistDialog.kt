@@ -26,7 +26,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
-import dagger.hilt.android.AndroidEntryPoint
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.DialogMusicChoicesBinding
 import com.HrshD1eux.musicplayer.detail.DetailViewModel
@@ -34,6 +33,7 @@ import com.HrshD1eux.musicplayer.list.ClickableListListener
 import com.HrshD1eux.musicplayer.list.adapter.UpdateInstructions
 import com.HrshD1eux.musicplayer.ui.ViewBindingMaterialDialogFragment
 import com.HrshD1eux.musicplayer.util.collectImmediately
+import dagger.hilt.android.AndroidEntryPoint
 import org.oxycblt.musikr.Artist
 import timber.log.Timber as L
 

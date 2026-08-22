@@ -20,8 +20,8 @@ package com.HrshD1eux.musicplayer.list.menu
 
 import android.os.Parcelable
 import androidx.annotation.MenuRes
-import kotlinx.parcelize.Parcelize
 import com.HrshD1eux.musicplayer.playback.PlaySong
+import kotlinx.parcelize.Parcelize
 import org.oxycblt.musikr.Album
 import org.oxycblt.musikr.Artist
 import org.oxycblt.musikr.Genre

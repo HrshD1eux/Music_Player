@@ -23,12 +23,12 @@ import androidx.media3.common.Format
 import androidx.media3.common.Player
 import androidx.media3.common.audio.AudioProcessor
 import androidx.media3.common.audio.BaseAudioProcessor
-import java.nio.ByteBuffer
-import javax.inject.Inject
-import kotlin.math.pow
 import com.HrshD1eux.musicplayer.playback.PlaybackSettings
 import com.HrshD1eux.musicplayer.playback.state.PlaybackStateManager
 import com.HrshD1eux.musicplayer.playback.state.QueueChange
+import java.nio.ByteBuffer
+import javax.inject.Inject
+import kotlin.math.pow
 import org.oxycblt.musikr.Album
 import org.oxycblt.musikr.MusicParent
 import org.oxycblt.musikr.Song

@@ -23,13 +23,12 @@ import android.content.Intent
 import androidx.core.content.pm.ShortcutInfoCompat
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
-import dagger.hilt.android.HiltAndroidApp
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.home.HomeSettings
 import com.HrshD1eux.musicplayer.image.ImageSettings
 import com.HrshD1eux.musicplayer.playback.PlaybackSettings
 import com.HrshD1eux.musicplayer.ui.UISettings
-import com.HrshD1eux.musicplayer.util.CopyleftNoticeTree
+import dagger.hilt.android.HiltAndroidApp
+import javax.inject.Inject
 import timber.log.Timber
 
 /**

@@ -19,8 +19,8 @@
 package com.HrshD1eux.musicplayer.playback.replaygain
 
 import android.content.Context
-import kotlin.math.abs
 import com.HrshD1eux.musicplayer.R
+import kotlin.math.abs
 
 /**
  * Format a decibel value in a human-readable format.

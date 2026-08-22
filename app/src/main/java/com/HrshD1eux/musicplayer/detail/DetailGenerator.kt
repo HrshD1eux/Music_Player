@@ -19,12 +19,12 @@
 package com.HrshD1eux.musicplayer.detail
 
 import androidx.annotation.StringRes
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.list.ListSettings
 import com.HrshD1eux.musicplayer.list.sort.Sort
 import com.HrshD1eux.musicplayer.music.MusicRepository
 import com.HrshD1eux.musicplayer.music.MusicType
+import javax.inject.Inject
 import org.oxycblt.musikr.Album
 import org.oxycblt.musikr.Artist
 import org.oxycblt.musikr.Genre

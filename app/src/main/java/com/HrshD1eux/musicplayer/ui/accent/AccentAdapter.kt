@@ -23,12 +23,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.TooltipCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.R as MR
 import com.HrshD1eux.musicplayer.databinding.ItemAccentBinding
 import com.HrshD1eux.musicplayer.list.ClickableListListener
 import com.HrshD1eux.musicplayer.util.getAttrColorCompat
 import com.HrshD1eux.musicplayer.util.getColorCompat
 import com.HrshD1eux.musicplayer.util.inflater
+import com.google.android.material.R as MR
 
 /**
  * A [RecyclerView.Adapter] that displays [Accent] choices.

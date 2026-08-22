@@ -34,8 +34,6 @@ import androidx.core.view.updatePadding
 import androidx.dynamicanimation.animation.SpringForce
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import dagger.hilt.android.AndroidEntryPoint
-import kotlin.math.abs
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.FragmentPlaybackPanelBinding
 import com.HrshD1eux.musicplayer.detail.DetailViewModel
@@ -57,6 +55,8 @@ import com.HrshD1eux.musicplayer.util.recycler
 import com.HrshD1eux.musicplayer.util.showToast
 import com.HrshD1eux.musicplayer.util.smoothScrollByPageTo
 import com.HrshD1eux.musicplayer.util.systemBarInsetsCompat
+import dagger.hilt.android.AndroidEntryPoint
+import kotlin.math.abs
 import org.oxycblt.musikr.MusicParent
 import org.oxycblt.musikr.Song
 import timber.log.Timber as L

@@ -24,7 +24,6 @@ import android.os.Build
 import coil3.request.ImageRequest
 import coil3.request.transformations
 import coil3.size.Size
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.image.BitmapProvider
 import com.HrshD1eux.musicplayer.image.ImageSettings
@@ -36,6 +35,7 @@ import com.HrshD1eux.musicplayer.playback.state.QueueChange
 import com.HrshD1eux.musicplayer.playback.state.RepeatMode
 import com.HrshD1eux.musicplayer.ui.UISettings
 import com.HrshD1eux.musicplayer.util.getDimenPixels
+import javax.inject.Inject
 import org.oxycblt.musikr.MusicParent
 import org.oxycblt.musikr.Song
 import timber.log.Timber as L

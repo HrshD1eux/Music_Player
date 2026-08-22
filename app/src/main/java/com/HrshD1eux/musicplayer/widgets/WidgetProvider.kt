@@ -33,7 +33,6 @@ import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.music.resolve
 import com.HrshD1eux.musicplayer.music.resolveNames
 import com.HrshD1eux.musicplayer.playback.service.PlaybackActions
-import com.HrshD1eux.musicplayer.playback.state.RepeatMode
 import com.HrshD1eux.musicplayer.ui.UISettings
 import com.HrshD1eux.musicplayer.ui.UISettingsImpl
 import com.HrshD1eux.musicplayer.util.newBroadcastPendingIntent

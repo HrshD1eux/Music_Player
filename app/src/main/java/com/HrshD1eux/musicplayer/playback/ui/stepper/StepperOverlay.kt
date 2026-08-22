@@ -28,13 +28,13 @@ import android.view.MotionEvent
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.withStyledAttributes
 import androidx.dynamicanimation.animation.SpringAnimation
+import com.HrshD1eux.musicplayer.R
+import com.HrshD1eux.musicplayer.ui.Effect
+import com.HrshD1eux.musicplayer.ui.UISettings
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.ShapeAppearanceModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import com.HrshD1eux.musicplayer.R
-import com.HrshD1eux.musicplayer.ui.Effect
-import com.HrshD1eux.musicplayer.ui.UISettings
 
 enum class Direction {
     FORWARDS,

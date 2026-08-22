@@ -43,10 +43,10 @@ import androidx.core.view.get
 import androidx.core.view.isNotEmpty
 import androidx.core.view.isVisible
 import androidx.core.view.size
-import com.google.android.material.R as MR
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.ViewToolbarBinding
 import com.HrshD1eux.musicplayer.util.unlikelyToBeNull
+import com.google.android.material.R as MR
 
 /**
  * Minimal MaterialToolbar replacement that implements everything with MaterialButtons compared to

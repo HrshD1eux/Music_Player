@@ -59,9 +59,10 @@ abstract class CoverCompositionFetcher(
                 .mapNotNull { cover ->
                     try {
                         cover.open()?.use { stream ->
-                            val options = BitmapFactory.Options().apply {
-                                inPreferredConfig = Bitmap.Config.RGB_565
-                            }
+                            val options =
+                                BitmapFactory.Options().apply {
+                                    inPreferredConfig = Bitmap.Config.RGB_565
+                                }
                             BitmapFactory.decodeStream(stream, null, options)
                         }
                     } catch (e: Exception) {

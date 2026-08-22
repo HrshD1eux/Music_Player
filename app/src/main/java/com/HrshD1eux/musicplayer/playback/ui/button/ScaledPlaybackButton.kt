@@ -23,6 +23,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.ViewGroup
 import androidx.annotation.AttrRes
+import com.HrshD1eux.musicplayer.util.lazyReflectedMethod
 import com.google.android.material.R
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.shape.AbsoluteCornerSize
@@ -33,7 +34,6 @@ import com.google.android.material.shape.ShapeAppearanceModel
 import com.google.android.material.shape.StateListShapeAppearanceModel
 import java.lang.reflect.Method
 import kotlin.math.max
-import com.HrshD1eux.musicplayer.util.lazyReflectedMethod
 
 /**
  * Companion scalable button to [ScaledPlaybackButtonGroup], see that.

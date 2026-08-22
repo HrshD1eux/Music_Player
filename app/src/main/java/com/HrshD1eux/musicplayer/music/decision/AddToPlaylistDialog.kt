@@ -27,7 +27,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.RecyclerView
-import dagger.hilt.android.AndroidEntryPoint
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.DialogMusicChoicesBinding
 import com.HrshD1eux.musicplayer.list.ClickableListListener
@@ -36,6 +35,7 @@ import com.HrshD1eux.musicplayer.music.PlaylistDecision
 import com.HrshD1eux.musicplayer.ui.ViewBindingMaterialDialogFragment
 import com.HrshD1eux.musicplayer.util.collectImmediately
 import com.HrshD1eux.musicplayer.util.navigateSafe
+import dagger.hilt.android.AndroidEntryPoint
 import org.oxycblt.musikr.Song
 import timber.log.Timber as L
 

@@ -30,19 +30,6 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.R as MR
-import com.google.android.material.bottomsheet.BackportBottomSheetBehavior
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.shape.MaterialShapeDrawable
-import com.google.android.material.shape.ShapeAppearanceModel
-import com.google.android.material.transition.MaterialFadeThrough
-import com.leinardi.android.speeddial.SpeedDialActionItem
-import com.leinardi.android.speeddial.SpeedDialView
-import dagger.hilt.android.AndroidEntryPoint
-import java.lang.reflect.Method
-import javax.inject.Inject
-import kotlin.math.max
-import kotlin.math.min
 import com.HrshD1eux.musicplayer.databinding.FragmentMainBinding
 import com.HrshD1eux.musicplayer.detail.DetailViewModel
 import com.HrshD1eux.musicplayer.detail.Show
@@ -68,6 +55,19 @@ import com.HrshD1eux.musicplayer.util.getDimen
 import com.HrshD1eux.musicplayer.util.lazyReflectedMethod
 import com.HrshD1eux.musicplayer.util.navigateSafe
 import com.HrshD1eux.musicplayer.util.unlikelyToBeNull
+import com.google.android.material.R as MR
+import com.google.android.material.bottomsheet.BackportBottomSheetBehavior
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.shape.MaterialShapeDrawable
+import com.google.android.material.shape.ShapeAppearanceModel
+import com.google.android.material.transition.MaterialFadeThrough
+import com.leinardi.android.speeddial.SpeedDialActionItem
+import com.leinardi.android.speeddial.SpeedDialView
+import dagger.hilt.android.AndroidEntryPoint
+import java.lang.reflect.Method
+import javax.inject.Inject
+import kotlin.math.max
+import kotlin.math.min
 import org.oxycblt.musikr.Music
 import org.oxycblt.musikr.Song
 import timber.log.Timber as L

@@ -32,7 +32,6 @@ import androidx.room.RoomDatabase
 import androidx.room.Transaction
 import androidx.room.TypeConverters
 import androidx.room.migration.Migration
-import androidx.sqlite.SQLiteConnection
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.sqlite.db.SupportSQLiteQueryBuilder
 import org.oxycblt.musikr.Music
@@ -60,46 +59,56 @@ internal abstract class PlaylistDatabase : RoomDatabase() {
                 )
                 .addMigrations(
                     object : Migration(30, 75) {
-                        private fun washUids(db: SupportSQLiteDatabase, table: String, column: String) {
-                            val playlistUidMigration = db.query(
-                                SupportSQLiteQueryBuilder.builder(table)
-                                    .columns(arrayOf(column))
-                                    .create()
-                            ).use {
-                                val migrations = mutableListOf<Pair<String, String>>()
-                                val playlistUidIndex = it.getColumnIndexOrThrow(column)
-                                while (it.moveToNext()) {
-                                    val oldUid =
-                                        requireNotNull(it.getStringOrNull(playlistUidIndex)) { "catastrophic migration failure: $table has no UID" }
-                                    val newUid =
-                                        requireNotNull(Music.UID.fromString(oldUid)) { "catastrophic migration failure: $table has bad UID" }.toString()
-                                    migrations.add(oldUid to newUid)
-                                }
-                                migrations
-                            }
+                        private fun washUids(
+                            db: SupportSQLiteDatabase,
+                            table: String,
+                            column: String,
+                        ) {
+                            val playlistUidMigration =
+                                db.query(
+                                        SupportSQLiteQueryBuilder.builder(table)
+                                            .columns(arrayOf(column))
+                                            .create()
+                                    )
+                                    .use {
+                                        val migrations = mutableListOf<Pair<String, String>>()
+                                        val playlistUidIndex = it.getColumnIndexOrThrow(column)
+                                        while (it.moveToNext()) {
+                                            val oldUid =
+                                                requireNotNull(
+                                                    it.getStringOrNull(playlistUidIndex)
+                                                ) {
+                                                    "catastrophic migration failure: $table has no UID"
+                                                }
+                                            val newUid =
+                                                requireNotNull(Music.UID.fromString(oldUid)) {
+                                                        "catastrophic migration failure: $table has bad UID"
+                                                    }
+                                                    .toString()
+                                            migrations.add(oldUid to newUid)
+                                        }
+                                        migrations
+                                    }
                             for ((old, new) in playlistUidMigration) {
                                 db.update(
                                     table,
                                     SQLiteDatabase.CONFLICT_REPLACE,
-                                    ContentValues().apply {
-                                        put(column, old)
-                                    },
+                                    ContentValues().apply { put(column, old) },
                                     "$column = ?",
-                                    arrayOf(new)
+                                    arrayOf(new),
                                 )
                             }
                             for ((old, new) in playlistUidMigration) {
                                 db.update(
                                     table,
                                     SQLiteDatabase.CONFLICT_REPLACE,
-                                    ContentValues().apply {
-                                        put(column, new)
-                                    },
+                                    ContentValues().apply { put(column, new) },
                                     "$column = ?",
-                                    arrayOf(old)
+                                    arrayOf(old),
                                 )
                             }
                         }
+
                         override fun migrate(db: SupportSQLiteDatabase) {
                             washUids(db, "PlaylistInfo", "playlistUid")
                             washUids(db, "PlaylistSongCrossRef", "playlistUid")
@@ -224,6 +233,8 @@ internal abstract class PlaylistDao {
     abstract suspend fun deleteRefs(playlistUid: Music.UID)
 
     /** Automatically prune dead songs not associated with any playlist. */
-    @Query("DELETE FROM PlaylistSong WHERE songUid NOT IN (SELECT DISTINCT songUid FROM PlaylistSongCrossRef)")
+    @Query(
+        "DELETE FROM PlaylistSong WHERE songUid NOT IN (SELECT DISTINCT songUid FROM PlaylistSongCrossRef)"
+    )
     abstract suspend fun pruneOrphanedSongs()
 }

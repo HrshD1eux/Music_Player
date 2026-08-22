@@ -23,14 +23,14 @@ import android.os.Bundle
 import android.support.v4.media.MediaBrowserCompat.MediaItem
 import androidx.media.MediaBrowserServiceCompat.BrowserRoot
 import androidx.media.MediaBrowserServiceCompat.Result
+import com.HrshD1eux.musicplayer.ForegroundListener
+import com.HrshD1eux.musicplayer.ForegroundServiceNotification
+import com.HrshD1eux.musicplayer.music.MusicRepository
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import com.HrshD1eux.musicplayer.ForegroundListener
-import com.HrshD1eux.musicplayer.ForegroundServiceNotification
-import com.HrshD1eux.musicplayer.music.MusicRepository
 import timber.log.Timber as L
 
 class MusicServiceFragment

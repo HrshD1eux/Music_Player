@@ -20,13 +20,6 @@ package com.HrshD1eux.musicplayer.playback
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
 import com.HrshD1eux.musicplayer.list.ListSettings
 import com.HrshD1eux.musicplayer.list.adapter.UpdateInstructions
 import com.HrshD1eux.musicplayer.playback.state.DeferredPlayback
@@ -38,6 +31,13 @@ import com.HrshD1eux.musicplayer.playback.state.RepeatMode
 import com.HrshD1eux.musicplayer.playback.state.ShuffleMode
 import com.HrshD1eux.musicplayer.util.Event
 import com.HrshD1eux.musicplayer.util.MutableEvent
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 import org.oxycblt.musikr.Album
 import org.oxycblt.musikr.Artist
 import org.oxycblt.musikr.Genre

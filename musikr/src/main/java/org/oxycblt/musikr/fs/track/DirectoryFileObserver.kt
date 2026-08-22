@@ -25,8 +25,8 @@ import java.io.File
 import java.util.concurrent.ConcurrentHashMap
 
 /**
- * A multi-directory recursive [FileObserver] that monitors target folders for real-time
- * filesystem modifications, bypassing Android's sluggish background MediaStore polling.
+ * A multi-directory recursive [FileObserver] that monitors target folders for real-time filesystem
+ * modifications, bypassing Android's sluggish background MediaStore polling.
  */
 internal class DirectoryFileObserver(
     private val rootPaths: List<String>,
@@ -98,7 +98,11 @@ internal class DirectoryFileObserver(
 
         val children = dir.listFiles() ?: return
         for (child in children) {
-            if (child.isDirectory && !child.name.startsWith(".") && !File(child, ".nomedia").exists()) {
+            if (
+                child.isDirectory &&
+                    !child.name.startsWith(".") &&
+                    !File(child, ".nomedia").exists()
+            ) {
                 watchDirectoryRecursively(child)
             }
         }

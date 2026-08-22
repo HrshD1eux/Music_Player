@@ -27,10 +27,10 @@ import androidx.core.view.isInvisible
 import androidx.core.view.updatePadding
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.divider.MaterialDivider
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.list.recycler.DialogRecyclerView.ViewHolder
 import com.HrshD1eux.musicplayer.util.getDimenPixels
+import com.google.android.material.divider.MaterialDivider
 
 /**
  * A [RecyclerView] intended for use in Dialogs, adding features such as:

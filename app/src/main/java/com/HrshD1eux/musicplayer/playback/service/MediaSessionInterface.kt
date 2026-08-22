@@ -25,9 +25,6 @@ import android.provider.MediaStore
 import android.support.v4.media.MediaDescriptionCompat
 import android.support.v4.media.session.MediaSessionCompat
 import android.support.v4.media.session.PlaybackStateCompat
-import dagger.hilt.android.qualifiers.ApplicationContext
-import javax.inject.Inject
-import org.apache.commons.text.similarity.JaroWinklerSimilarity
 import com.HrshD1eux.musicplayer.BuildConfig
 import com.HrshD1eux.musicplayer.music.MusicRepository
 import com.HrshD1eux.musicplayer.music.resolve
@@ -37,6 +34,9 @@ import com.HrshD1eux.musicplayer.playback.state.PlaybackCommand
 import com.HrshD1eux.musicplayer.playback.state.PlaybackStateManager
 import com.HrshD1eux.musicplayer.playback.state.RepeatMode
 import com.HrshD1eux.musicplayer.playback.state.ShuffleMode
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
+import org.apache.commons.text.similarity.JaroWinklerSimilarity
 import org.oxycblt.musikr.Album
 import org.oxycblt.musikr.Artist
 import org.oxycblt.musikr.Genre

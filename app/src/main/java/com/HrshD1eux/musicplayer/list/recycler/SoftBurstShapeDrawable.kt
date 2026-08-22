@@ -29,13 +29,13 @@ import android.graphics.PixelFormat
 import android.graphics.Rect
 import android.graphics.RectF
 import android.graphics.drawable.Drawable
+import com.HrshD1eux.musicplayer.ui.ExpressiveShapes
+import com.HrshD1eux.musicplayer.util.getAttrColorCompat
 import com.google.android.material.R as MR
 import kotlin.math.hypot
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.roundToInt
-import com.HrshD1eux.musicplayer.ui.ExpressiveShapes
-import com.HrshD1eux.musicplayer.util.getAttrColorCompat
 
 /**
  * A drawable that fills its bounds with the expressive soft-burst shape.

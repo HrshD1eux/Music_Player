@@ -20,10 +20,10 @@ package com.HrshD1eux.musicplayer.image.covers
 
 import android.content.Context
 import android.graphics.Bitmap
-import java.util.UUID
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.image.CoverMode
 import com.HrshD1eux.musicplayer.image.ImageSettings
+import java.util.UUID
+import javax.inject.Inject
 import org.oxycblt.musikr.covers.Cover
 import org.oxycblt.musikr.covers.Covers
 import org.oxycblt.musikr.covers.FDCover

@@ -51,14 +51,6 @@ import androidx.dynamicanimation.animation.FloatValueHolder
 import androidx.dynamicanimation.animation.SpringAnimation
 import androidx.dynamicanimation.animation.SpringForce
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.R as MR
-import com.google.android.material.motion.MotionUtils
-import com.google.android.material.textview.MaterialTextView
-import kotlin.math.abs
-import kotlin.math.hypot
-import kotlin.math.max
-import kotlin.math.min
-import kotlin.math.roundToInt
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.ui.Effect
 import com.HrshD1eux.musicplayer.ui.ExpressiveShapes
@@ -71,6 +63,14 @@ import com.HrshD1eux.musicplayer.util.isRtl
 import com.HrshD1eux.musicplayer.util.isUnder
 import com.HrshD1eux.musicplayer.util.scale
 import com.HrshD1eux.musicplayer.util.systemBarInsetsCompat
+import com.google.android.material.R as MR
+import com.google.android.material.motion.MotionUtils
+import com.google.android.material.textview.MaterialTextView
+import kotlin.math.abs
+import kotlin.math.hypot
+import kotlin.math.max
+import kotlin.math.min
+import kotlin.math.roundToInt
 
 /**
  * A [RecyclerView] that enables better fast-scrolling. This is fundamentally a implementation of

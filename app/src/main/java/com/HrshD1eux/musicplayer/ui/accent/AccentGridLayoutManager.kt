@@ -22,9 +22,9 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlin.math.max
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.util.getDimenPixels
+import kotlin.math.max
 
 /**
  * A [GridLayoutManager] that automatically sets the span size in order to use the most possible

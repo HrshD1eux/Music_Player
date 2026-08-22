@@ -21,12 +21,12 @@ package com.HrshD1eux.musicplayer.detail.sort
 import android.os.Bundle
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import dagger.hilt.android.AndroidEntryPoint
 import com.HrshD1eux.musicplayer.databinding.DialogSortBinding
 import com.HrshD1eux.musicplayer.detail.DetailViewModel
 import com.HrshD1eux.musicplayer.list.sort.Sort
 import com.HrshD1eux.musicplayer.list.sort.SortDialog
 import com.HrshD1eux.musicplayer.util.collectImmediately
+import dagger.hilt.android.AndroidEntryPoint
 import org.oxycblt.musikr.Album
 import timber.log.Timber as L
 

@@ -18,8 +18,8 @@
  
 package com.HrshD1eux.musicplayer.util
 
-import kotlin.reflect.KClass
 import com.HrshD1eux.musicplayer.BuildConfig
+import kotlin.reflect.KClass
 
 /**
  * Sanitizes a value that is unlikely to be null. On debug builds, this aliases to [requireNotNull],

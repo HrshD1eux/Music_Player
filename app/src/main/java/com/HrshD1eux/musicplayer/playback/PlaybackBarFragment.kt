@@ -21,7 +21,6 @@ package com.HrshD1eux.musicplayer.playback
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.fragment.app.activityViewModels
-import dagger.hilt.android.AndroidEntryPoint
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.FragmentPlaybackBarBinding
 import com.HrshD1eux.musicplayer.detail.DetailViewModel
@@ -30,6 +29,7 @@ import com.HrshD1eux.musicplayer.music.resolveNames
 import com.HrshD1eux.musicplayer.playback.state.RepeatMode
 import com.HrshD1eux.musicplayer.ui.ViewBindingFragment
 import com.HrshD1eux.musicplayer.util.collectImmediately
+import dagger.hilt.android.AndroidEntryPoint
 import org.oxycblt.musikr.Song
 import timber.log.Timber as L
 

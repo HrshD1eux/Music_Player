@@ -30,13 +30,13 @@ import android.graphics.Rect
 import android.graphics.RectF
 import android.graphics.drawable.Drawable
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.HrshD1eux.musicplayer.ui.ExpressiveShapes
+import com.HrshD1eux.musicplayer.util.getAttrColorCompat
 import com.google.android.material.R as MR
 import kotlin.math.hypot
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.roundToInt
-import com.HrshD1eux.musicplayer.ui.ExpressiveShapes
-import com.HrshD1eux.musicplayer.util.getAttrColorCompat
 import org.oxycblt.musikr.tag.Name
 
 fun Name.thumb() =
@@ -48,12 +48,14 @@ fun Name.thumb() =
         is Name.Unknown -> "?"
     }
 
-/**
- * Configure a [SwipeRefreshLayout] for home library list tabs.
- */
+/** Configure a [SwipeRefreshLayout] for home library list tabs. */
 fun SwipeRefreshLayout.setupHomeSwipeRefresh(context: Context, onRefresh: () -> Unit) {
-    setColorSchemeColors(context.getAttrColorCompat(androidx.appcompat.R.attr.colorPrimary).defaultColor)
-    setProgressBackgroundColorSchemeColor(context.getAttrColorCompat(MR.attr.colorSurface).defaultColor)
+    setColorSchemeColors(
+        context.getAttrColorCompat(androidx.appcompat.R.attr.colorPrimary).defaultColor
+    )
+    setProgressBackgroundColorSchemeColor(
+        context.getAttrColorCompat(MR.attr.colorSurface).defaultColor
+    )
     setOnRefreshListener(onRefresh)
 }
 

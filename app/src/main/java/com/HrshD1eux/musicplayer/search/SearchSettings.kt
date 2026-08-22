@@ -20,11 +20,11 @@ package com.HrshD1eux.musicplayer.search
 
 import android.content.Context
 import androidx.core.content.edit
-import dagger.hilt.android.qualifiers.ApplicationContext
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.music.MusicType
 import com.HrshD1eux.musicplayer.settings.Settings
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
 /**
  * User configuration specific to the search UI.

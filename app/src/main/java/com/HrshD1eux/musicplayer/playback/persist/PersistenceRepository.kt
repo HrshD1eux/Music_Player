@@ -18,9 +18,9 @@
  
 package com.HrshD1eux.musicplayer.playback.persist
 
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.music.MusicRepository
 import com.HrshD1eux.musicplayer.playback.state.PlaybackStateManager
+import javax.inject.Inject
 import org.oxycblt.musikr.MusicParent
 import timber.log.Timber as L
 
@@ -106,8 +106,7 @@ constructor(
             )
 
         // Convert the remaining queue information to their database-specific counterparts.
-        val heap =
-            state.heap.mapIndexed { i, song -> QueueHeapItem(i, requireNotNull(song).uid) }
+        val heap = state.heap.mapIndexed { i, song -> QueueHeapItem(i, requireNotNull(song).uid) }
 
         val shuffledMapping =
             state.shuffledMapping.mapIndexed { i, index -> QueueShuffledMappingItem(i, index) }

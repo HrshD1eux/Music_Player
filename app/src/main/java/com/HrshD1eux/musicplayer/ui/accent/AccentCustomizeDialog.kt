@@ -22,8 +22,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.BuildConfig
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.DialogAccentBinding
@@ -31,6 +29,8 @@ import com.HrshD1eux.musicplayer.list.ClickableListListener
 import com.HrshD1eux.musicplayer.ui.UISettings
 import com.HrshD1eux.musicplayer.ui.ViewBindingMaterialDialogFragment
 import com.HrshD1eux.musicplayer.util.unlikelyToBeNull
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import timber.log.Timber as L
 
 /**

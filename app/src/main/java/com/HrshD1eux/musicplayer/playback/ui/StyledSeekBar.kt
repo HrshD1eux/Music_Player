@@ -20,11 +20,11 @@ package com.HrshD1eux.musicplayer.playback.ui
 
 import android.content.Context
 import android.util.AttributeSet
-import com.google.android.material.slider.Slider
-import kotlin.math.max
 import com.HrshD1eux.musicplayer.databinding.ViewSeekBarBinding
 import com.HrshD1eux.musicplayer.playback.formatDurationDs
 import com.HrshD1eux.musicplayer.util.inflater
+import com.google.android.material.slider.Slider
+import kotlin.math.max
 import timber.log.Timber as L
 
 /**

@@ -27,10 +27,10 @@ import androidx.core.content.res.getTextArrayOrThrow
 import androidx.preference.DialogPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceViewHolder
-import java.lang.reflect.Field
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.util.getInteger
 import com.HrshD1eux.musicplayer.util.lazyReflectedField
+import java.lang.reflect.Field
 
 /**
  * An implementation of a list-based preference backed with integers.

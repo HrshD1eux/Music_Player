@@ -67,9 +67,7 @@ class PlaylistListFragment :
     override fun onBindingCreated(binding: FragmentHomeListBinding, savedInstanceState: Bundle?) {
         super.onBindingCreated(binding, savedInstanceState)
 
-        binding.homeSwipeRefresh.setupHomeSwipeRefresh(requireContext()) {
-            musicModel.refresh()
-        }
+        binding.homeSwipeRefresh.setupHomeSwipeRefresh(requireContext()) { musicModel.refresh() }
 
         binding.homeRecycler.apply {
             id = R.id.home_playlist_recycler

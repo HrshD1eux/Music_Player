@@ -20,7 +20,6 @@ package com.HrshD1eux.musicplayer.music.service
 
 import android.content.Context
 import android.support.v4.media.MediaBrowserCompat.MediaItem
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.BuildConfig
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.detail.DetailGenerator
@@ -31,6 +30,7 @@ import com.HrshD1eux.musicplayer.music.MusicRepository
 import com.HrshD1eux.musicplayer.music.MusicType
 import com.HrshD1eux.musicplayer.music.resolve
 import com.HrshD1eux.musicplayer.search.SearchEngine
+import javax.inject.Inject
 import org.oxycblt.musikr.Album
 import org.oxycblt.musikr.Artist
 import org.oxycblt.musikr.Genre

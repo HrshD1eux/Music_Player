@@ -31,8 +31,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.google.android.material.transition.MaterialSharedAxis
-import dagger.hilt.android.AndroidEntryPoint
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.FragmentSearchBinding
 import com.HrshD1eux.musicplayer.detail.DetailViewModel
@@ -57,6 +55,8 @@ import com.HrshD1eux.musicplayer.util.getSystemServiceCompat
 import com.HrshD1eux.musicplayer.util.navigateSafe
 import com.HrshD1eux.musicplayer.util.setFullWidthLookup
 import com.HrshD1eux.musicplayer.util.showToast
+import com.google.android.material.transition.MaterialSharedAxis
+import dagger.hilt.android.AndroidEntryPoint
 import org.oxycblt.musikr.Album
 import org.oxycblt.musikr.Artist
 import org.oxycblt.musikr.Genre

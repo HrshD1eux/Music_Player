@@ -19,10 +19,10 @@
 package com.HrshD1eux.musicplayer.search
 
 import android.content.Context
+import com.HrshD1eux.musicplayer.music.resolve
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.text.Normalizer
 import javax.inject.Inject
-import com.HrshD1eux.musicplayer.music.resolve
 import org.oxycblt.musikr.Album
 import org.oxycblt.musikr.Artist
 import org.oxycblt.musikr.Genre

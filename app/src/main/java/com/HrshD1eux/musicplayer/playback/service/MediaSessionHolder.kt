@@ -34,7 +34,6 @@ import androidx.media.session.MediaButtonReceiver
 import coil3.request.CachePolicy
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.BuildConfig
 import com.HrshD1eux.musicplayer.ForegroundListener
 import com.HrshD1eux.musicplayer.ForegroundServiceNotification
@@ -52,6 +51,7 @@ import com.HrshD1eux.musicplayer.playback.state.QueueChange
 import com.HrshD1eux.musicplayer.playback.state.RepeatMode
 import com.HrshD1eux.musicplayer.util.newBroadcastPendingIntent
 import com.HrshD1eux.musicplayer.util.newMainPendingIntent
+import javax.inject.Inject
 import org.oxycblt.musikr.MusicParent
 import org.oxycblt.musikr.Song
 import timber.log.Timber as L

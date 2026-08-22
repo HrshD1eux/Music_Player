@@ -34,10 +34,6 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.appbar.AppBarLayout
-import com.google.android.material.tabs.TabLayoutMediator
-import com.google.android.material.transition.MaterialSharedAxis
-import dagger.hilt.android.AndroidEntryPoint
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.FragmentHomeBinding
 import com.HrshD1eux.musicplayer.detail.DetailViewModel
@@ -65,6 +61,10 @@ import com.HrshD1eux.musicplayer.util.collectImmediately
 import com.HrshD1eux.musicplayer.util.dampen
 import com.HrshD1eux.musicplayer.util.navigateSafe
 import com.HrshD1eux.musicplayer.util.showToast
+import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import com.google.android.material.transition.MaterialSharedAxis
+import dagger.hilt.android.AndroidEntryPoint
 import org.oxycblt.musikr.IndexingProgress
 import org.oxycblt.musikr.Music
 import org.oxycblt.musikr.Playlist

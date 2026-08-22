@@ -26,7 +26,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import dagger.hilt.android.AndroidEntryPoint
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.DialogPlaylistNameBinding
 import com.HrshD1eux.musicplayer.music.MusicViewModel
@@ -34,6 +33,7 @@ import com.HrshD1eux.musicplayer.music.resolve
 import com.HrshD1eux.musicplayer.ui.ViewBindingMaterialDialogFragment
 import com.HrshD1eux.musicplayer.util.collectImmediately
 import com.HrshD1eux.musicplayer.util.unlikelyToBeNull
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber as L
 
 /**

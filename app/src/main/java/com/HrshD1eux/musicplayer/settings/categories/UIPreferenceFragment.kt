@@ -20,14 +20,14 @@ package com.HrshD1eux.musicplayer.settings.categories
 
 import androidx.navigation.fragment.findNavController
 import androidx.preference.Preference
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.settings.BasePreferenceFragment
 import com.HrshD1eux.musicplayer.settings.ui.WrappedDialogPreference
 import com.HrshD1eux.musicplayer.ui.UISettings
 import com.HrshD1eux.musicplayer.util.isNight
 import com.HrshD1eux.musicplayer.util.navigateSafe
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import timber.log.Timber as L
 
 /**

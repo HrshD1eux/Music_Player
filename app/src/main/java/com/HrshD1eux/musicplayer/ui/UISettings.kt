@@ -22,11 +22,11 @@ import android.content.Context
 import android.os.Build
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.edit
-import dagger.hilt.android.qualifiers.ApplicationContext
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.settings.Settings
 import com.HrshD1eux.musicplayer.ui.accent.Accent
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 import timber.log.Timber as L
 
 /**

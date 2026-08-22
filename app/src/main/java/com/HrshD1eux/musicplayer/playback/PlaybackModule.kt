@@ -18,13 +18,13 @@
  
 package com.HrshD1eux.musicplayer.playback
 
+import com.HrshD1eux.musicplayer.playback.state.PlaybackStateManager
+import com.HrshD1eux.musicplayer.playback.state.PlaybackStateManagerImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
-import com.HrshD1eux.musicplayer.playback.state.PlaybackStateManager
-import com.HrshD1eux.musicplayer.playback.state.PlaybackStateManagerImpl
 
 @Module
 @InstallIn(SingletonComponent::class)

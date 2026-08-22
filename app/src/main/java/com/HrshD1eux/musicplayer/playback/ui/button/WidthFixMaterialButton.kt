@@ -22,12 +22,12 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.annotation.AttrRes
 import androidx.annotation.DrawableRes
-import com.google.android.material.R
 import com.HrshD1eux.musicplayer.ui.RippleFixMaterialButton
+import com.google.android.material.R
 
 /**
- * [com.HrshD1eux.musicplayer.ui.RippleFixMaterialButton] that works around another bug where switching the
- * icon during a press breaks width expansion animations.
+ * [com.HrshD1eux.musicplayer.ui.RippleFixMaterialButton] that works around another bug where
+ * switching the icon during a press breaks width expansion animations.
  *
  * @author HrshD1eux
  *

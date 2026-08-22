@@ -27,10 +27,10 @@ import androidx.core.view.isInvisible
 import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.FloatValueHolder
 import androidx.dynamicanimation.animation.SpringAnimation
+import com.HrshD1eux.musicplayer.util.scale
 import com.google.android.material.R as MR
 import com.google.android.material.motion.MotionUtils
 import com.google.android.material.shape.MaterialShapeDrawable
-import com.HrshD1eux.musicplayer.util.scale
 
 private const val MIN_VISIBLE_CHANGE_DRAWABLE_ALPHA = 1f
 

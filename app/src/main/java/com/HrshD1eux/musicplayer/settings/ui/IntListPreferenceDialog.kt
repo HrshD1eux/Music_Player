@@ -22,10 +22,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.AppCompatButton
 import androidx.preference.PreferenceDialogFragmentCompat
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.HrshD1eux.musicplayer.BuildConfig
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.util.fixDoubleRipple
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 /**
  * The companion dialog to [IntListPreference]. Use [from] to create an instance.

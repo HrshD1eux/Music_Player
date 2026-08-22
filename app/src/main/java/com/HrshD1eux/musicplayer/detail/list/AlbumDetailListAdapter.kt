@@ -23,7 +23,6 @@ import androidx.core.view.isGone
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.divider.MaterialDivider
 import com.HrshD1eux.musicplayer.IntegerTable
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.ItemAlbumSongBinding
@@ -44,6 +43,7 @@ import com.HrshD1eux.musicplayer.playback.formatDurationMs
 import com.HrshD1eux.musicplayer.util.context
 import com.HrshD1eux.musicplayer.util.getAttrColorCompat
 import com.HrshD1eux.musicplayer.util.inflater
+import com.google.android.material.divider.MaterialDivider
 import org.oxycblt.musikr.Album
 import org.oxycblt.musikr.Song
 import org.oxycblt.musikr.tag.Disc

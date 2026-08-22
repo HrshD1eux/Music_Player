@@ -48,13 +48,6 @@ import coil3.request.ImageRequest
 import coil3.request.target
 import coil3.request.transformations
 import coil3.util.CoilUtils
-import com.google.android.material.R as MR
-import com.google.android.material.shape.MaterialShapeDrawable
-import com.google.android.material.shape.RelativeCornerSize
-import com.google.android.material.shape.ShapeAppearanceModel
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
-import kotlin.math.min
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.image.coil.GalleryCoverCollection
 import com.HrshD1eux.musicplayer.image.coil.RoundedRectTransformation
@@ -68,6 +61,13 @@ import com.HrshD1eux.musicplayer.util.getAttrColorCompat
 import com.HrshD1eux.musicplayer.util.getColorCompat
 import com.HrshD1eux.musicplayer.util.getDimenPixels
 import com.HrshD1eux.musicplayer.util.getDrawableCompat
+import com.google.android.material.R as MR
+import com.google.android.material.shape.MaterialShapeDrawable
+import com.google.android.material.shape.RelativeCornerSize
+import com.google.android.material.shape.ShapeAppearanceModel
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
+import kotlin.math.min
 import org.oxycblt.musikr.Album
 import org.oxycblt.musikr.Artist
 import org.oxycblt.musikr.Genre

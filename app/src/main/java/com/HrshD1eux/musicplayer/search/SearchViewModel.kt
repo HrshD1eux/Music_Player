@@ -20,15 +20,6 @@ package com.HrshD1eux.musicplayer.search
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import kotlinx.coroutines.yield
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.list.BasicHeader
 import com.HrshD1eux.musicplayer.list.Item
@@ -38,6 +29,15 @@ import com.HrshD1eux.musicplayer.music.MusicRepository
 import com.HrshD1eux.musicplayer.music.MusicType
 import com.HrshD1eux.musicplayer.playback.PlaySong
 import com.HrshD1eux.musicplayer.playback.PlaybackSettings
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import kotlinx.coroutines.yield
 import org.oxycblt.musikr.Library
 import org.oxycblt.musikr.Song
 import timber.log.Timber as L
@@ -108,9 +108,7 @@ constructor(
             viewModelScope.launch(Dispatchers.Default) {
                 val results = searchImpl(library, query)
                 yield()
-                withContext(Dispatchers.Main) {
-                    _searchResults.value = results
-                }
+                withContext(Dispatchers.Main) { _searchResults.value = results }
             }
     }
 

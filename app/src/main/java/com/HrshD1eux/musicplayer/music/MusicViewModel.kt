@@ -22,6 +22,10 @@ import android.content.Context
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.HrshD1eux.musicplayer.R
+import com.HrshD1eux.musicplayer.list.ListSettings
+import com.HrshD1eux.musicplayer.util.Event
+import com.HrshD1eux.musicplayer.util.MutableEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
@@ -29,10 +33,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import com.HrshD1eux.musicplayer.R
-import com.HrshD1eux.musicplayer.list.ListSettings
-import com.HrshD1eux.musicplayer.util.Event
-import com.HrshD1eux.musicplayer.util.MutableEvent
 import org.oxycblt.musikr.Album
 import org.oxycblt.musikr.Artist
 import org.oxycblt.musikr.Genre

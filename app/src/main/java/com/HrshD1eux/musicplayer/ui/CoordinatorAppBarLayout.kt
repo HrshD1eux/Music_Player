@@ -28,8 +28,8 @@ import androidx.annotation.AttrRes
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.appbar.AppBarLayout
 import com.HrshD1eux.musicplayer.util.coordinatorLayoutBehavior
+import com.google.android.material.appbar.AppBarLayout
 import timber.log.Timber as L
 
 /**

@@ -20,13 +20,13 @@ package com.HrshD1eux.musicplayer.playback
 
 import android.content.Context
 import androidx.core.content.edit
-import dagger.hilt.android.qualifiers.ApplicationContext
-import javax.inject.Inject
 import com.HrshD1eux.musicplayer.IntegerTable
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.playback.replaygain.ReplayGainMode
 import com.HrshD1eux.musicplayer.playback.replaygain.ReplayGainPreAmp
 import com.HrshD1eux.musicplayer.settings.Settings
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 import timber.log.Timber as L
 
 /**

@@ -22,7 +22,6 @@ import android.view.MenuItem
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
-import dagger.hilt.android.AndroidEntryPoint
 import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.DialogMenuBinding
 import com.HrshD1eux.musicplayer.detail.DetailViewModel
@@ -35,6 +34,7 @@ import com.HrshD1eux.musicplayer.playback.formatDurationMs
 import com.HrshD1eux.musicplayer.util.getPlural
 import com.HrshD1eux.musicplayer.util.share
 import com.HrshD1eux.musicplayer.util.showToast
+import dagger.hilt.android.AndroidEntryPoint
 import org.oxycblt.musikr.Artist
 import org.oxycblt.musikr.Genre
 import org.oxycblt.musikr.Playlist
