@@ -15,6 +15,7 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_remote_default_cover_24"
+        android:clipToOutline="true"
         tools:ignore="ContentDescription" />
 
     <!-- Dark overlay for text readability -->
@@ -25,17 +26,19 @@
         android:alpha="0.2" />
 
     <!-- Content overlay with metadata and controls -->
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/widget_panel"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <!-- Metadata at top -->
         <LinearLayout
-            android:id="@+id/widget_metadata"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="vertical"
+            android:gravity="top"
             android:padding="@dimen/spacing_medium">
 
             <TextView
@@ -64,68 +67,48 @@
             android:id="@+id/widget_controls"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:orientation="horizontal"
             android:gravity="center"
-            android:padding="@dimen/spacing_mid_medium">
+            android:paddingStart="@dimen/spacing_mid_medium"
+            android:paddingEnd="@dimen/spacing_mid_medium"
+            android:paddingBottom="@dimen/spacing_mid_medium">
 
-            <FrameLayout
-                android:layout_width="@dimen/size_touchable_medium"
-                android:layout_height="@dimen/size_touchable_medium"
-                android:background="@drawable/ui_widget_circle_button_bg">
-
-                <ImageButton
-                    android:id="@+id/widget_skip_prev"
-                    style="@style/Widget.MusicPlayer.MaterialButton.AppWidget"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:contentDescription="@string/desc_skip_prev"
-                    android:src="@drawable/ic_skip_prev_24" />
-
-            </FrameLayout>
+            <ImageButton
+                android:id="@+id/widget_skip_prev"
+                style="@style/Widget.MusicPlayer.MaterialButton.AppWidget"
+                android:layout_width="@dimen/size_touchable_small"
+                android:layout_height="@dimen/size_touchable_small"
+                android:contentDescription="@string/desc_skip_prev"
+                android:src="@drawable/ic_skip_prev_24" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
 
-            <FrameLayout
-                android:layout_width="@dimen/size_touchable_large"
-                android:layout_height="@dimen/size_touchable_large"
-                android:background="@drawable/ui_widget_circle_button_bg">
-
-                <ImageButton
-                    android:id="@+id/widget_play_pause"
-                    style="@style/Widget.MusicPlayer.MaterialButton.AppWidget.PlayPause"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:contentDescription="@string/desc_play_pause"
-                    android:src="@drawable/ic_play_24" />
-
-            </FrameLayout>
+            <ImageButton
+                android:id="@+id/widget_play_pause"
+                style="@style/Widget.MusicPlayer.MaterialButton.AppWidget.PlayPause"
+                android:layout_width="@dimen/size_touchable_small"
+                android:layout_height="@dimen/size_touchable_small"
+                android:contentDescription="@string/desc_play_pause"
+                android:src="@drawable/ic_play_24" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
 
-            <FrameLayout
-                android:layout_width="@dimen/size_touchable_medium"
-                android:layout_height="@dimen/size_touchable_medium"
-                android:background="@drawable/ui_widget_circle_button_bg">
-
-                <ImageButton
-                    android:id="@+id/widget_skip_next"
-                    style="@style/Widget.MusicPlayer.MaterialButton.AppWidget"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:contentDescription="@string/desc_skip_next"
-                    android:src="@drawable/ic_skip_next_24" />
-
-            </FrameLayout>
+            <ImageButton
+                android:id="@+id/widget_skip_next"
+                style="@style/Widget.MusicPlayer.MaterialButton.AppWidget"
+                android:layout_width="@dimen/size_touchable_small"
+                android:layout_height="@dimen/size_touchable_small"
+                android:contentDescription="@string/desc_skip_next"
+                android:src="@drawable/ic_skip_next_24" />
 
         </LinearLayout>
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </FrameLayout>
