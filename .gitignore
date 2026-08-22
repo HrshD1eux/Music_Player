@@ -16,6 +16,7 @@ captures/
 *.key
 keystore.properties
 signing.properties
+keystore_base64.txt
 
 # Build & APKs
 *.apk
