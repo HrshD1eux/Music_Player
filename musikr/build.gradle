@@ -91,9 +91,10 @@ tasks.register("assembleTaglib", Exec, {
     doFirst {
         def ndkDir = androidComponents.sdkComponents.ndkDirectory.get().asFile.absolutePath.replace('\\', '/')
         def jniDirPath = jniDir.toString().replace('\\', '/')
-        def shExe = "sh"
+        def shExe = "bash"
         if (Os.isFamily(Os.FAMILY_WINDOWS)) {
             def paths = [
+                "C:/Programming/Git/Git/bin/bash.exe",
                 "C:/Programming/Git/Git/bin/sh.exe",
                 "C:/Programming/Git/Git/usr/bin/sh.exe",
                 "C:/Program Files/Git/bin/sh.exe",
