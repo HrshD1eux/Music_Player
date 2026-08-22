@@ -41,6 +41,10 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
+    - name: Ensure Media Library Proguard Files
+      run: |
+        find media/libraries -maxdepth 2 -type d -exec touch {}/proguard-rules.txt \; 2>/dev/null || true
+
     - name: Extract Version Name
       id: get_version
       run: |

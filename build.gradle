@@ -48,3 +48,12 @@ spotless {
         licenseHeaderFile("NOTICE")
     }
 }
+
+subprojects {
+    afterEvaluate { project ->
+        def rulesFile = new File(project.projectDir, "proguard-rules.txt")
+        if (!rulesFile.exists() && project.path.startsWith(":media-lib-")) {
+            rulesFile.text = "# Auto-generated\n"
+        }
+    }
+}
