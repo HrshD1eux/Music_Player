@@ -12,4 +12,6 @@
     <color name="widget_on_surface_inverse">@color/material_dynamic_neutral20</color>
 
     <color name="dynamic_primary">@color/m3_ref_palette_dynamic_primary80</color>
+
+    <color name="splash_background">#023F85</color>
 </resources>
