@@ -4,6 +4,8 @@
     android:id="@android:id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ui_widget_bg_round"
+    android:backgroundTint="?attr/colorSurface"
     android:theme="@style/Theme.MusicPlayer.Widget">
 
     <!-- Full background album cover -->
@@ -19,9 +21,8 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/ui_widget_bg_round"
-        android:backgroundTint="?attr/colorSurface"
-        android:alpha="0.15" />
+        android:background="?attr/colorSurface"
+        android:alpha="0.2" />
 
     <!-- Content overlay with metadata and controls -->
     <RelativeLayout
