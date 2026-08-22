@@ -95,36 +95,13 @@ jobs:
         path: app/build/outputs/apk/debug/app-debug.apk
 
     - name: Configure Git
-      if: env.RELEASE_KEYSTORE_BASE64 != ''
+      if: env.RELEASE_KEYSTORE_BASE64 != '' && github.ref == 'refs/heads/main'
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
 
-    - name: Bump Version in build.gradle
-      if: env.RELEASE_KEYSTORE_BASE64 != ''
-      run: |
-        # Extract current version
-        CURRENT_VERSION=$(grep 'versionName' app/build.gradle | head -1 | awk -F'"' '{print $2}')
-        
-        # Split version into parts (major.minor.patch)
-        IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
-        
-        # Increment patch version
-        PATCH=$((PATCH + 1))
-        NEW_VERSION="$MAJOR.$MINOR.$PATCH"
-        
-        # Update build.gradle with new version
-        sed -i "s/versionName \"$CURRENT_VERSION\"/versionName \"$NEW_VERSION\"/g" app/build.gradle
-        
-        # Commit and push version bump
-        git add app/build.gradle
-        git commit -m "chore: bump version to $NEW_VERSION" || true
-        git push origin main || true
-        
-        echo "Version bumped from $CURRENT_VERSION to $NEW_VERSION"
-
     - name: Create and Push Git Tag
-      if: env.RELEASE_KEYSTORE_BASE64 != ''
+      if: env.RELEASE_KEYSTORE_BASE64 != '' && github.ref == 'refs/heads/main'
       run: |
         # Check if tag already exists
         if git rev-parse ${{ env.TAG_NAME }} >/dev/null 2>&1; then
@@ -136,7 +113,7 @@ jobs:
         fi
 
     - name: Create GitHub Release
-      if: env.RELEASE_KEYSTORE_BASE64 != ''
+      if: env.RELEASE_KEYSTORE_BASE64 != '' && github.ref == 'refs/heads/main'
       uses: softprops/action-gh-release@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -153,3 +130,26 @@ jobs:
           app/build/outputs/apk/release/app-release.apk
         draft: false
         prerelease: false
+
+    - name: Bump Version and Commit
+      if: env.RELEASE_KEYSTORE_BASE64 != '' && github.ref == 'refs/heads/main'
+      run: |
+        # Extract current version
+        CURRENT_VERSION=$(grep 'versionName' app/build.gradle | head -1 | awk -F'"' '{print $2}')
+        
+        # Split version into parts (major.minor.patch)
+        IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
+        
+        # Increment patch version
+        PATCH=$((PATCH + 1))
+        NEW_VERSION="$MAJOR.$MINOR.$PATCH"
+        
+        # Update build.gradle with new version
+        sed -i "s/versionName \"$CURRENT_VERSION\"/versionName \"$NEW_VERSION\"/g" app/build.gradle
+        
+        # Commit and push version bump (skip CI on this commit to avoid recursive runs)
+        git add app/build.gradle
+        git commit -m "chore: bump version to $NEW_VERSION [skip ci]" || true
+        git push origin main || true
+        
+        echo "Version bumped from $CURRENT_VERSION to $NEW_VERSION"
