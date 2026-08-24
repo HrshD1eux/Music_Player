@@ -20,21 +20,16 @@ package com.HrshD1eux.musicplayer.widgets
 
 import android.content.Context
 import android.graphics.Bitmap
-import android.os.Build
 import coil3.request.ImageRequest
 import coil3.request.transformations
 import coil3.size.Size
-import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.image.BitmapProvider
 import com.HrshD1eux.musicplayer.image.ImageSettings
-import com.HrshD1eux.musicplayer.image.coil.RoundedRectTransformation
-import com.HrshD1eux.musicplayer.image.coil.SquareCropTransformation
 import com.HrshD1eux.musicplayer.playback.state.PlaybackStateManager
 import com.HrshD1eux.musicplayer.playback.state.Progression
 import com.HrshD1eux.musicplayer.playback.state.QueueChange
 import com.HrshD1eux.musicplayer.playback.state.RepeatMode
 import com.HrshD1eux.musicplayer.ui.UISettings
-import com.HrshD1eux.musicplayer.util.getDimenPixels
 import javax.inject.Inject
 import org.oxycblt.musikr.MusicParent
 import org.oxycblt.musikr.Song
@@ -93,32 +88,7 @@ private constructor(
             song,
             object : BitmapProvider.Target {
                 override fun onConfigRequest(builder: ImageRequest.Builder): ImageRequest.Builder {
-                    val cornerRadius =
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                            // Android 12, always round the cover with the widget's inner radius
-                            L.d("Using android 12 corner radius")
-                            context.getDimenPixels(android.R.dimen.system_app_widget_inner_radius)
-                        } else if (uiSettings.roundMode) {
-                            // < Android 12, but the user still enabled round mode.
-                            L.d("Using default corner radius")
-                            context.getDimenPixels(R.dimen.m3_shape_corners_large)
-                        } else {
-                            // User did not enable round mode.
-                            L.d("Using no corner radius")
-                            0
-                        }
-
-                    val transformations = buildList {
-                        if (imageSettings.forceSquareCovers) {
-                            add(SquareCropTransformation.INSTANCE)
-                        }
-                        if (cornerRadius > 0) {
-                            add(WidgetBitmapTransformation(15f))
-                            add(RoundedRectTransformation(cornerRadius.toFloat()))
-                        } else {
-                            add(WidgetBitmapTransformation(3f))
-                        }
-                    }
+                    val transformations = buildList { add(WidgetBitmapTransformation(2f)) }
 
                     return builder.size(Size.ORIGINAL).transformations(transformations)
                 }

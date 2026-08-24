@@ -181,15 +181,17 @@ class WidgetProvider : AppWidgetProvider() {
     // --- LAYOUTS ---
 
     private fun newDefaultLayout(context: Context, uiSettings: UISettings) =
-        newRemoteViews(context, R.layout.widget_default)
-            .setupBackground(uiSettings)
-            .setupBackground(uiSettings)
+        newRemoteViews(context, R.layout.widget_default).setupBackground(uiSettings)
 
     private fun newThinStickLayout(context: Context, state: WidgetComponent.PlaybackState) =
-        newRemoteViews(context, R.layout.widget_stick_thin).setupTimelineControls(context, state)
+        newRemoteViews(context, R.layout.widget_stick_thin)
+            .setupCover(context, state)
+            .setupTimelineControls(context, state)
 
     private fun newWideStickLayout(context: Context, state: WidgetComponent.PlaybackState) =
-        newRemoteViews(context, R.layout.widget_stick_wide).setupFullControls(context, state)
+        newRemoteViews(context, R.layout.widget_stick_wide)
+            .setupCover(context, state)
+            .setupFullControls(context, state)
 
     private fun newThinWaferLayout(
         context: Context,
@@ -198,8 +200,7 @@ class WidgetProvider : AppWidgetProvider() {
     ) =
         newRemoteViews(context, R.layout.widget_wafer_thin)
             .setupBackground(uiSettings)
-            .setupCover(context, state.takeIf { canDisplayWaferCover(uiSettings) })
-            .setupFillingCover(uiSettings)
+            .setupPlaybackState(context, state)
             .setupTimelineControls(context, state)
 
     private fun newWideWaferLayout(
@@ -209,8 +210,7 @@ class WidgetProvider : AppWidgetProvider() {
     ) =
         newRemoteViews(context, R.layout.widget_wafer_wide)
             .setupBackground(uiSettings)
-            .setupCover(context, state.takeIf { canDisplayWaferCover(uiSettings) })
-            .setupFillingCover(uiSettings)
+            .setupPlaybackState(context, state)
             .setupFullControls(context, state)
 
     private fun newThinDockedLayout(
@@ -245,31 +245,8 @@ class WidgetProvider : AppWidgetProvider() {
             .setupPlaybackState(context, state)
             .setupFullControls(context, state)
 
-    /**
-     * Set up the control bar in a [RemoteViews] layout that contains one. This is a kind of
-     * "floating" drawable that sits in front of the cover and contains the controls.
-     */
-    private fun RemoteViews.setupBar(uiSettings: UISettings): RemoteViews {
-        // Below API 31, enable a rounded bar only if round mode is enabled.
-        // On API 31+, the bar should always be round in order to fit in with other widgets.
-        val background =
-            if (useRoundedRemoteViews(uiSettings)) {
-                R.drawable.ui_widget_bg_round
-            } else {
-                R.drawable.ui_widget_bg_sharp
-            }
-        setBackgroundResource(R.id.widget_controls, background)
-        return this
-    }
-
-    /**
-     * Set up the background in a [RemoteViews] layout that contains one. This is largely
-     * self-explanatory, being a solid-color background that sits behind the cover and controls.
-     */
+    /** Set up the background in a [RemoteViews] layout that contains one. */
     private fun RemoteViews.setupBackground(uiSettings: UISettings): RemoteViews {
-        // Below API 31, enable a rounded background only if round mode is enabled.
-        // On API 31+, the background should always be round in order to fit in with other
-        // widgets.
         val background =
             if (useRoundedRemoteViews(uiSettings)) {
                 R.drawable.ui_widget_bg_round
@@ -314,20 +291,6 @@ class WidgetProvider : AppWidgetProvider() {
         setContentDescription(R.id.widget_cover, context.getString(R.string.desc_no_cover))
     }
 
-    private fun RemoteViews.setupFillingCover(uiSettings: UISettings): RemoteViews {
-        // Below API 31, enable a rounded background only if round mode is enabled.
-        // On API 31+, the background should always be round in order to fit in with other
-        // widgets.
-        val background =
-            if (useRoundedRemoteViews(uiSettings)) {
-                R.drawable.ui_widget_bg_round
-            } else {
-                R.drawable.ui_widget_bg_sharp
-            }
-        setBackgroundResource(R.id.widget_cover, background)
-        return this
-    }
-
     /**
      * Set up the album cover, song title, and artist name in a [RemoteViews] layout that contains
      * them.
@@ -341,7 +304,17 @@ class WidgetProvider : AppWidgetProvider() {
     ): RemoteViews {
         setupCover(context, state)
         setTextViewText(R.id.widget_song, state.song.name.resolve(context))
-        setTextViewText(R.id.widget_artist, state.song.artists.resolveNames(context))
+        val artist = state.song.artists.resolveNames(context)
+        val album = state.song.album.name.resolve(context)
+        val subtitle =
+            if (artist.isNotBlank() && album.isNotBlank() && album != artist) {
+                "$artist • $album"
+            } else if (artist.isNotBlank()) {
+                artist
+            } else {
+                album
+            }
+        setTextViewText(R.id.widget_artist, subtitle)
         return this
     }
 
@@ -355,29 +328,19 @@ class WidgetProvider : AppWidgetProvider() {
         context: Context,
         state: WidgetComponent.PlaybackState,
     ): RemoteViews {
-        // Hook the play/pause button to the play/pause broadcast that will be recognized
-        // by PlaybackService.
         setOnClickPendingIntent(
             R.id.widget_play_pause,
             context.newBroadcastPendingIntent(PlaybackActions.ACTION_PLAY_PAUSE),
         )
 
-        // Set up the play/pause button appearance. Like the Android 13 media controls, use
-        // a circular FAB when paused, and a squircle FAB when playing. This does require us
-        // to disable the ripple animation sadly, as  it will glitch when this is used. The
-        // shape change should act as a similar signal.
-        val icon: Int
-        val background: Int
-        if (state.isPlaying) {
-            icon = R.drawable.ic_pause_24
-            background = R.drawable.ui_remote_fab_container_playing
-        } else {
-            icon = R.drawable.ic_play_24
-            background = R.drawable.ui_remote_fab_container_paused
-        }
+        val icon =
+            if (state.isPlaying) {
+                R.drawable.ic_widget_pause_24
+            } else {
+                R.drawable.ic_widget_play_24
+            }
 
         setImageViewResource(R.id.widget_play_pause, icon)
-        setBackgroundResource(R.id.widget_play_pause, background)
 
         return this
     }
@@ -393,12 +356,10 @@ class WidgetProvider : AppWidgetProvider() {
         context: Context,
         state: WidgetComponent.PlaybackState,
     ): RemoteViews {
-        // Timeline controls contain the basic controls, set those up
         setupBasicControls(context, state)
-        // Timeline elements should always be left-to-right.
         setLayoutDirection(R.id.widget_controls, View.LAYOUT_DIRECTION_LTR)
-        // Hook the skip buttons to the respective broadcasts that can be recognized
-        // by PlaybackService.
+        setImageViewResource(R.id.widget_skip_prev, R.drawable.ic_widget_skip_prev_24)
+        setImageViewResource(R.id.widget_skip_next, R.drawable.ic_widget_skip_next_24)
         setOnClickPendingIntent(
             R.id.widget_skip_prev,
             context.newBroadcastPendingIntent(PlaybackActions.ACTION_SKIP_PREV),
@@ -426,15 +387,6 @@ class WidgetProvider : AppWidgetProvider() {
 
     private fun useRoundedRemoteViews(uiSettings: UISettings) =
         uiSettings.roundMode || Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
-
-    private fun canDisplayWaferCover(uiSettings: UISettings) =
-        // We cannot display album covers in the wafer-style widget when round mode is enabled
-        // below Android 12, as:
-        // - We cannot rely on system widget corner clipping, like on Android 12+
-        // - We cannot manually clip the widget ourselves due to broken clipToOutline support
-        // - We cannot determine the exact widget height that would allow us to clip the loaded
-        // image itself
-        Build.VERSION.SDK_INT >= Build.VERSION_CODES.S || !uiSettings.roundMode
 
     companion object {
         /**

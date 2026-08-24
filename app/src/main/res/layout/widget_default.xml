@@ -5,29 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ui_widget_bg_round"
-    android:backgroundTint="?attr/colorSurface"
-    android:theme="@style/Theme.MusicPlayer.Widget"
-    tools:ignore="Overdraw">
+    android:backgroundTint="#023F85"
+    android:clipToOutline="true"
+    android:theme="@style/Theme.MusicPlayer.Widget">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0.275"
-        android:contentDescription="@string/desc_no_cover"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_music_player_24"
-        android:tint="?attr/colorPrimary" />
-
-    <TextView
-        style="@style/Widget.MusicPlayer.TextView.Primary.AppWidget"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:ellipsize="none"
         android:gravity="center"
-        android:padding="@dimen/spacing_medium"
-        android:singleLine="false"
-        android:text="@string/def_playback"
-        android:textAlignment="center" />
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:alpha="0.85"
+            android:contentDescription="@string/desc_no_cover"
+            android:src="@drawable/ic_music_player_24"
+            android:tint="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/def_playback"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
 </FrameLayout>

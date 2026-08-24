@@ -46,7 +46,7 @@ class WidgetBitmapTransformation(reduce: Float) : Transformation() {
             throw IllegalArgumentException("WidgetBitmapTransformation requires original size.")
         }
         val inputArea = input.width * input.height
-        if (inputArea != maxBitmapArea) {
+        if (inputArea > maxBitmapArea) {
             val scale = sqrt(maxBitmapArea / inputArea.toDouble())
             val newWidth = (input.width * scale).toInt()
             val newHeight = (input.height * scale).toInt()
