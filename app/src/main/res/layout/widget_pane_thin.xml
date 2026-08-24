@@ -18,10 +18,12 @@
         tools:ignore="ContentDescription" />
 
     <!-- Dark gradient overlay for text readability & button contrast -->
-    <View
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/ui_widget_scrim" />
+        android:scaleType="fitXY"
+        android:src="@drawable/ui_widget_scrim"
+        tools:ignore="ContentDescription" />
 
     <!-- Overlay content: Metadata at top, Controls at bottom -->
     <RelativeLayout
@@ -49,11 +51,11 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:fontFamily="sans-serif-medium"
+                android:maxLines="1"
                 android:shadowColor="#B3000000"
                 android:shadowDx="0"
                 android:shadowDy="2"
                 android:shadowRadius="4"
-                android:singleLine="true"
                 android:textColor="#FFFFFF"
                 android:textSize="17sp"
                 android:textStyle="bold"
@@ -66,11 +68,11 @@
                 android:layout_marginTop="2dp"
                 android:ellipsize="end"
                 android:fontFamily="sans-serif"
+                android:maxLines="1"
                 android:shadowColor="#B3000000"
                 android:shadowDx="0"
                 android:shadowDy="1"
                 android:shadowRadius="3"
-                android:singleLine="true"
                 android:textColor="#D0FFFFFF"
                 android:textSize="13sp"
                 tools:text="&lt;unknown&gt; • Quick Share" />
@@ -96,10 +98,11 @@
                 android:scaleType="center"
                 android:src="@drawable/ic_widget_skip_prev_24" />
 
-            <Space
+            <ImageView
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                tools:ignore="ContentDescription" />
 
             <ImageButton
                 android:id="@+id/widget_play_pause"
@@ -110,10 +113,11 @@
                 android:scaleType="center"
                 android:src="@drawable/ic_widget_play_24" />
 
-            <Space
+            <ImageView
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                tools:ignore="ContentDescription" />
 
             <ImageButton
                 android:id="@+id/widget_skip_next"

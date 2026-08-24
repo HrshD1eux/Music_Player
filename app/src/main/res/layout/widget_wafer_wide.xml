@@ -16,10 +16,12 @@
         android:src="@drawable/ic_remote_default_cover_24"
         tools:ignore="ContentDescription" />
 
-    <View
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/ui_widget_scrim" />
+        android:scaleType="fitXY"
+        android:src="@drawable/ui_widget_scrim"
+        tools:ignore="ContentDescription" />
 
     <LinearLayout
         android:id="@+id/widget_panel"
@@ -43,11 +45,11 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:fontFamily="sans-serif-medium"
+                android:maxLines="1"
                 android:shadowColor="#B3000000"
                 android:shadowDx="0"
                 android:shadowDy="2"
                 android:shadowRadius="4"
-                android:singleLine="true"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp"
                 android:textStyle="bold"
@@ -60,11 +62,11 @@
                 android:layout_marginTop="2dp"
                 android:ellipsize="end"
                 android:fontFamily="sans-serif"
+                android:maxLines="1"
                 android:shadowColor="#B3000000"
                 android:shadowDx="0"
                 android:shadowDy="1"
                 android:shadowRadius="3"
-                android:singleLine="true"
                 android:textColor="#D0FFFFFF"
                 android:textSize="12sp"
                 tools:text="Artist • Album" />

@@ -88,7 +88,7 @@ private constructor(
             song,
             object : BitmapProvider.Target {
                 override fun onConfigRequest(builder: ImageRequest.Builder): ImageRequest.Builder {
-                    val transformations = buildList { add(WidgetBitmapTransformation(2f)) }
+                    val transformations = buildList { add(WidgetBitmapTransformation()) }
 
                     return builder.size(Size.ORIGINAL).transformations(transformations)
                 }

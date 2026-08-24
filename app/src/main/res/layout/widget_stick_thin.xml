@@ -16,10 +16,12 @@
         android:src="@drawable/ic_remote_default_cover_24"
         tools:ignore="ContentDescription" />
 
-    <View
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/ui_widget_scrim" />
+        android:scaleType="fitXY"
+        android:src="@drawable/ui_widget_scrim"
+        tools:ignore="ContentDescription" />
 
     <LinearLayout
         android:id="@+id/widget_controls"
@@ -39,10 +41,11 @@
             android:scaleType="center"
             android:src="@drawable/ic_widget_skip_prev_24" />
 
-        <Space
+        <ImageView
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            tools:ignore="ContentDescription" />
 
         <ImageButton
             android:id="@+id/widget_play_pause"
@@ -53,10 +56,11 @@
             android:scaleType="center"
             android:src="@drawable/ic_widget_play_24" />
 
-        <Space
+        <ImageView
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            tools:ignore="ContentDescription" />
 
         <ImageButton
             android:id="@+id/widget_skip_next"

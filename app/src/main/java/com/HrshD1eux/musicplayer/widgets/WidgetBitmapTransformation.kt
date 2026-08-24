@@ -18,38 +18,27 @@
  
 package com.HrshD1eux.musicplayer.widgets
 
-import android.content.res.Resources
 import android.graphics.Bitmap
 import androidx.core.graphics.scale
 import coil3.size.Size
 import coil3.transform.Transformation
 import kotlin.math.sqrt
 
-class WidgetBitmapTransformation(reduce: Float) : Transformation() {
-    private val metrics = Resources.getSystem().displayMetrics
-    private val sw = metrics.widthPixels
-    private val sh = metrics.heightPixels
-    // Cap memory usage at 1.5 times the size of the display
-    // 1.5 * 4 bytes/pixel * w * h ==> 6 * w * h
-    // https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/services/appwidget/java/com/android/server/appwidget/AppWidgetServiceImpl.java
-    // Of course since OEMs randomly patch this check, we give a lot of slack.
-    private val maxBitmapArea = (1.5 * sw * sh / reduce).toInt()
+class WidgetBitmapTransformation(private val maxDimension: Int = 480) : Transformation() {
+    private val maxBitmapArea = maxDimension * maxDimension
 
     override val cacheKey: String
-        get() = "WidgetBitmapTransformation:${maxBitmapArea}"
+        get() = "WidgetBitmapTransformation:$maxDimension"
 
     override suspend fun transform(input: Bitmap, size: Size): Bitmap {
         if (size !== Size.ORIGINAL) {
-            // The widget loading stack basically discards the size parameter since there's no
-            // sane value from the get-go, all this transform does is actually dynamically apply
-            // the size cap so this transform must always be zero.
             throw IllegalArgumentException("WidgetBitmapTransformation requires original size.")
         }
         val inputArea = input.width * input.height
         if (inputArea > maxBitmapArea) {
-            val scale = sqrt(maxBitmapArea / inputArea.toDouble())
-            val newWidth = (input.width * scale).toInt()
-            val newHeight = (input.height * scale).toInt()
+            val scale = sqrt(maxBitmapArea.toDouble() / inputArea.toDouble())
+            val newWidth = (input.width * scale).toInt().coerceAtLeast(1)
+            val newHeight = (input.height * scale).toInt().coerceAtLeast(1)
             return input.scale(newWidth, newHeight)
         }
         return input

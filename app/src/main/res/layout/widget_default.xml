@@ -30,7 +30,7 @@
             android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
-            android:singleLine="true"
+            android:maxLines="1"
             android:text="@string/def_playback"
             android:textColor="#FFFFFF"
             android:textSize="15sp"

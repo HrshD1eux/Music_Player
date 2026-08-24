@@ -91,29 +91,21 @@ class WidgetProvider : AppWidgetProvider() {
         // Create and configure each possible layout for the widget. These dimensions seem
         // arbitrary, but they are actually the minimum dimensions required to fit all of
         // the widget elements, plus some leeway for text sizing.
-        val defaultLayout = newThinDockedLayout(context, uiSettings, state)
+        val defaultLayout = newWidePaneLayout(context, uiSettings, state)
         val views =
             mapOf(
-                SizeF(180f, 48f) to newThinStickLayout(context, state),
-                SizeF(304f, 48f) to newWideStickLayout(context, state),
-                SizeF(180f, 80f) to newThinWaferLayout(context, uiSettings, state),
-                SizeF(304f, 80f) to newWideWaferLayout(context, uiSettings, state),
-                SizeF(180f, 152f) to defaultLayout,
-                SizeF(304f, 152f) to newWideDockedLayout(context, uiSettings, state),
-                SizeF(180f, 272f) to newThinPaneLayout(context, uiSettings, state),
-                SizeF(304f, 272f) to newWidePaneLayout(context, uiSettings, state),
+                SizeF(180f, 48f) to newWideStickLayout(context, state),
+                SizeF(180f, 80f) to newWideWaferLayout(context, uiSettings, state),
+                SizeF(180f, 130f) to defaultLayout,
             )
 
         // This is the order in which we will disable cover art layouts if they exceed the
-        // maximum bitmap memory usage. (See the comment in the loop below for more info.)
+        // maximum bitmap memory usage.
         val victims =
             mutableSetOf(
-                R.layout.widget_wafer_thin,
+                R.layout.widget_stick_wide,
                 R.layout.widget_wafer_wide,
-                R.layout.widget_pane_thin,
                 R.layout.widget_pane_wide,
-                R.layout.widget_docked_thin,
-                R.layout.widget_docked_wide,
             )
 
         // Manually update AppWidgetManager with the new views.
