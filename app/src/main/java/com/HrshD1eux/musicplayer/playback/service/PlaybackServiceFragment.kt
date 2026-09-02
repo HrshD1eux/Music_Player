@@ -29,6 +29,7 @@ import com.HrshD1eux.musicplayer.playback.PlaybackSettings
 import com.HrshD1eux.musicplayer.playback.state.DeferredPlayback
 import com.HrshD1eux.musicplayer.playback.state.PlaybackStateManager
 import com.HrshD1eux.musicplayer.playback.state.Progression
+import com.HrshD1eux.musicplayer.playback.stats.ListeningTracker
 import com.HrshD1eux.musicplayer.widgets.WidgetComponent
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
@@ -46,6 +47,7 @@ private constructor(
     private val foregroundListener: ForegroundListener,
     private val playbackManager: PlaybackStateManager,
     private val playbackSettings: PlaybackSettings,
+    private val listeningTracker: ListeningTracker,
     exoHolderFactory: ExoPlaybackStateHolder.Factory,
     sessionHolderFactory: MediaSessionHolder.Factory,
     widgetComponentFactory: WidgetComponent.Factory,
@@ -56,6 +58,7 @@ private constructor(
     constructor(
         private val playbackManager: PlaybackStateManager,
         private val playbackSettings: PlaybackSettings,
+        private val listeningTracker: ListeningTracker,
         private val exoHolderFactory: ExoPlaybackStateHolder.Factory,
         private val sessionHolderFactory: MediaSessionHolder.Factory,
         private val widgetComponentFactory: WidgetComponent.Factory,
@@ -67,6 +70,7 @@ private constructor(
                 foregroundListener,
                 playbackManager,
                 playbackSettings,
+                listeningTracker,
                 exoHolderFactory,
                 sessionHolderFactory,
                 widgetComponentFactory,
@@ -118,6 +122,7 @@ private constructor(
         exoHolder.attach()
         sessionHolder.attach()
         widgetComponent.attach()
+        listeningTracker.attach()
         systemReceiver.attach()
         playbackManager.addListener(this)
         updateAutoStopTimer(playbackManager.progression.isPlaying)
@@ -177,6 +182,7 @@ private constructor(
         waitJob.cancel()
         playbackManager.removeListener(this)
         systemReceiver.release()
+        listeningTracker.release()
         widgetComponent.release()
         sessionHolder.release()
         exoHolder.release()

@@ -30,16 +30,23 @@ import androidx.room.Transaction
 import androidx.room.TypeConverters
 import androidx.room.migration.Migration
 import com.HrshD1eux.musicplayer.playback.state.RepeatMode
+import kotlinx.coroutines.flow.Flow
 import org.oxycblt.musikr.Music
 
 /**
- * Provides raw access to the database storing the persisted playback state.
+ * Provides raw access to the database storing the persisted playback state and listening history.
  *
  * @author HrshD1eux
  */
 @Database(
-    entities = [PlaybackState::class, QueueHeapItem::class, QueueShuffledMappingItem::class],
-    version = 38,
+    entities =
+        [
+            PlaybackState::class,
+            QueueHeapItem::class,
+            QueueShuffledMappingItem::class,
+            PlaybackHistoryEntry::class,
+        ],
+    version = 39,
     exportSchema = false,
 )
 @TypeConverters(Music.UID.TypeConverters::class)
@@ -58,6 +65,13 @@ abstract class PersistenceDatabase : RoomDatabase() {
      */
     abstract fun queueDao(): QueueDao
 
+    /**
+     * Get the current [PlaybackHistoryDao].
+     *
+     * @return A [PlaybackHistoryDao] providing access to listening history.
+     */
+    abstract fun playbackHistoryDao(): PlaybackHistoryDao
+
     companion object {
         val MIGRATION_27_32 =
             Migration(27, 32) {
@@ -65,6 +79,24 @@ abstract class PersistenceDatabase : RoomDatabase() {
                 it.execSQL("ALTER TABLE playback_state RENAME TO PlaybackState")
                 it.execSQL("ALTER TABLE queue_heap RENAME TO QueueHeapItem")
                 it.execSQL("ALTER TABLE queue_mapping RENAME TO QueueMappingItem")
+            }
+
+        val MIGRATION_38_39 =
+            Migration(38, 39) {
+                it.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS `PlaybackHistoryEntry` (
+                        `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        `songUid` TEXT NOT NULL,
+                        `songTitle` TEXT NOT NULL,
+                        `artistName` TEXT NOT NULL,
+                        `durationPlayedMs` INTEGER NOT NULL,
+                        `songDurationMs` INTEGER NOT NULL,
+                        `timestamp` INTEGER NOT NULL
+                    )
+                    """
+                        .trimIndent()
+                )
             }
     }
 }
@@ -168,3 +200,62 @@ data class PlaybackState(
 @Entity data class QueueHeapItem(@PrimaryKey val id: Int, val uid: Music.UID)
 
 @Entity data class QueueShuffledMappingItem(@PrimaryKey val id: Int, val index: Int)
+
+@Entity(tableName = "PlaybackHistoryEntry")
+data class PlaybackHistoryEntry(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val songUid: Music.UID,
+    val songTitle: String,
+    val artistName: String,
+    val durationPlayedMs: Long,
+    val songDurationMs: Long,
+    val timestamp: Long,
+)
+
+/**
+ * Provides control of the persisted playback history and listening statistics table.
+ *
+ * @author HrshD1eux
+ */
+@Dao
+interface PlaybackHistoryDao {
+    /**
+     * Insert a new playback history entry into the database.
+     *
+     * @param entry The [PlaybackHistoryEntry] to insert.
+     * @return The row ID of the inserted entry.
+     */
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(entry: PlaybackHistoryEntry): Long
+
+    /**
+     * Get the count of songs played since a given timestamp.
+     *
+     * @param sinceTimestamp Epoch milliseconds threshold.
+     */
+    @Query("SELECT COUNT(*) FROM PlaybackHistoryEntry WHERE timestamp >= :sinceTimestamp")
+    fun getPlayCountSinceFlow(sinceTimestamp: Long): Flow<Int>
+
+    /**
+     * Get the total duration of songs listened to since a given timestamp.
+     *
+     * @param sinceTimestamp Epoch milliseconds threshold.
+     */
+    @Query(
+        "SELECT COALESCE(SUM(durationPlayedMs), 0) FROM PlaybackHistoryEntry WHERE timestamp >= :sinceTimestamp"
+    )
+    fun getTotalDurationSinceFlow(sinceTimestamp: Long): Flow<Long>
+
+    /** Get the count of songs played since a given timestamp synchronously. */
+    @Query("SELECT COUNT(*) FROM PlaybackHistoryEntry WHERE timestamp >= :sinceTimestamp")
+    suspend fun getPlayCountSince(sinceTimestamp: Long): Int
+
+    /** Get the total duration of songs listened to since a given timestamp synchronously. */
+    @Query(
+        "SELECT COALESCE(SUM(durationPlayedMs), 0) FROM PlaybackHistoryEntry WHERE timestamp >= :sinceTimestamp"
+    )
+    suspend fun getTotalDurationSince(sinceTimestamp: Long): Long
+
+    /** Delete all playback history entries. */
+    @Query("DELETE FROM PlaybackHistoryEntry") suspend fun nukeHistory()
+}

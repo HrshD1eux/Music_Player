@@ -105,3 +105,28 @@ fun Long.formatDurationSecs(isElapsed: Boolean): String {
     }
     return durationString
 }
+
+/**
+ * Format a listening duration in milliseconds into a friendly string like "45m", "2h 15m", or "1d
+ * 4h".
+ */
+fun Long.formatListeningDuration(): String {
+    if (this <= 0L) return "0m"
+    val totalSeconds = floorDiv(1000)
+    val totalMinutes = totalSeconds / 60
+    val totalHours = totalMinutes / 60
+    val totalDays = totalHours / 24
+
+    return when {
+        totalMinutes < 1 -> "<1m"
+        totalHours < 1 -> "${totalMinutes}m"
+        totalDays < 1 -> {
+            val remMins = totalMinutes % 60
+            if (remMins > 0) "${totalHours}h ${remMins}m" else "${totalHours}h"
+        }
+        else -> {
+            val remHours = totalHours % 24
+            if (remHours > 0) "${totalDays}d ${remHours}h" else "${totalDays}d"
+        }
+    }
+}

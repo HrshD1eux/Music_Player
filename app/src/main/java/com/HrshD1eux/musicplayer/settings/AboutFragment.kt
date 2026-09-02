@@ -33,6 +33,8 @@ import com.HrshD1eux.musicplayer.R
 import com.HrshD1eux.musicplayer.databinding.FragmentAboutBinding
 import com.HrshD1eux.musicplayer.music.MusicViewModel
 import com.HrshD1eux.musicplayer.playback.formatDurationMs
+import com.HrshD1eux.musicplayer.playback.formatListeningDuration
+import com.HrshD1eux.musicplayer.playback.stats.ListeningStats
 import com.HrshD1eux.musicplayer.ui.ViewBindingFragment
 import com.HrshD1eux.musicplayer.util.collectImmediately
 import com.HrshD1eux.musicplayer.util.openInBrowser
@@ -50,6 +52,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class AboutFragment : ViewBindingFragment<FragmentAboutBinding>() {
     private val musicModel: MusicViewModel by activityViewModels()
+    private val listeningStatsModel: ListeningStatsViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,11 +81,12 @@ class AboutFragment : ViewBindingFragment<FragmentAboutBinding>() {
             requireContext().openInBrowser(LINK_NEW_ISSUE)
         }
         binding.aboutFeedbackEmail.setOnClickListener {
-            requireContext().sendEmail("feedback@auxio.app")
+            requireContext().sendEmail("hrshd1eux@proton.me")
         }
 
         // VIEWMODEL SETUP
         collectImmediately(musicModel.statistics, ::updateStatistics)
+        collectImmediately(listeningStatsModel.listeningStats, ::updateListeningStats)
     }
 
     private fun checkAppUpdates() {
@@ -167,6 +171,50 @@ class AboutFragment : ViewBindingFragment<FragmentAboutBinding>() {
             getString(
                 R.string.fmt_lib_total_size,
                 Formatter.formatFileSize(context, statistics?.totalSizeBytes ?: 0L),
+            )
+    }
+
+    private fun updateListeningStats(stats: ListeningStats?) {
+        val binding = binding ?: return
+        val day = stats?.day
+        val week = stats?.week
+        val month = stats?.month
+        val year = stats?.year
+        val allTime = stats?.allTime
+
+        binding.aboutStatsDay.text =
+            getString(
+                R.string.fmt_stat_summary,
+                getString(R.string.lbl_stat_day),
+                "${getString(R.string.fmt_stat_songs_played, day?.playCount ?: 0)} (${(day?.totalDurationMs ?: 0L).formatListeningDuration()})",
+            )
+
+        binding.aboutStatsWeek.text =
+            getString(
+                R.string.fmt_stat_summary,
+                getString(R.string.lbl_stat_week),
+                "${getString(R.string.fmt_stat_songs_played, week?.playCount ?: 0)} (${(week?.totalDurationMs ?: 0L).formatListeningDuration()})",
+            )
+
+        binding.aboutStatsMonth.text =
+            getString(
+                R.string.fmt_stat_summary,
+                getString(R.string.lbl_stat_month),
+                "${getString(R.string.fmt_stat_songs_played, month?.playCount ?: 0)} (${(month?.totalDurationMs ?: 0L).formatListeningDuration()})",
+            )
+
+        binding.aboutStatsYear.text =
+            getString(
+                R.string.fmt_stat_summary,
+                getString(R.string.lbl_stat_year),
+                "${getString(R.string.fmt_stat_songs_played, year?.playCount ?: 0)} (${(year?.totalDurationMs ?: 0L).formatListeningDuration()})",
+            )
+
+        binding.aboutStatsAllTime.text =
+            getString(
+                R.string.fmt_stat_summary,
+                getString(R.string.lbl_stat_all_time),
+                "${getString(R.string.fmt_stat_songs_played, allTime?.playCount ?: 0)} (${(allTime?.totalDurationMs ?: 0L).formatListeningDuration()})",
             )
     }
 

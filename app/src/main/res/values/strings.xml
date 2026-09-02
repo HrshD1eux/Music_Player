@@ -172,6 +172,15 @@
     <string name="lbl_wiki">Wiki</string>
     <string name="lbl_licenses">Licenses</string>
     <string name="lbl_library_counts">Library statistics</string>
+    <string name="lbl_listening_stats">Listening statistics</string>
+    <string name="lbl_stat_day">Today</string>
+    <string name="lbl_stat_week">This week</string>
+    <string name="lbl_stat_month">This month</string>
+    <string name="lbl_stat_year">This year</string>
+    <string name="lbl_stat_all_time">All time</string>
+    <string name="fmt_stat_songs_played">%d songs played</string>
+    <string name="fmt_stat_time_listened">%s listened</string>
+    <string name="fmt_stat_summary">%1$s • %2$s</string>
 
     <string name="lbl_selection">Selection</string>
 

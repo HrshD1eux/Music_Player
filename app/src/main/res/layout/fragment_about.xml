@@ -251,6 +251,68 @@
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/spacing_tiny">
+
+                    <TextView
+                        android:id="@+id/about_listening_stats"
+                        style="@style/Widget.MusicPlayer.TextView.Header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lbl_listening_stats" />
+
+                    <TextView
+                        android:id="@+id/about_stats_day"
+                        style="@style/Widget.MusicPlayer.TextView.Icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:drawableStartCompat="@drawable/ic_time_24"
+                        tools:text="Today: 12 songs played • 45m listened" />
+
+                    <TextView
+                        android:id="@+id/about_stats_week"
+                        style="@style/Widget.MusicPlayer.TextView.Icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:drawableStartCompat="@drawable/ic_time_24"
+                        tools:text="This week: 48 songs played • 3h 10m listened" />
+
+                    <TextView
+                        android:id="@+id/about_stats_month"
+                        style="@style/Widget.MusicPlayer.TextView.Icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:drawableStartCompat="@drawable/ic_time_24"
+                        tools:text="This month: 210 songs played • 14h 25m listened" />
+
+                    <TextView
+                        android:id="@+id/about_stats_year"
+                        style="@style/Widget.MusicPlayer.TextView.Icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:drawableStartCompat="@drawable/ic_time_24"
+                        tools:text="This year: 1,420 songs played • 89h 40m listened" />
+
+                    <TextView
+                        android:id="@+id/about_stats_all_time"
+                        style="@style/Widget.MusicPlayer.TextView.Icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:drawableStartCompat="@drawable/ic_song_24"
+                        tools:text="All time: 3,500 songs played • 210h 15m listened" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
